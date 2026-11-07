@@ -1,0 +1,61 @@
+{
+  "sintetico": true,
+  "observacao": "Exemplo inteiramente sintetico e ficticio; nenhum modelo foi executado e nao houve medicoes. Categorias sao propostas ilustrativas, e juiz, rubrica, metricas e formato da resposta aguardam validacao de Hugo na T05.",
+  "execucao": {
+    "id": "exec-sintetica-001",
+    "data": "2026-10-31T14:00:00-03:00",
+    "estado": "concluida_com_falhas",
+    "bateria": {
+      "id": "bateria-suporte-demo",
+      "versao": "0.1.0"
+    },
+    "modelo": {
+      "id": "modelo-demo",
+      "versao": "versao-ficticia"
+    },
+    "prompt": {
+      "id": "prompt-classificacao-demo",
+      "versao": "0.1.0"
+    },
+    "parametros": {
+      "temperature": 0
+    },
+    "juiz": {
+      "id": "juiz-demo-pendente-t05",
+      "versao": null
+    }
+  },
+  "casos": [
+    {
+      "id": "caso-demo-001",
+      "chamado": "Nao consigo acessar minha conta depois de redefinir a senha.",
+      "categoria_esperada": "acesso_conta",
+      "resposta_original": "{\"categoria\":\"acesso_conta\",\"justificativa\":\"O problema descrito e de acesso a conta.\"}",
+      "categoria_prevista": "acesso_conta",
+      "justificativa": "O problema descrito e de acesso a conta.",
+      "acerto": true,
+      "nota_juiz": null,
+      "tempo_ms": null,
+      "tokens_entrada": null,
+      "tokens_saida": null,
+      "erro": null
+    },
+    {
+      "id": "caso-demo-002",
+      "chamado": "Uma cobranca foi feita duas vezes no meu cartao.",
+      "categoria_esperada": "cobranca",
+      "resposta_original": null,
+      "categoria_prevista": null,
+      "justificativa": null,
+      "acerto": false,
+      "nota_juiz": null,
+      "tempo_ms": null,
+      "tokens_entrada": null,
+      "tokens_saida": null,
+      "erro": {
+        "codigo": "TIMEOUT",
+        "mensagem": "Tempo limite excedido sem resposta do modelo."
+      }
+    }
+  ]
+}
