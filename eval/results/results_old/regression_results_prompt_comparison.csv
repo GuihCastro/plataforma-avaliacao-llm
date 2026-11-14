@@ -1,0 +1,41 @@
+input,expected,original_response,original_correct,degraded_response,degraded_correct
+Instalem o software de desenho nesta máquina.,Instalação,Software,False,Hardware.,False
+O computador está emitindo um ruído forte na ventoinha.,Hardware,Hardware,True,Sistema de hardware.,False
+A tela do notebook está piscando constantemente.,Hardware,Acesso,False,Hardware,True
+Quero definir o aplicativo de PDF como programa padrão.,Configuração,Configuração,True,"A mensagem pede para definir o aplicativo de PDF como programa padrão. Esta é uma solicitação relativa ao software e ao hardware, pois se refere especificamente a um aplicativo (o PDF) e um programa (que provavelmente seria o software que ele é). Portanto, a classificação dessa mensagem seria:
+
+""Hardware""",False
+Internet lenta.,Rede,Rede,True,Menssagem classificada como Hardware.,False
+O sistema apaga os filtros depois que fecho a tela.,Software,Configuração,False,Sistema,False
+O antivírus exibe um erro durante a verificação.,Software,Software,True,Software,True
+Programa travou.,Software,Instalação,False,"Não há dados suficientes para classificar a mensagem de suporte de TI como Hardware. A mensagem ""Programa travou"" é geralmente relacionada a um problema de software, mas pode também indicar um problema de hardware, dependendo da natureza do programa.",False
+Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Hardware,True,Hardware,True
+Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,Mensagem de Hardware,False
+Sem máquina nessa mesa.,Instalação,Hardware,False,"A mensagem ""Sem máquina nessa mesa"" está relacionada ao hardware, pois ela se refere à ausência de uma máquina na determinada localização.",False
+O notebook está superaquecendo e desligando sozinho.,Hardware,Hardware,True,A mensagem é relacionada ao hardware.,False
+Quero instalar o aplicativo de videoconferência.,Instalação,Instalação,True,Hardware,False
+Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Software,False,Hardware,False
+O computador não liga quando aperto o botão.,Hardware,Instalação,False,Esta mensagem se refere a um problema relacionado ao hardware do computador.,False
+O navegador não carrega as extensões instaladas.,Software,Hardware,False,"A mensagem ""O navegador não carrega as extensões instaladas"" pertence à categoria de Hardware.",False
+O aplicativo apresenta uma tela branca ao iniciar.,Software,Hardware,False,"Mensagem: O aplicativo apresenta uma tela branca ao iniciar.
+
+Classificação: Hardware",False
+Preciso redefinir minha senha de rede.,Acesso,Acesso,True,"Redefinir a senha de rede é um procedimento normal e importante para garantir a segurança do seu ambiente de TI. Aqui estão algumas etapas que você pode seguir:
+
+1. Clique em ""Meu perfil"" ou ""Minha conta"".
+2. Selecione ""Configurações de segurança"".
+3. Encontre a opção relacionada à segurança da rede ou de acesso à Internet.
+4. Digite a nova senha na janela que aparece.
+5. Confirmar a nova senha.
+6. Se houver certificados de confiança digital, você precisará inseri-los.
+7. Finalize o processo para atualizar a senha na rede.
+
+Lembre-se de que esta etapa é necessária para alterar a senha da rede, mas não para desafiar o sistema.",False
+A nova estação precisa receber o sistema operacional.,Instalação,Software,False,"A mensagem classificada é:
+
+Software
+
+Justificativa: A mensagem pede para a nova estação receber o sistema operacional, o que se refere diretamente ao software do sistema operacional (OS), que é responsável por administrar o hardware do computador.",False
+Solicito a instalação do pacote de escritório.,Instalação,Instalação,True,"**Classificação: Hardware**
+
+Esta mensagem está especificamente relacionada ao hardware. É um pedido para instalar um pacote que, por se tratar de uma aplicação de escritório, normalmente envolve uma instalação do software ou um programa em um dispositivo físico, como um computador ou um dispositivo móvel.",False

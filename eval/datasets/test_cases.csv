@@ -1,0 +1,101 @@
+input,expected
+Monitor parou.,Hardware
+Meu teclado não funciona.,Hardware
+O mouse não está respondendo aos movimentos.,Hardware
+A tela do notebook está piscando constantemente.,Hardware
+O computador não liga quando aperto o botão.,Hardware
+A impressora está puxando várias folhas de uma vez.,Hardware
+O headset não reproduz som em nenhum aplicativo.,Hardware
+Uma das portas USB não reconhece o pendrive.,Hardware
+O carregador do notebook está com o cabo danificado.,Hardware
+A webcam não liga quando conecto ao computador.,Hardware
+A tela do monitor está com uma faixa preta.,Hardware
+O notebook está superaquecendo e desligando sozinho.,Hardware
+A bateria do notebook não segura carga.,Hardware
+Algumas teclas do teclado estão fisicamente quebradas.,Hardware
+O computador está emitindo um ruído forte na ventoinha.,Hardware
+O conector do cabo de vídeo está quebrado.,Hardware
+O scanner não liga quando pressiono o botão.,Hardware
+Programa travou.,Software
+O sistema fecha sozinho ao abrir.,Software
+O navegador apresenta erro ao iniciar.,Software
+O aplicativo de folha de pagamento parou de responder.,Software
+O Word fecha quando tento salvar o documento.,Software
+O programa exibe uma mensagem de erro ao executar.,Software
+O sistema apresenta falha ao carregar os relatórios.,Software
+O aplicativo não abre depois da atualização.,Software
+O programa apresenta falha ao exportar um arquivo PDF.,Software
+O sistema duplicou os registros ao salvar.,Software
+O navegador não carrega as extensões instaladas.,Software
+O antivírus exibe um erro durante a verificação.,Software
+O aplicativo apresenta uma tela branca ao iniciar.,Software
+O programa não reconhece o arquivo que tento importar.,Software
+O sistema apaga os filtros depois que fecho a tela.,Software
+O leitor de PDF fecha ao abrir determinados arquivos.,Software
+A planilha apresenta erro ao executar uma fórmula.,Software
+Estou sem rede.,Rede
+Internet lenta.,Rede
+Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede
+A conexão Wi-Fi cai várias vezes durante o expediente.,Rede
+O computador não recebe um endereço IP da rede.,Rede
+O cabo de rede não está conectando à internet.,Rede
+A rede da empresa está indisponível em todos os computadores.,Rede
+Não consigo alcançar o servidor pelo endereço IP.,Rede
+A videoconferência trava por causa da instabilidade da conexão.,Rede
+A conexão cabeada está desconectando sozinha.,Rede
+O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede
+A impressora de rede está indisponível para todos os computadores.,Rede
+A intranet está fora do ar para todos os funcionários.,Rede
+A conexão com o servidor apresenta perda de pacotes.,Rede
+"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede
+A VPN desconecta continuamente durante o uso.,Rede
+A transferência de arquivos pela rede está muito lenta.,Rede
+Sem acesso a pasta.,Acesso
+Não consigo entrar no computador.,Acesso
+Não consigo fazer login no sistema com minha conta.,Acesso
+Minha senha corporativa foi bloqueada após várias tentativas.,Acesso
+Preciso recuperar o acesso ao meu e-mail institucional.,Acesso
+Minha conta não consegue entrar no portal interno.,Acesso
+Aparece usuário sem permissão ao abrir o sistema.,Acesso
+Meu crachá não libera meu acesso ao sistema de ponto.,Acesso
+Não consigo acessar a pasta compartilhada do meu departamento.,Acesso
+Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso
+Minha conta foi desativada e não consigo autenticar.,Acesso
+O sistema não aceita a senha da minha conta.,Acesso
+Não consigo entrar no painel administrativo com meu usuário.,Acesso
+Preciso redefinir minha senha de rede.,Acesso
+O acesso ao sistema foi negado para minha matrícula.,Acesso
+Meu usuário não tem permissão para visualizar os relatórios.,Acesso
+O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso
+Preciso de um programa.,Instalação
+Sem máquina nessa mesa.,Instalação
+Preciso instalar o Microsoft Teams neste computador.,Instalação
+Solicito a instalação do pacote de escritório.,Instalação
+Preciso adicionar uma impressora nova ao meu computador.,Instalação
+Instalem o leitor de PDF na minha estação.,Instalação
+Preciso instalar o certificado digital neste computador.,Instalação
+Quero instalar o aplicativo de videoconferência.,Instalação
+Solicito a instalação do cliente VPN.,Instalação
+A nova estação precisa receber o sistema operacional.,Instalação
+Preciso instalar os drivers da impressora.,Instalação
+Solicito a instalação do navegador Firefox.,Instalação
+Preciso instalar o aplicativo de acesso remoto.,Instalação
+Instalem o software de desenho nesta máquina.,Instalação
+Preciso adicionar o agente de antivírus no notebook.,Instalação
+Solicito a instalação do driver do scanner.,Instalação
+Preciso que fique dessa forma.,Configuração
+Preciso do meu computador no modo noturno.,Configuração
+Quero alterar a resolução do monitor para 1920x1080.,Configuração
+Preciso configurar a assinatura automática do e-mail.,Configuração
+Quero mudar o idioma do sistema para português.,Configuração
+Configure o navegador para abrir a página da intranet ao iniciar.,Configuração
+Preciso ajustar o fuso horário do computador.,Configuração
+Quero alterar o tempo para a tela bloquear automaticamente.,Configuração
+Configure a impressora para imprimir frente e verso por padrão.,Configuração
+Preciso mapear a unidade de rede Z: no meu computador.,Configuração
+Quero definir o aplicativo de PDF como programa padrão.,Configuração
+Ajuste o brilho da tela para um nível menor.,Configuração
+Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração
+Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração
+Configure meu e-mail para atualizar a cada cinco minutos.,Configuração
+Preciso deixar a escala da tela em 125%.,Configuração

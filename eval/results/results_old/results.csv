@@ -1,0 +1,31 @@
+model,input,expected,response,correct,latency_seconds,judge_correct,judge_reason
+qwen2.5:1.5b,Estou sem rede.,Rede,Acesso,False,2.878,False,A resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,Programa travou.,Software,Software,True,7.8639,True,A resposta 'Software' corresponde à categoria esperada 'Software' para a mensagem 'Programa travou'.
+qwen2.5:1.5b,Internet lenta.,Rede,Configuração,False,2.0621,False,"A categoria esperada é 'Rede', mas a resposta do modelo é 'Configuração'"
+qwen2.5:1.5b,Sem acesso a pasta.,Acesso,Software,False,2.0512,False,A resposta 'Software' não corresponde à categoria esperada 'Acesso'.
+qwen2.5:1.5b,Não consigo entrar no computador.,Acesso,Acesso,True,2.0581,True,A resposta 'Acesso' corresponde à categoria esperada 'Acesso' devido à mensagem original 'Não consigo entrar no computador' que indica um problema de acesso.
+qwen2.5:1.5b,Preciso de um programa.,Instalação,Software,False,2.056,False,Software e Instalação são categorias diferentes. Instalação é uma subcategoria de Software.
+qwen2.5:1.5b,Sem máquina nessa mesa.,Instalação,Hardware,False,2.0518,False,A categoria esperada é 'Instalação' e a resposta do modelo é 'Hardware'. Essas categorias não estão relacionadas.
+qwen2.5:1.5b,Monitor parou.,Hardware,Rede,False,2.0643,False,Resposta 'Rede' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,Preciso que fique dessa forma.,Configuração,Hardware,False,2.0515,False,"A categoria esperada é Configuração, mas a resposta do modelo é Hardware"
+qwen2.5:1.5b,Preciso do meu computador no modo noturno.,Configuração,Acesso,False,2.0525,False,"A categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso', que não corresponde à categoria esperada."
+llama3.2:3b,Estou sem rede.,Rede,Acesso,False,2.0715,False,A resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,Programa travou.,Software,Configuração.,False,2.073,False,"A categoria esperada é Software, mas a resposta do modelo foi Configuração."
+llama3.2:3b,Internet lenta.,Rede,Acesso.,False,2.0713,False,A resposta 'Acesso' não corresponde à categoria esperada 'Rede' para a mensagem 'Internet lenta'.
+llama3.2:3b,Sem acesso a pasta.,Acesso,Configuração.,False,2.0766,False,"A categoria esperada é 'Acesso', mas a resposta é 'Configuração', que não corresponde exatamente."
+llama3.2:3b,Não consigo entrar no computador.,Acesso,Acesso,True,2.0675,True,A resposta 'Acesso' corresponde diretamente à categoria esperada 'Acesso' para a mensagem 'Não consigo entrar no computador'.
+llama3.2:3b,Preciso de um programa.,Instalação,Acesso.,False,2.0776,False,A resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Sem máquina nessa mesa.,Instalação,Acesso,False,2.0896,False,"A categoria esperada é 'Instalação' e a resposta do modelo é 'Acesso', que não corresponde à categoria esperada."
+llama3.2:3b,Monitor parou.,Hardware,Acesso,False,2.0806,False,A resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,Preciso que fique dessa forma.,Configuração,Configuração.,True,2.0829,True,A resposta 'Configuração' corresponde diretamente à categoria esperada 'Configuração'.
+llama3.2:3b,Preciso do meu computador no modo noturno.,Configuração,Acesso,False,2.0605,False,A resposta 'Acesso' não corresponde à categoria esperada 'Configuração'.
+gemma3:1b,Estou sem rede.,Rede,Rede,True,7.883,True,A resposta 'Rede' corresponde exatamente à categoria esperada 'Rede'.
+gemma3:1b,Programa travou.,Software,Rede,False,2.0737,False,A resposta 'Rede' não corresponde à categoria esperada 'Software'.
+gemma3:1b,Internet lenta.,Rede,Rede,True,2.0764,True,A resposta 'Rede' corresponde exatamente à categoria esperada 'Rede'.
+gemma3:1b,Sem acesso a pasta.,Acesso,Rede,False,2.0645,False,"A categoria esperada é 'Acesso', mas a resposta do modelo avaliado foi 'Rede', que não corresponde."
+gemma3:1b,Não consigo entrar no computador.,Acesso,Acesso,True,2.0628,True,A resposta 'Acesso' corresponde exatamente à categoria esperada 'Acesso'.
+gemma3:1b,Preciso de um programa.,Instalação,Software,False,2.0658,False,Software e Instalação são categorias diferentes. Um programa pode ser classificado como Software.
+gemma3:1b,Sem máquina nessa mesa.,Instalação,Software,False,2.0688,False,A frase 'Sem máquina nessa mesa' não está claramente relacionada à instalação de software. A resposta 'Software' está incorreta para esta frase.
+gemma3:1b,Monitor parou.,Hardware,Rede,False,2.0906,False,A resposta 'Rede' não corresponde à categoria esperada 'Hardware'
+gemma3:1b,Preciso que fique dessa forma.,Configuração,Hardware,False,2.093,False,A categoria esperada é 'Configuração' e a resposta do modelo é 'Hardware'
+gemma3:1b,Preciso do meu computador no modo noturno.,Configuração,Acesso,False,2.0607,False,A resposta 'Acesso' não corresponde à categoria esperada 'Configuração'.
