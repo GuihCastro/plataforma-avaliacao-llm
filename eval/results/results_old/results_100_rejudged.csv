@@ -1,0 +1,301 @@
+model,input,expected,response,correct,latency_seconds,judge_correct,judge_reason
+qwen2.5:1.5b,Monitor parou.,Hardware,Hardware,True,3.2989,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Meu teclado não funciona.,Hardware,Hardware,True,2.051,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O mouse não está respondendo aos movimentos.,Hardware,Acessibilidade,False,2.0543,False,"Categoria esperada é 'Hardware', enquanto a resposta do modelo é 'Acessibilidade'"
+qwen2.5:1.5b,A tela do notebook está piscando constantemente.,Hardware,Acesso,False,2.0645,False,"Categoria esperada: Hardware, Resposta do modelo: Acesso"
+qwen2.5:1.5b,O computador não liga quando aperto o botão.,Hardware,Instalação,False,2.0731,False,Resposta 'Instalação' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,A impressora está puxando várias folhas de uma vez.,Hardware,Hardware,True,2.0689,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O headset não reproduz som em nenhum aplicativo.,Hardware,Hardware,True,2.0552,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Uma das portas USB não reconhece o pendrive.,Hardware,Acesso,False,2.071,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Acesso'"
+qwen2.5:1.5b,O carregador do notebook está com o cabo danificado.,Hardware,Hardware,True,2.0556,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,A webcam não liga quando conecto ao computador.,Hardware,Configuração,False,2.0622,False,Resposta 'Configuração' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,A tela do monitor está com uma faixa preta.,Hardware,Instalação,False,2.072,False,Resposta 'Instalação' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,O notebook está superaquecendo e desligando sozinho.,Hardware,Instalação,False,2.0638,False,"Resposta do modelo é 'Instalação', que não corresponde à categoria esperada 'Hardware'."
+qwen2.5:1.5b,A bateria do notebook não segura carga.,Hardware,Hardware,True,2.0378,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Instalação,False,2.073,False,Resposta não corresponde à categoria esperada
+qwen2.5:1.5b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Acesso,False,2.0602,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Acesso' que é categoricamente diferente"
+qwen2.5:1.5b,O conector do cabo de vídeo está quebrado.,Hardware,Hardware,True,2.0546,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O scanner não liga quando pressiono o botão.,Hardware,Instalação,False,2.055,False,Resposta 'Instalação' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,Programa travou.,Software,Software,True,2.0592,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O sistema fecha sozinho ao abrir.,Software,Instalação ou Configuração,False,2.0645,False,"Categoria esperada é Software, enquanto a resposta do modelo é Instalação ou Configuração"
+qwen2.5:1.5b,O navegador apresenta erro ao iniciar.,Software,Rede,False,2.0618,False,"Resposta do modelo é 'Rede', enquanto a categoria esperada é 'Software'"
+qwen2.5:1.5b,O aplicativo de folha de pagamento parou de responder.,Software,Instalação,False,2.0589,False,"Resposta é 'Instalação', não está relacionado a software"
+qwen2.5:1.5b,O Word fecha quando tento salvar o documento.,Software,Acesso,False,2.0411,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Acesso'"
+qwen2.5:1.5b,O programa exibe uma mensagem de erro ao executar.,Software,Hardware,False,2.0423,False,"Categoria esperada é Software, mas resposta do modelo é Hardware"
+qwen2.5:1.5b,O sistema apresenta falha ao carregar os relatórios.,Software,Hardware,False,2.0782,False,"Categoria esperada é Software, enquanto a resposta é Hardware"
+qwen2.5:1.5b,O aplicativo não abre depois da atualização.,Software,Instalação ou Configuração,False,2.0908,False,A resposta 'Instalação ou Configuração' não corresponde à categoria esperada 'Software'
+qwen2.5:1.5b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Software,True,2.0514,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O sistema duplicou os registros ao salvar.,Software,Configuração,False,2.0645,False,"Categoria esperada é Software, mas a resposta do modelo é Configuração"
+qwen2.5:1.5b,O navegador não carrega as extensões instaladas.,Software,Instalação,False,2.0854,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Instalação'"
+qwen2.5:1.5b,O antivírus exibe um erro durante a verificação.,Software,Software,True,2.0568,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Instalação,False,2.0454,False,"Categoria esperada é 'Software', enquanto a resposta do modelo é 'Instalação'"
+qwen2.5:1.5b,O programa não reconhece o arquivo que tento importar.,Software,Instalação,False,2.0649,False,Resposta 'Instalação' não corresponde à categoria esperada 'Software'
+qwen2.5:1.5b,O sistema apaga os filtros depois que fecho a tela.,Software,Configuração,False,2.0592,False,Resposta não corresponde à categoria esperada
+qwen2.5:1.5b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Hardware,False,2.0592,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Hardware'"
+qwen2.5:1.5b,A planilha apresenta erro ao executar uma fórmula.,Software,Software,True,2.0758,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Estou sem rede.,Rede,Acesso,False,2.0591,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,Internet lenta.,Rede,Rede,True,2.0423,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Acesso,False,2.0694,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Rede,True,2.0504,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,O computador não recebe um endereço IP da rede.,Rede,Instalação,False,2.0492,False,Resposta 'Instalação' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,O cabo de rede não está conectando à internet.,Rede,Acesso,False,2.0338,False,"Categoria esperada é 'Rede', enquanto a resposta do modelo é 'Acesso'"
+qwen2.5:1.5b,A rede da empresa está indisponível em todos os computadores.,Rede,Rede,True,2.068,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Acesso,False,2.0602,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Instalação,False,2.0581,False,Resposta 'Instalação' é diferente da categoria esperada 'Rede'
+qwen2.5:1.5b,A conexão cabeada está desconectando sozinha.,Rede,Hardware,False,2.0564,False,Categoria esperada é 'Rede' e a resposta do modelo é 'Hardware'
+qwen2.5:1.5b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Rede,True,2.0607,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,A impressora de rede está indisponível para todos os computadores.,Rede,Hardware,False,2.0585,False,"Resposta do modelo sugeriu Hardware, enquanto a categoria esperada era Rede"
+qwen2.5:1.5b,A intranet está fora do ar para todos os funcionários.,Rede,Rede,True,2.0524,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,A conexão com o servidor apresenta perda de pacotes.,Rede,Rede,True,2.0677,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Acesso,False,2.0542,False,Resposta não corresponde à categoria esperada (Rede -> Acesso)
+qwen2.5:1.5b,A VPN desconecta continuamente durante o uso.,Rede,Rede,True,2.0694,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,A transferência de arquivos pela rede está muito lenta.,Rede,Rede,True,2.0533,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Sem acesso a pasta.,Acesso,Hardware,False,2.0581,False,categorias diferentes
+qwen2.5:1.5b,Não consigo entrar no computador.,Acesso,Rede,False,2.0635,False,Resposta da modelo é diferente da categoria esperada
+qwen2.5:1.5b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0599,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,2.0453,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.0403,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso,True,2.0417,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Acesso,True,2.0739,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Acesso,True,2.0665,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Acesso,True,2.0576,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0834,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Minha conta foi desativada e não consigo autenticar.,Acesso,Rede,False,2.0854,False,"Categoria esperada é 'Acesso', mas a resposta do modelo é 'Rede'"
+qwen2.5:1.5b,O sistema não aceita a senha da minha conta.,Acesso,Rede,False,2.0753,False,"Categoria esperada é 'Acesso', enquanto a resposta do modelo é 'Rede'"
+qwen2.5:1.5b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Rede,False,2.0697,False,"A categoria esperada é 'Acesso', enquanto a resposta do modelo é 'Rede', que é diferente."
+qwen2.5:1.5b,Preciso redefinir minha senha de rede.,Acesso,Configuração,False,2.0946,False,"Resposta do modelo é 'Configuração', diferente de 'Acesso' da categoria esperada"
+qwen2.5:1.5b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.0704,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Configuração,False,2.0601,False,Resposta 'Configuração' não corresponde à categoria 'Acesso' esperada.
+qwen2.5:1.5b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Rede,False,2.0701,False,"Categoria esperada é 'Acesso', mas a resposta do modelo é 'Rede'"
+qwen2.5:1.5b,Preciso de um programa.,Instalação,Software,False,2.0385,False,"Resposta é 'Software', enquanto a categoria esperada é 'Instalação'"
+qwen2.5:1.5b,Sem máquina nessa mesa.,Instalação,Configuração,False,2.0664,False,Resposta 'Configuração' não corresponde à categoria esperada 'Instalação'
+qwen2.5:1.5b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Instalação,True,2.0506,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Solicito a instalação do pacote de escritório.,Instalação,Instalação,True,2.0698,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Hardware,False,2.0615,False,Categorias diferentes: 'Instalação' não é igual a 'Hardware'
+qwen2.5:1.5b,Instalem o leitor de PDF na minha estação.,Instalação,Instalação,True,2.0597,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso instalar o certificado digital neste computador.,Instalação,Instalação,True,2.0451,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Quero instalar o aplicativo de videoconferência.,Instalação,Instalação,True,2.0362,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Solicito a instalação do cliente VPN.,Instalação,Instalação,True,2.0613,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,A nova estação precisa receber o sistema operacional.,Instalação,Software,False,2.0349,False,"Resposta é Software, não Instalação"
+qwen2.5:1.5b,Preciso instalar os drivers da impressora.,Instalação,Instalação,True,2.0649,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Solicito a instalação do navegador Firefox.,Instalação,Instalação,True,2.0611,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Instalação,True,2.0464,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Instalem o software de desenho nesta máquina.,Instalação,Software,False,2.0634,False,"Resposta do modelo é 'Software', enquanto a categoria esperada é 'Instalação'"
+qwen2.5:1.5b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Software,False,2.0476,False,Categorias diferentes: 'Software' não é igual a 'Instalação'
+qwen2.5:1.5b,Solicito a instalação do driver do scanner.,Instalação,Instalação,True,2.078,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso que fique dessa forma.,Configuração,Software,False,2.0404,False,Categoria esperada é 'Configuração' enquanto a resposta do modelo é 'Software'
+qwen2.5:1.5b,Preciso do meu computador no modo noturno.,Configuração,Instalação,False,2.078,False,"Categoria esperada é 'Configuração', enquanto a resposta do modelo é 'Instalação'."
+qwen2.5:1.5b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,2.0741,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso configurar a assinatura automática do e-mail.,Configuração,Configuração,True,2.0642,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Quero mudar o idioma do sistema para português.,Configuração,Configuração,True,2.0598,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,Configuração,True,2.0655,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso ajustar o fuso horário do computador.,Configuração,Configuração,True,2.0741,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Configuração,True,2.0627,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Configuração,True,2.07,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Configuração,True,2.0653,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Software,False,2.0623,False,Resposta 'Software' não corresponde à categoria esperada 'Configuração'
+qwen2.5:1.5b,Ajuste o brilho da tela para um nível menor.,Configuração,Configuração,True,2.0495,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Configuração,True,2.0429,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Configuração,True,2.0724,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Configuração,True,2.0674,True,Resposta corresponde exatamente à categoria esperada
+qwen2.5:1.5b,Preciso deixar a escala da tela em 125%.,Configuração,Configuração,True,2.0622,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Monitor parou.,Hardware,Acesso,False,3.8736,False,"Categoria esperada é Hardware, mas a resposta do modelo é Acesso"
+llama3.2:3b,Meu teclado não funciona.,Hardware,Acesso,False,2.0721,False,Resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,O mouse não está respondendo aos movimentos.,Hardware,Configuração.,False,2.0822,False,"Categoria esperada é Hardware, mas resposta do modelo é Configuração, que não corresponde a Hardware"
+llama3.2:3b,A tela do notebook está piscando constantemente.,Hardware,Acesso,False,2.0638,False,"Categoria esperada: Hardware, Resposta do modelo: Access"
+llama3.2:3b,O computador não liga quando aperto o botão.,Hardware,Configuração,False,2.0586,False,Resposta 'Configuração' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,A impressora está puxando várias folhas de uma vez.,Hardware,Acesso,False,2.0639,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Acesso'"
+llama3.2:3b,O headset não reproduz som em nenhum aplicativo.,Hardware,Configuração,False,2.0851,False,Resposta 'Configuração' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,Uma das portas USB não reconhece o pendrive.,Hardware,Acesso,False,2.0781,False,"Categoria esperada é 'Hardware', enquanto a resposta do modelo é 'Acesso'"
+llama3.2:3b,O carregador do notebook está com o cabo danificado.,Hardware,Acesso,False,2.0768,False,"Categoria esperada é 'Hardware', resposta do modelo é 'Acesso'"
+llama3.2:3b,A webcam não liga quando conecto ao computador.,Hardware,Acesso,False,2.0612,False,"Categoria esperada: Hardware, Resposta do modelo: Access"
+llama3.2:3b,A tela do monitor está com uma faixa preta.,Hardware,Acesso,False,2.0675,False,"categoria esperada é 'Hardware', resposta do modelo é 'Acesso'"
+llama3.2:3b,O notebook está superaquecendo e desligando sozinho.,Hardware,Hardware,True,2.0522,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,A bateria do notebook não segura carga.,Hardware,Acesso,False,2.0706,False,"Categoria esperada: Hardware, Resposta do modelo: Access"
+llama3.2:3b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Hardware.,True,2.0959,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Acesso,False,2.0632,False,"Categoria esperada é 'Hardware', resposta do modelo é 'Acesso'"
+llama3.2:3b,O conector do cabo de vídeo está quebrado.,Hardware,Acesso,False,2.0625,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Acesso'"
+llama3.2:3b,O scanner não liga quando pressiono o botão.,Hardware,Acesso,False,2.0473,False,"Categoria esperada é 'Hardware', resposta do modelo é 'Acesso'"
+llama3.2:3b,Programa travou.,Software,Acesso.,False,2.082,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O sistema fecha sozinho ao abrir.,Software,Configuração,False,2.0756,False,Resposta 'Configuração' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O navegador apresenta erro ao iniciar.,Software,Acesso.,False,2.091,False,"Categoria esperada é Software, mas resposta do modelo é Acesso. Estas são categorias diferentes."
+llama3.2:3b,O aplicativo de folha de pagamento parou de responder.,Software,Acesso,False,2.065,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O Word fecha quando tento salvar o documento.,Software,Configuração,False,2.0882,False,"Categoria esperada é Software, resposta do modelo é Configuração"
+llama3.2:3b,O programa exibe uma mensagem de erro ao executar.,Software,Acesso,False,2.0676,False,A resposta 'Acesso' não corresponde à categoria 'Software'
+llama3.2:3b,O sistema apresenta falha ao carregar os relatórios.,Software,Configuração.,False,2.0784,False,"Categoria esperada é Software, mas a resposta do modelo é Configuração."
+llama3.2:3b,O aplicativo não abre depois da atualização.,Software,Acesso,False,2.0897,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Configuração,False,2.08,False,"Categoria esperada é Software, mas a resposta do modelo é Configuração"
+llama3.2:3b,O sistema duplicou os registros ao salvar.,Software,Acesso,False,2.0457,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O navegador não carrega as extensões instaladas.,Software,Acesso,False,2.0664,False,"Categoria esperada é Software, mas a resposta do modelo é Acesso"
+llama3.2:3b,O antivírus exibe um erro durante a verificação.,Software,Configuração.,False,2.0777,False,Resposta 'Configuração' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Configuração.,False,2.0982,False,"Categoria esperada é 'Software', enquanto a resposta do modelo é 'Configuração'"
+llama3.2:3b,O programa não reconhece o arquivo que tento importar.,Software,Acesso,False,2.0723,False,"Categoria esperada é Software, mas a resposta do modelo é Acesso"
+llama3.2:3b,O sistema apaga os filtros depois que fecho a tela.,Software,Acesso.,False,2.0707,False,A resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Configuração.,False,2.0857,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Configuração'"
+llama3.2:3b,A planilha apresenta erro ao executar uma fórmula.,Software,Acesso,False,2.0735,False,"A categoria esperada é Software, mas a resposta do modelo é Acesso. Estas categorias são diferentes."
+llama3.2:3b,Estou sem rede.,Rede,Acesso.,False,2.0897,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,Internet lenta.,Rede,Acesso,False,2.0662,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Acesso,False,2.0619,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Acesso,False,2.0547,False,Categorias diferentes
+llama3.2:3b,O computador não recebe um endereço IP da rede.,Rede,Acesso,False,2.0755,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,O cabo de rede não está conectando à internet.,Rede,Acesso,False,2.0896,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A rede da empresa está indisponível em todos os computadores.,Rede,Acesso,False,2.0653,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Configuração.,False,2.0862,False,Resposta não corresponde à categoria esperada (Rede)
+llama3.2:3b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Configuração,False,2.0771,False,Resposta 'Configuração' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A conexão cabeada está desconectando sozinha.,Rede,Acesso,False,2.0801,False,"Categoria esperada: Rede, Resposta do modelo: Acesso"
+llama3.2:3b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Acesso.,False,2.0739,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A impressora de rede está indisponível para todos os computadores.,Rede,Rede,True,2.0715,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,A intranet está fora do ar para todos os funcionários.,Rede,Acesso,False,2.0847,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A conexão com o servidor apresenta perda de pacotes.,Rede,Configuração.,False,2.0713,False,"Resposta do modelo mencionou 'Configuração', que é diferente da categoria esperada 'Rede'"
+llama3.2:3b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Acesso.,False,2.0844,False,"Categoria esperada é 'Rede', mas a resposta do modelo é 'Acesso'"
+llama3.2:3b,A VPN desconecta continuamente durante o uso.,Rede,Configuração.,False,2.0984,False,Resposta 'Configuração' não corresponde à categoria esperada 'Rede'
+llama3.2:3b,A transferência de arquivos pela rede está muito lenta.,Rede,Rede,True,2.0713,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Sem acesso a pasta.,Acesso,Configuração.,False,2.087,False,Resposta 'Configuração' não corresponde à categoria esperada 'Acesso'
+llama3.2:3b,Não consigo entrar no computador.,Acesso,Acesso,True,2.0863,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0526,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,2.0716,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.0751,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso,True,2.0739,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Acesso,True,2.0729,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Acesso,True,2.0925,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Configuração,False,2.097,False,Resposta não corresponde à categoria esperada (Acesso)
+llama3.2:3b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0715,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Minha conta foi desativada e não consigo autenticar.,Acesso,Acesso,True,2.0775,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,O sistema não aceita a senha da minha conta.,Acesso,Acesso,True,2.0635,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Acesso,True,2.0691,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Preciso redefinir minha senha de rede.,Acesso,Acesso,True,2.076,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.0793,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Acesso,True,2.0548,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Acesso,True,2.0886,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Preciso de um programa.,Instalação,Acesso.,False,2.0731,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Sem máquina nessa mesa.,Instalação,Configuração,False,2.0572,False,Resposta sugeriu Configuração que é diferente de Instalação
+llama3.2:3b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Configuração.,False,2.0779,False,resposta sugeriu configuração em vez de instalação
+llama3.2:3b,Solicito a instalação do pacote de escritório.,Instalação,Acesso,False,2.0912,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Acesso,False,2.0696,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Instalem o leitor de PDF na minha estação.,Instalação,Acesso,False,2.0854,False,"Categoria esperada é 'Instalação', mas a resposta do modelo é 'Acesso'"
+llama3.2:3b,Preciso instalar o certificado digital neste computador.,Instalação,Configuração,False,2.0552,False,"Resposta é na categoria de Configuração, enquanto a esperada era Instalação"
+llama3.2:3b,Quero instalar o aplicativo de videoconferência.,Instalação,Configuração,False,2.0782,False,"Resposta é 'Configuração', enquanto a categoria esperada é 'Instalação'."
+llama3.2:3b,Solicito a instalação do cliente VPN.,Instalação,Acesso.,False,2.093,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,A nova estação precisa receber o sistema operacional.,Instalação,Configuração.,False,2.0916,False,Resposta 'Configuração' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Preciso instalar os drivers da impressora.,Instalação,Configuração,False,2.0799,False,Resposta 'Configuração' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Solicito a instalação do navegador Firefox.,Instalação,Acesso,False,2.0662,False,Resposta 'Acesso' não corresponde a categoria esperada 'Instalação'
+llama3.2:3b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Configuração,False,2.0842,False,"Categoria esperada é Instalação, mas a resposta do modelo é Configuração"
+llama3.2:3b,Instalem o software de desenho nesta máquina.,Instalação,Configuração,False,2.0787,False,"Categoria esperada é 'Instalação', enquanto a resposta do modelo é 'Configuração'"
+llama3.2:3b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Configuração.,False,2.0803,False,Resposta 'Configuração' é diferente da categoria esperada 'Instalação'
+llama3.2:3b,Solicito a instalação do driver do scanner.,Instalação,Acesso,False,2.0548,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Preciso que fique dessa forma.,Configuração,Acesso,False,2.0896,False,"Categoria esperada é 'Configuração', enquanto a resposta do modelo é 'Acesso'"
+llama3.2:3b,Preciso do meu computador no modo noturno.,Configuração,Configuração,True,2.076,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Acesso,False,2.0749,False,"Categoria esperada é 'Configuração', enquanto a resposta do modelo é 'Acesso'."
+llama3.2:3b,Preciso configurar a assinatura automática do e-mail.,Configuração,Acesso,False,2.0515,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+llama3.2:3b,Quero mudar o idioma do sistema para português.,Configuração,Configuração,True,2.0776,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,A categoria correta é: Acesso,False,2.1271,False,categorias diferentes
+llama3.2:3b,Preciso ajustar o fuso horário do computador.,Configuração,Configuração.,True,2.0899,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Acesso,False,2.0886,False,"Categoria esperada é 'Configuração', enquanto a resposta é 'Acesso'"
+llama3.2:3b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Acesso,False,2.0686,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+llama3.2:3b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Configuração.,True,2.0895,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Configuração,True,2.0811,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Ajuste o brilho da tela para um nível menor.,Configuração,Acesso,False,2.066,False,"Categoria esperada é 'Configuração', enquanto a resposta do modelo é 'Acesso'"
+llama3.2:3b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Acesso.,False,2.0748,False,"Categoria esperada é 'Configuração', enquanto a resposta do modelo é 'Acesso'"
+llama3.2:3b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Configuração.,True,2.0813,True,Resposta corresponde exatamente à categoria esperada
+llama3.2:3b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Acesso.,False,2.0832,False,"Categoria esperada é 'Configuração', mas a resposta é 'Acesso', que é categoricamente diferente."
+llama3.2:3b,Preciso deixar a escala da tela em 125%.,Configuração,Acesso,False,2.0698,False,"categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso'"
+gemma3:1b,Monitor parou.,Hardware,Rede,False,2.8896,False,"Resposta é 'Rede', que é diferente de 'Hardware', categoria esperada."
+gemma3:1b,Meu teclado não funciona.,Hardware,Rede,False,2.0827,False,"Categoria esperada: Hardware, Resposta do modelo: Rede"
+gemma3:1b,O mouse não está respondendo aos movimentos.,Hardware,Rede,False,2.0852,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Rede'"
+gemma3:1b,A tela do notebook está piscando constantemente.,Hardware,Rede,False,2.0791,False,"Categoria esperada é Hardware, mas a resposta do modelo é Rede"
+gemma3:1b,O computador não liga quando aperto o botão.,Hardware,Rede,False,2.0752,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Rede' que não corresponde à categoria esperada."
+gemma3:1b,A impressora está puxando várias folhas de uma vez.,Hardware,Rede,False,2.097,False,Resposta 'Rede' é diferente da categoria esperada 'Hardware'
+gemma3:1b,O headset não reproduz som em nenhum aplicativo.,Hardware,Rede,False,2.0831,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Rede'"
+gemma3:1b,Uma das portas USB não reconhece o pendrive.,Hardware,Rede,False,2.0724,False,"Categoria esperada é 'Hardware', enquanto a resposta do modelo é 'Rede'"
+gemma3:1b,O carregador do notebook está com o cabo danificado.,Hardware,Rede,False,2.0749,False,"Categoria esperada: Hardware, Resposta do modelo: Rede"
+gemma3:1b,A webcam não liga quando conecto ao computador.,Hardware,Rede,False,2.0528,False,"Categoria esperada é Hardware, enquanto a resposta do modelo é Rede"
+gemma3:1b,A tela do monitor está com uma faixa preta.,Hardware,Hardware,True,2.0661,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O notebook está superaquecendo e desligando sozinho.,Hardware,Hardware,True,2.0598,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A bateria do notebook não segura carga.,Hardware,Hardware,True,2.0759,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Acesso,False,2.0678,False,"Categoria esperada é 'Hardware', mas a resposta do modelo é 'Acesso', que não corresponde."
+gemma3:1b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Rede,False,2.0714,False,"Categoria esperada é Hardware, enquanto a resposta do modelo é Rede"
+gemma3:1b,O conector do cabo de vídeo está quebrado.,Hardware,Rede,False,2.0746,False,"Categoria esperada é 'Hardware', enquanto a resposta do modelo é 'Rede'"
+gemma3:1b,O scanner não liga quando pressiono o botão.,Hardware,Hardware,True,2.0434,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Programa travou.,Software,Rede,False,2.0667,False,"Categoria esperada é 'Software', enquanto a resposta do modelo é 'Rede'"
+gemma3:1b,O sistema fecha sozinho ao abrir.,Software,Rede,False,2.0745,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Rede'"
+gemma3:1b,O navegador apresenta erro ao iniciar.,Software,Rede,False,2.0755,False,"Resposta: Rede, Diferente de: Software"
+gemma3:1b,O aplicativo de folha de pagamento parou de responder.,Software,Software,True,2.0574,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O Word fecha quando tento salvar o documento.,Software,Rede,False,2.0821,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Rede'."
+gemma3:1b,O programa exibe uma mensagem de erro ao executar.,Software,Instalação,False,2.0816,False,"Resposta é 'Instalação', que não corresponde diretamente à categoria esperada 'Software'"
+gemma3:1b,O sistema apresenta falha ao carregar os relatórios.,Software,Rede,False,2.0688,False,Resposta 'Rede' não corresponde à categoria esperada 'Software'
+gemma3:1b,O aplicativo não abre depois da atualização.,Software,Rede,False,2.0687,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Rede'"
+gemma3:1b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Rede,False,2.0671,False,"Categoria esperada é 'Software', enquanto a resposta do modelo é 'Rede'."
+gemma3:1b,O sistema duplicou os registros ao salvar.,Software,Rede,False,2.0926,False,"Categoria esperada é 'Software', resposta do modelo é 'Rede'"
+gemma3:1b,O navegador não carrega as extensões instaladas.,Software,Rede,False,2.0811,False,"A categoria esperada é 'Software', mas a resposta do modelo é 'Rede'."
+gemma3:1b,O antivírus exibe um erro durante a verificação.,Software,Rede,False,2.0733,False,"Categoria esperada é 'Software', mas a resposta do modelo é 'Rede'"
+gemma3:1b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Acesso,False,2.078,False,A resposta 'Acesso' não corresponde à categoria esperada 'Software'
+gemma3:1b,O programa não reconhece o arquivo que tento importar.,Software,Rede,False,2.0774,False,"Categoria esperada é 'Software', enquanto a resposta do modelo é 'Rede'"
+gemma3:1b,O sistema apaga os filtros depois que fecho a tela.,Software,Rede,False,2.0646,False,"Categoria esperada é Software, mas a resposta do modelo é Rede, que é diferente."
+gemma3:1b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Instalação,False,2.073,False,"Categoria esperada é Software, mas a resposta do modelo é Instalação"
+gemma3:1b,A planilha apresenta erro ao executar uma fórmula.,Software,Acesso,False,2.0587,False,"Categoria esperada é 'Software', resposta do modelo é 'Acesso'"
+gemma3:1b,Estou sem rede.,Rede,Rede,True,2.0826,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Internet lenta.,Rede,Rede,True,2.0823,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Rede,True,2.0856,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Rede,True,2.0669,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O computador não recebe um endereço IP da rede.,Rede,Rede,True,2.0933,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O cabo de rede não está conectando à internet.,Rede,Rede,True,2.0683,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A rede da empresa está indisponível em todos os computadores.,Rede,Rede,True,2.0658,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Não especificado,False,2.0718,False,"Categoria esperada: Rede, Resposta do modelo: Não especificado"
+gemma3:1b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Rede,True,2.0944,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A conexão cabeada está desconectando sozinha.,Rede,Rede,True,2.0766,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Rede,True,2.0608,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A impressora de rede está indisponível para todos os computadores.,Rede,Rede,True,2.0579,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A intranet está fora do ar para todos os funcionários.,Rede,Rede,True,2.0593,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A conexão com o servidor apresenta perda de pacotes.,Rede,Rede,True,2.0577,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Rede,True,2.0917,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A VPN desconecta continuamente durante o uso.,Rede,Rede,True,2.0664,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,A transferência de arquivos pela rede está muito lenta.,Rede,Rede,True,2.0565,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Sem acesso a pasta.,Acesso,Rede,False,2.076,False,Resposta 'Rede' não corresponde à categoria esperada 'Acesso'
+gemma3:1b,Não consigo entrar no computador.,Acesso,Acesso,True,2.069,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0937,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Segurança,False,2.0839,False,"Categoria esperada é 'Acesso', mas a resposta é 'Segurança' que é uma categoria diferente"
+gemma3:1b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.079,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso,True,2.0713,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Acesso,True,2.0746,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Acesso,True,2.0739,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Rede,False,2.0759,False,Resposta 'Rede' não corresponde à categoria esperada 'Acesso'
+gemma3:1b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0772,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Minha conta foi desativada e não consigo autenticar.,Acesso,Acesso,True,2.0898,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O sistema não aceita a senha da minha conta.,Acesso,Acesso,True,2.0732,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Acesso,True,2.0625,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Preciso redefinir minha senha de rede.,Acesso,Acesso,True,2.0878,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.0939,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Acesso,True,2.0743,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Acesso,True,2.0692,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Preciso de um programa.,Instalação,Software,False,2.0678,False,"Categoria esperada é Instalação, mas a resposta do modelo é Software"
+gemma3:1b,Sem máquina nessa mesa.,Instalação,Software,False,2.0804,False,Categoria esperada é 'Instalação' e a resposta do modelo é 'Software'
+gemma3:1b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Rede,False,2.0708,False,"Categoria esperada é 'Instalação', mas a resposta do modelo é 'Rede'"
+gemma3:1b,Solicito a instalação do pacote de escritório.,Instalação,Software,False,2.0662,False,"Resposta do modelo é 'Software', diferente de 'Instalação'"
+gemma3:1b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Rede,False,2.0719,False,Resposta 'Rede' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Instalem o leitor de PDF na minha estação.,Instalação,Software,False,2.0658,False,Categorias diferentes
+gemma3:1b,Preciso instalar o certificado digital neste computador.,Instalação,Segurança,False,2.0632,False,Resposta 'Segurança' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Quero instalar o aplicativo de videoconferência.,Instalação,Rede,False,2.0629,False,"Categoria esperada é Instalação, enquanto a resposta do modelo é Rede"
+gemma3:1b,Solicito a instalação do cliente VPN.,Instalação,Rede,False,2.0762,False,"Categoria esperada é 'Instalação', enquanto a resposta do modelo é 'Rede'"
+gemma3:1b,A nova estação precisa receber o sistema operacional.,Instalação,Rede,False,2.0726,False,Resposta 'Rede' é diferente da categoria esperada 'Instalação'
+gemma3:1b,Preciso instalar os drivers da impressora.,Instalação,Rede,False,2.0727,False,Resposta 'Rede' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Solicito a instalação do navegador Firefox.,Instalação,Software,False,2.083,False,Resposta 'Software' é diferente de categoria esperada 'Instalação'
+gemma3:1b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Acesso,False,2.0808,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Instalem o software de desenho nesta máquina.,Instalação,Software,False,2.0791,False,"Resposta do modelo é 'Software', enquanto a categoria esperada é 'Instalação'"
+gemma3:1b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Segurança da Rede,False,2.088,False,"Resposta do modelo é 'Segurança da Rede', que é diferente da categoria esperada 'Instalação'"
+gemma3:1b,Solicito a instalação do driver do scanner.,Instalação,Rede,False,2.0495,False,"Categoria esperada: Instalação, Resposta do modelo: Rede"
+gemma3:1b,Preciso que fique dessa forma.,Configuração,Instalação,False,2.0967,False,Resposta 'Instalação' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Preciso do meu computador no modo noturno.,Configuração,Acesso,False,2.075,False,"Categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso'"
+gemma3:1b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Rede,False,2.0653,False,Resposta 'Rede' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Preciso configurar a assinatura automática do e-mail.,Configuração,Configuração,True,2.0694,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Quero mudar o idioma do sistema para português.,Configuração,Acesso,False,2.0786,False,"Categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso'"
+gemma3:1b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,Acesso,False,2.0784,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Preciso ajustar o fuso horário do computador.,Configuração,Acesso,False,2.0622,False,"Categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso', que é categoriamente diferente."
+gemma3:1b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Software,False,2.085,False,"categoria esperada é Configuração, mas a resposta do modelo é Software"
+gemma3:1b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Acesso,False,2.0763,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Rede,False,2.0936,False,resposta diferente da categoria esperada
+gemma3:1b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Instalação,False,2.0863,False,Resposta 'Instalação' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Ajuste o brilho da tela para um nível menor.,Configuração,Configuração,True,2.0938,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Rede,False,2.0737,False,"resposta é 'Rede', categoria esperada é 'Configuração', as categorias são diferentes"
+gemma3:1b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Configuração,True,2.0841,True,Resposta corresponde exatamente à categoria esperada
+gemma3:1b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Software,False,2.0857,False,"Resposta é 'Software', enquanto a categoria esperada é 'Configuração'."
+gemma3:1b,Preciso deixar a escala da tela em 125%.,Configuração,Acesso,False,2.0603,False,"Categoria esperada é 'Configuração', mas a resposta do modelo é 'Acesso'"

@@ -1,0 +1,61 @@
+input,expected,original_response,original_correct,degraded_response,degraded_correct
+Instalem o software de desenho nesta máquina.,Instalação,Software,False,"A mensagem pede a instalação do software de desenho em uma máquina. O hardware específico aqui é uma máquina, mas o software é o ""software de desenho"". Portanto, a classificação da mensagem de suporte de TI seria: Hardware.",False
+O computador está emitindo um ruído forte na ventoinha.,Hardware,Hardware,True,Hardware,True
+A tela do notebook está piscando constantemente.,Hardware,Hardware,True,Mensagem classificada como Hardware.,False
+Quero definir o aplicativo de PDF como programa padrão.,Configuração,Configuração,True,Aviso: Este é um aviso técnico e não um pedido de atendimento de TI.,False
+Internet lenta.,Rede,Rede,True,Hardware,False
+O sistema apaga os filtros depois que fecho a tela.,Software,Instalação,False,"A mensagem ""O sistema apaga os filtros depois que fecho a tela"" é de suporte de TI. Aqui está a classificação:
+
+Hardware
+
+Esta mensagem refere-se ao comportamento específico de um sistema operacional (SO) ao abrir e fechar a tela, o que geralmente afeta o hardware do computador. Se isso ocorre, pode ser um sinal de falha no sistema operacional ou no hardware do computador.",False
+O antivírus exibe um erro durante a verificação.,Software,Software,True,"A mensagem ""O antivírus exibe um erro durante a verificação"" se refere à detecção e análise de riscos de ameaças a redes e equipamentos informáticos. Este tipo de mensagem é geralmente associado ao uso de um sistema de segurança informática, como um antivírus.",False
+Programa travou.,Software,Instalação,False,"A mensagem ""Programa travou"" classifica como Hardware.",False
+Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Acesso,False,Hardware,True
+Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,Hardware,False
+Sem máquina nessa mesa.,Instalação,Hardware,False,Não há uma máquina na mesa.,False
+O notebook está superaquecendo e desligando sozinho.,Hardware,Hardware,True,"A mensagem ""O notebook está superaquecendo e desligando sozinho"" classifica como um problema técnico relacionado ao hardware do computador. Esse tipo de mensagem geralmente indica que há algum componente do sistema que está fazendo mais uso de energia do que o permitido, o que resulta em excesso de热量 e eventual desligamento do dispositivo. Aqui estão algumas possíveis causas e resoluções para o problema:
+
+1. Hardware malfeitor:
+- Pneu de ventilação ou ventilador de ventilação estão danificados, causando um excesso de calor.
+- Rola de refrigerante da máquina de computador se deslocou, causando mal funcionamento.
+
+2. Temperatura do ambiente:
+- O ambiente em que está localizado o computador está extremamente quente.
+- A máquina está localizada em um local que acende o quarto, causando um excesso de calor.
+
+3. Sistemas de segurança:
+- A máquina está bloqueada por um sistema de segurança que está fazendo uma operação incompatível com o estado atual da máquina.
+
+Para resolver esse problema, você pode tentar:
+- Desligar o notebook e limpar ou substituir o componente em que ocorre o excesso de热量.
+- Verificar se há algum problema com o ventilação do computador.
+- Isolar o ambiente do computador se possível.
+- Verificar se há algum problema com o sistema de segurança.
+
+Se o problema persistir, você provavelmente terá que consultar um técnico especializado para averiguar se há algum componente da máquina que precisa ser removido ou reconfigurado.",False
+Quero instalar o aplicativo de videoconferência.,Instalação,Instalação,True,Hardware,False
+Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,Aviso de segurança do hardware.,False
+O computador não liga quando aperto o botão.,Hardware,Instalação,False,Não pode funcionar sem hardware.,False
+O navegador não carrega as extensões instaladas.,Software,Software,True,"A mensagem ""O navegador não carrega as extensões instaladas"" classifica como um problema relacionado ao hardware. Este tipo de problema geralmente se refere a problemas com o hardware que o dispositivo usado para navegar na web está tentando lidar. Eles podem incluir, por exemplo:
+
+1. Problemas de rede: Problemas com o seu router de rede ou sua conexão à internet podem causar problemas para o navegador, tornando-o difícil ou impossível para ele carregar as extensões instaladas.
+
+2. Software malicioso: Se você tiver uma instalação de software malicioso na sua máquina, ele pode bloquear ou destruir as extensões instaladas do seu navegador.
+
+3. Falha do sistema operacional: Se você estiver usando um sistema operacional com vulnerabilidades de segurança, ele pode interferir na capacidade do seu navegador de carregar as extensões.
+
+4. Problemas de processador: Dependendo do tipo de hardware do seu computador, o seu processador pode não estar em uma condição adequada para processar as requisições que o seu navegador precisa para carregar as extensões instaladas.
+
+Para ajudar a diagnosticar este problema, você pode tentar algumas soluções básicas:
+
+1. Verifique se sua internet está conectada corretamente e que está em modo perto.
+2. Reinicie o seu computador.
+3. Verifique se o seu router está funcionando corretamente.
+4. Atualize seu software de navegador e de sistema operacional para as mais recentes versões.
+
+Se você tentar essas soluções sem sucesso, pode ser útil solicitar ajuda a um técnico de TI ou um especialista em hardware.",False
+O aplicativo apresenta uma tela branca ao iniciar.,Software,Configuração,False,Mensagem classificada como Hardware.,False
+Preciso redefinir minha senha de rede.,Acesso,Configuração,False,"A mensagem se refere ao hardware da TI, pois está relacionada à configuração da rede e sua segurança.",False
+A nova estação precisa receber o sistema operacional.,Instalação,Software,False,Este é um problema de Hardware.,False
+Solicito a instalação do pacote de escritório.,Instalação,Instalação,True,Hardware,False

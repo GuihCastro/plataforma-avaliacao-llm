@@ -1,0 +1,301 @@
+model,input,expected,response,correct,latency_seconds,prompt_tokens,completion_tokens,total_tokens,ollama_duration_seconds,judge_correct,judge_reason
+qwen2.5:1.5b,Monitor parou.,Hardware,Acesso,False,3.3036,85,3,88,1.2852,False,Resposta 'Acesso' não corresponde à categoria esperada 'Hardware' da mensagem 'Monitor parou.'
+qwen2.5:1.5b,Meu teclado não funciona.,Hardware,Acesso,False,2.0555,88,3,91,0.0212,False,Resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,O mouse não está respondendo aos movimentos.,Hardware,Hardware,True,2.0431,91,2,93,0.0177,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,A tela do notebook está piscando constantemente.,Hardware,Configuração,False,2.0588,91,4,95,0.0225,False,Resposta 'Configuração' não corresponde à categoria esperada 'Hardware'
+qwen2.5:1.5b,O computador não liga quando aperto o botão.,Hardware,Instalação,False,2.0652,94,4,98,0.0228,False,"Resposta indicou Instalação, que não corresponde à categoria esperada (Hardware)"
+qwen2.5:1.5b,A impressora está puxando várias folhas de uma vez.,Hardware,Hardware,True,2.0358,95,2,97,0.0177,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O headset não reproduz som em nenhum aplicativo.,Hardware,Acesso,False,2.0468,93,3,96,0.0205,False,Resposta 'Acesso' não representa a categoria esperada 'Hardware'
+qwen2.5:1.5b,Uma das portas USB não reconhece o pendrive.,Hardware,Instalação,False,2.0535,94,4,98,0.0241,False,"A resposta 'Instalação' não se refere diretamente ao problema mencionado na mensagem original (uma das portas USB não reconhece o pendrive, que é um problema de Hardware)."
+qwen2.5:1.5b,O carregador do notebook está com o cabo danificado.,Hardware,Hardware,True,2.043,94,2,96,0.0172,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,A webcam não liga quando conecto ao computador.,Hardware,Instalação,False,2.0568,93,4,97,0.0225,False,"A resposta 'Instalação' não identifica claramente a categoria 'Hardware', mas sugere uma solução de instalação, que pode envolver tanto hardware quanto software ou configuração."
+qwen2.5:1.5b,A tela do monitor está com uma faixa preta.,Hardware,Instalação,False,2.0659,93,4,97,0.0231,False,"Resposta indicou Instalação, que não corresponde à categoria esperada de Hardware"
+qwen2.5:1.5b,O notebook está superaquecendo e desligando sozinho.,Hardware,Acesso,False,2.0629,96,3,99,0.0209,False,Resposta identifica outra categoria (Acesso) e não a categoria esperada (Hardware)
+qwen2.5:1.5b,A bateria do notebook não segura carga.,Hardware,Hardware,True,2.0647,91,2,93,0.0177,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Configuração,False,2.0568,95,4,99,0.0232,False,A resposta 'Configuração' não corresponde à categoria 'Hardware' da lista fornecida.
+qwen2.5:1.5b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Acesso,False,2.0638,96,3,99,0.0209,False,Resposta 'Acesso' não está na categoria esperada 'Hardware'
+qwen2.5:1.5b,O conector do cabo de vídeo está quebrado.,Hardware,Hardware,True,2.0413,93,2,95,0.0177,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O scanner não liga quando pressiono o botão.,Hardware,Instalação,False,2.0633,94,4,98,0.023,False,Resposta indica outra categoria (Instalação) e não está relacionada à categoria esperada (Hardware)
+qwen2.5:1.5b,Programa travou.,Software,Software,True,2.0513,86,2,88,0.0175,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O sistema fecha sozinho ao abrir.,Software,Rede,False,2.0384,90,3,93,0.0208,False,Resposta indicou Rede ao invés de Software
+qwen2.5:1.5b,O navegador apresenta erro ao iniciar.,Software,Rede,False,2.0577,89,3,92,0.0207,False,"Resposta indicou Rede, mas a mensagem original aponta para um erro no navegador, que é um problema de Software."
+qwen2.5:1.5b,O aplicativo de folha de pagamento parou de responder.,Software,Hardware,False,2.057,94,2,96,0.0175,False,A resposta 'Hardware' não se refere corretamente ao problema do aplicativo de folha de pagamento.
+qwen2.5:1.5b,O Word fecha quando tento salvar o documento.,Software,Instalação,False,2.0603,91,4,95,0.023,False,A resposta 'Instalação' não representa corretamente a categoria 'Software' para a categoria esperada de 'O Word fecha quando tento salvar o documento'.
+qwen2.5:1.5b,O programa exibe uma mensagem de erro ao executar.,Software,Software,True,2.0575,93,2,95,0.0173,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O sistema apresenta falha ao carregar os relatórios.,Software,Hardware,False,2.0371,95,2,97,0.0171,False,"Resposta indica Hardware, enquanto a categoria esperada é Software"
+qwen2.5:1.5b,O aplicativo não abre depois da atualização.,Software,Rede,False,2.0659,91,3,94,0.0205,False,Resposta 'Rede' não representa a categoria esperada 'Software'
+qwen2.5:1.5b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Acesso,False,2.0347,94,3,97,0.0219,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+qwen2.5:1.5b,O sistema duplicou os registros ao salvar.,Software,Configuração,False,2.063,90,4,94,0.0236,False,Resposta 'Configuração' não representa claramente a categoria esperada 'Software'
+qwen2.5:1.5b,O navegador não carrega as extensões instaladas.,Software,Instalação,False,2.0547,93,4,97,0.0229,False,Resposta 'Instalação' não corresponde à categoria esperada 'Software'
+qwen2.5:1.5b,O antivírus exibe um erro durante a verificação.,Software,Software,True,2.0406,95,2,97,0.0196,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Configuração,False,2.0436,93,4,97,0.0229,False,Resposta 'Configuração' não está associada à categoria 'Software' da mensagem original 'O aplicativo apresenta uma tela branca ao iniciar.'
+qwen2.5:1.5b,O programa não reconhece o arquivo que tento importar.,Software,Rede,False,2.0517,95,3,98,0.0205,False,"Resposta indicou 'Rede', enquanto a categoria esperada é 'Software'"
+qwen2.5:1.5b,O sistema apaga os filtros depois que fecho a tela.,Software,Configuração,False,2.0634,95,4,99,0.0232,False,"Resposta 'Configuração' não corresponde ao contexto da mensagem original que discute a ação de apagar filtros após fechar uma tela, que é uma tarefa de configuração dentro do software."
+qwen2.5:1.5b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Hardware,False,2.0548,94,2,96,0.0173,False,"Resposta indicou Hardware, enquanto a categoria esperada é Software"
+qwen2.5:1.5b,A planilha apresenta erro ao executar uma fórmula.,Software,Hardware,False,2.054,96,2,98,0.0171,False,"Resposta indica Hardware, enquanto a categoria esperada é Software"
+qwen2.5:1.5b,Estou sem rede.,Rede,Acesso,False,2.0699,86,3,89,0.0204,False,Resposta não identifica claramente a categoria esperada
+qwen2.5:1.5b,Internet lenta.,Rede,Rede,True,2.0471,85,3,88,0.0204,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Instalação,False,2.0655,96,4,100,0.0226,False,A resposta 'Instalação' não corresponde à categoria esperada 'Rede' do problema de acesso a sites conectado ao Wi-Fi.
+qwen2.5:1.5b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Acesso,False,2.0405,95,3,98,0.0207,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede' da mensagem original.
+qwen2.5:1.5b,O computador não recebe um endereço IP da rede.,Rede,Instalação ou Configuração,False,2.0597,93,8,101,0.0323,False,"Resposta mencionou Hardware, Software e Instalação/Configuração, que não correspondem à categoria esperada de Rede"
+qwen2.5:1.5b,O cabo de rede não está conectando à internet.,Rede,Acesso,False,2.0383,92,3,95,0.0203,False,Resposta 'Acesso' não representa corretamente a categoria 'Rede' da mensagem original 'O cabo de rede não está conectando à internet.'
+qwen2.5:1.5b,A rede da empresa está indisponível em todos os computadores.,Rede,Rede,True,2.0423,95,3,98,0.0206,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Configuração,False,2.0435,93,4,97,0.0232,False,Resposta 'Configuração' não corresponde à categoria 'Rede' da mensagem original.
+qwen2.5:1.5b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Acesso,False,2.0505,96,3,99,0.0207,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede'
+qwen2.5:1.5b,A conexão cabeada está desconectando sozinha.,Rede,Rede,True,2.0632,94,3,97,0.0218,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Rede,True,2.0428,95,3,98,0.0207,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,A impressora de rede está indisponível para todos os computadores.,Rede,Acesso,False,2.056,96,3,99,0.0202,False,Resposta 'Acesso' não representa claramente a categoria 'Rede' da mensagem original
+qwen2.5:1.5b,A intranet está fora do ar para todos os funcionários.,Rede,Rede,True,2.0663,94,3,97,0.0208,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,A conexão com o servidor apresenta perda de pacotes.,Rede,Rede,True,2.0436,95,3,98,0.0217,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Acesso,False,2.0608,97,3,100,0.0203,False,"Resposta apenas indica Acesso, que não identifica claramente a categoria de Rede"
+qwen2.5:1.5b,A VPN desconecta continuamente durante o uso.,Rede,Acesso,False,2.0516,92,3,95,0.0209,False,Resposta 'Acesso' não representa a categoria esperada 'Rede' da mensagem 'VPN desconecta continuamente durante o uso'.
+qwen2.5:1.5b,A transferência de arquivos pela rede está muito lenta.,Rede,Rede,True,2.0608,94,3,97,0.0208,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Sem acesso a pasta.,Acesso,Hardware,False,2.0599,86,2,88,0.0183,False,Resposta 'Hardware' não corresponde à categoria esperada 'Acesso'
+qwen2.5:1.5b,Não consigo entrar no computador.,Acesso,Rede,False,2.0543,89,3,92,0.0208,False,"Resposta indicou Rede, enquanto a categoria esperada era Acesso"
+qwen2.5:1.5b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0386,92,3,95,0.0204,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,2.068,94,3,97,0.0205,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.0488,95,3,98,0.0212,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso,True,2.0691,93,3,96,0.0205,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Instalação,False,2.0684,93,4,97,0.0229,False,Resposta 'Instalação' não corresponde à categoria 'Acesso' da mensagem original 'Aparece usuário sem permissão ao abrir o sistema'.
+qwen2.5:1.5b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Acesso,True,2.0795,96,3,99,0.0207,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Acesso,True,2.0505,96,3,99,0.0207,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0601,96,3,99,0.0207,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Minha conta foi desativada e não consigo autenticar.,Acesso,Rede,False,2.0532,96,3,99,0.0213,False,Resposta 'Rede' não corresponde à categoria esperada 'Acesso'
+qwen2.5:1.5b,O sistema não aceita a senha da minha conta.,Acesso,Acesso,True,2.0384,92,3,95,0.0199,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Rede,False,2.0628,94,3,97,0.0205,False,Resposta não identifica a categoria esperada (Acesso)
+qwen2.5:1.5b,Preciso redefinir minha senha de rede.,Acesso,Instalação,False,2.0433,92,4,96,0.0223,False,"Resposta indicou 'Instalação', que não é a categoria esperada de 'Rede'"
+qwen2.5:1.5b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.083,95,3,98,0.0208,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Acesso,True,2.0605,96,3,99,0.0205,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Hardware,False,2.0533,97,2,99,0.0172,False,"A resposta indicou 'Hardware', enquanto a categoria esperada era 'Acesso'."
+qwen2.5:1.5b,Preciso de um programa.,Instalação,Software,False,2.0388,87,2,89,0.0165,False,Resposta 'Software' não corresponde à categoria esperada 'Instalação'
+qwen2.5:1.5b,Sem máquina nessa mesa.,Instalação,Configuração,False,2.0621,87,4,91,0.0237,False,Resposta 'Configuração' não corresponde adequadamente ao tópico 'Instalação' na mensagem 'Sem máquina nessa mesa'
+qwen2.5:1.5b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Instalação,True,2.0632,92,4,96,0.0224,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Solicito a instalação do pacote de escritório.,Instalação,Instalação,True,2.0431,94,4,98,0.0227,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Hardware,False,2.0539,94,2,96,0.0175,False,Resposta 'Hardware' não corresponde claramente à categoria esperada 'Instalação'
+qwen2.5:1.5b,Instalem o leitor de PDF na minha estação.,Instalação,Configuração,False,2.0705,93,4,97,0.0237,False,Resposta 'Configuração' não corresponde diretamente à categoria 'Instalação'
+qwen2.5:1.5b,Preciso instalar o certificado digital neste computador.,Instalação,Instalação,True,2.0712,93,4,97,0.0233,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Quero instalar o aplicativo de videoconferência.,Instalação,Instalação,True,2.0791,94,4,98,0.0238,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Solicito a instalação do cliente VPN.,Instalação,Instalação,True,2.064,91,4,95,0.0228,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,A nova estação precisa receber o sistema operacional.,Instalação,Software,False,2.0625,92,2,94,0.017,False,Resposta indicou 'Software' ao invés de 'Instalação'
+qwen2.5:1.5b,Preciso instalar os drivers da impressora.,Instalação,Instalação,True,2.058,91,4,95,0.0237,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Solicito a instalação do navegador Firefox.,Instalação,Instalação,True,2.0619,91,4,95,0.0223,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Instalação,True,2.0515,93,4,97,0.0238,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Instalem o software de desenho nesta máquina.,Instalação,Software,False,2.0589,92,2,94,0.0171,False,Resposta 'Software' não representa corretamente a categoria esperada 'Instalação'
+qwen2.5:1.5b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Configuração,False,2.0453,96,4,100,0.025,False,"Resposta indica 'Configuração', que não é a categoria esperada 'Instalação'"
+qwen2.5:1.5b,Solicito a instalação do driver do scanner.,Instalação,Instalação,True,2.0542,92,4,96,0.0229,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso que fique dessa forma.,Configuração,Hardware,False,2.0534,89,2,91,0.0179,False,"Resposta indicou Hardware, quando a categoria esperada era Configuração"
+qwen2.5:1.5b,Preciso do meu computador no modo noturno.,Configuração,Hardware,False,2.0289,93,2,95,0.0176,False,"Resposta mencionou Hardware, que não é a categoria esperada (Configuração)."
+qwen2.5:1.5b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,2.0382,103,4,107,0.0235,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso configurar a assinatura automática do e-mail.,Configuração,Configuração,True,2.0507,95,4,99,0.0234,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Quero mudar o idioma do sistema para português.,Configuração,Configuração,True,2.0641,95,4,99,0.0229,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,Configuração,True,2.0651,95,4,99,0.0242,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso ajustar o fuso horário do computador.,Configuração,Configuração,True,2.0622,94,4,98,0.0235,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Configuração,True,2.0616,95,4,99,0.0241,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Configuração,True,2.0433,94,4,98,0.0238,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Configuração,True,2.0451,98,4,102,0.0234,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Software,False,2.0573,95,2,97,0.0179,False,Resposta indicou 'Software' ao invés de 'Configuração'
+qwen2.5:1.5b,Ajuste o brilho da tela para um nível menor.,Configuração,Configuração,True,2.0631,95,4,99,0.0231,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Configuração,True,2.0477,96,4,100,0.0231,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Configuração,True,2.0667,97,4,101,0.0229,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Configuração,True,2.0451,93,4,97,0.0234,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+qwen2.5:1.5b,Preciso deixar a escala da tela em 125%.,Configuração,Acesso,False,2.042,96,3,99,0.02,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' do problema original.
+llama3.2:3b,Monitor parou.,Hardware,Acesso,False,4.6982,81,3,84,2.6582,False,Resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,Meu teclado não funciona.,Hardware,Acesso,False,2.0546,84,3,87,0.0231,False,Resposta 'Acesso' não corresponde à categoria 'Hardware' da categoria esperada.
+llama3.2:3b,O mouse não está respondendo aos movimentos.,Hardware,Acesso.,False,2.06,87,4,91,0.0266,False,"Resposta indicou 'Acesso', que não corresponde à categoria esperada de 'Hardware'"
+llama3.2:3b,A tela do notebook está piscando constantemente.,Hardware,Configuração.,False,2.0597,87,5,92,0.0296,False,A resposta 'Configuração' não corresponde diretamente ao problema da tela piscando do notebook.
+llama3.2:3b,O computador não liga quando aperto o botão.,Hardware,Acesso,False,2.0495,90,3,93,0.0239,False,Resposta 'Acesso' não representa a categoria 'Hardware' da mensagem original
+llama3.2:3b,A impressora está puxando várias folhas de uma vez.,Hardware,Acesso,False,2.0672,92,3,95,0.0234,False,Resposta 'Acesso' não se refere à categoria esperada 'Hardware' no contexto da impressora
+llama3.2:3b,O headset não reproduz som em nenhum aplicativo.,Hardware,Configuração,False,2.067,89,4,93,0.027,False,Resposta 'Configuração' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,Uma das portas USB não reconhece o pendrive.,Hardware,Hardware,True,2.0337,90,2,92,0.0188,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,O carregador do notebook está com o cabo danificado.,Hardware,Acesso,False,2.058,90,3,93,0.0231,False,Resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,A webcam não liga quando conecto ao computador.,Hardware,Acesso.,False,2.0767,89,4,93,0.0266,False,Resposta 'Acesso' não corresponde à categoria 'Hardware' da mensagem original
+llama3.2:3b,A tela do monitor está com uma faixa preta.,Hardware,Acesso,False,2.0443,89,3,92,0.0229,False,"Resposta indicou 'Acesso', que não corresponde à categoria esperada de 'Hardware'"
+llama3.2:3b,O notebook está superaquecendo e desligando sozinho.,Hardware,Acesso,False,2.0627,92,3,95,0.0233,False,Resposta identifica outra categoria diferente da esperada
+llama3.2:3b,A bateria do notebook não segura carga.,Hardware,Acesso,False,2.05,87,3,90,0.0231,False,Resposta 'Acesso' não está relacionada à categoria 'Hardware' do problema descrito na mensagem original.
+llama3.2:3b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Acesso,False,2.0516,91,3,94,0.0238,False,Resposta 'Acesso' não corresponde à categoria 'Hardware' da mensagem original
+llama3.2:3b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Instalação,False,2.0661,93,4,97,0.0269,False,Resposta 'Instalação' não corresponde à categoria 'Hardware'
+llama3.2:3b,O conector do cabo de vídeo está quebrado.,Hardware,Acesso,False,2.035,89,3,92,0.0232,False,Resposta 'Acesso' não corresponde à categoria 'Hardware'
+llama3.2:3b,O scanner não liga quando pressiono o botão.,Hardware,Acesso,False,2.0496,90,3,93,0.0232,False,A resposta 'Acesso' não corresponde à categoria esperada 'Hardware'
+llama3.2:3b,Programa travou.,Software,Acesso,False,2.0618,82,3,85,0.0229,False,Resposta 'Acesso' não corresponde à categoria 'Software'
+llama3.2:3b,O sistema fecha sozinho ao abrir.,Software,Configuração,False,2.0613,86,4,90,0.0267,False,Resposta 'Configuração' não identifica corretamente a categoria esperada 'Software'
+llama3.2:3b,O navegador apresenta erro ao iniciar.,Software,Acesso,False,2.0625,85,3,88,0.0225,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O aplicativo de folha de pagamento parou de responder.,Software,Acesso,False,2.0695,90,3,93,0.0232,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O Word fecha quando tento salvar o documento.,Software,Acesso,False,2.0477,86,3,89,0.0227,False,Resposta não identifica a categoria corretamente
+llama3.2:3b,O programa exibe uma mensagem de erro ao executar.,Software,Acesso.,False,2.0581,89,4,93,0.0265,False,Resposta 'Acesso' não representa a categoria 'Software' da mensagem original 'O programa exibe uma mensagem de erro ao executar'.
+llama3.2:3b,O sistema apresenta falha ao carregar os relatórios.,Software,Configuração,False,2.0475,91,4,95,0.0263,False,"Resposta indica Configuração, enquanto a categoria esperada é Software"
+llama3.2:3b,O aplicativo não abre depois da atualização.,Software,Acesso,False,2.0697,87,3,90,0.0238,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Instalação,False,2.0538,90,4,94,0.0265,False,"Resposta indicou instalação, quando a categoria esperada é Software"
+llama3.2:3b,O sistema duplicou os registros ao salvar.,Software,Acesso,False,2.0529,86,3,89,0.0235,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software' do sistema duplicando registros ao salvar.
+llama3.2:3b,O navegador não carrega as extensões instaladas.,Software,Acesso,False,2.0515,89,3,92,0.0226,False,Resposta 'Acesso' não corresponde à categoria 'Software' da mensagem original
+llama3.2:3b,O antivírus exibe um erro durante a verificação.,Software,Acesso,False,2.061,91,3,94,0.0231,False,Resposta 'Acesso' não corresponde à categoria 'Software' da mensagem original
+llama3.2:3b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Acesso,False,2.0568,89,3,92,0.0224,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software' da mensagem original.
+llama3.2:3b,O programa não reconhece o arquivo que tento importar.,Software,Configuração.,False,2.0547,90,5,95,0.0303,False,Resposta não identifica a categoria esperada ou apresenta uma categoria diferente da lista
+llama3.2:3b,O sistema apaga os filtros depois que fecho a tela.,Software,Acesso,False,2.0629,91,3,94,0.0233,False,Resposta 'Acesso' não corresponde à categoria 'Software' da mensagem original.
+llama3.2:3b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Acesso,False,2.0713,90,3,93,0.023,False,Resposta 'Acesso' não representa a categoria esperada 'Software' da mensagem original 'O leitor de PDF fecha ao abrir determinados arquivos'.
+llama3.2:3b,A planilha apresenta erro ao executar uma fórmula.,Software,Acesso.,False,2.0534,92,4,96,0.0264,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+llama3.2:3b,Estou sem rede.,Rede,Acesso,False,2.0463,82,3,85,0.0233,False,Resposta não identifica claramente a categoria esperada
+llama3.2:3b,Internet lenta.,Rede,Acesso,False,2.053,81,3,84,0.0228,False,Resposta 'Acesso' não representa corretamente a categoria 'Rede' da mensagem 'Internet lenta'
+llama3.2:3b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Acesso,False,2.0407,92,3,95,0.0233,False,Resposta aponta para 'Acesso' ao invés de 'Rede'
+llama3.2:3b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Rede,True,2.0429,92,3,95,0.0234,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,O computador não recebe um endereço IP da rede.,Rede,Acesso,False,2.0551,89,3,92,0.0221,False,A resposta 'Acesso' não corresponde à categoria 'Rede' do problema proposto.
+llama3.2:3b,O cabo de rede não está conectando à internet.,Rede,Acesso,False,2.0559,88,3,91,0.0224,False,Resposta 'Acesso' não corresponde à categoria 'Rede' da mensagem original
+llama3.2:3b,A rede da empresa está indisponível em todos os computadores.,Rede,Acesso,False,2.0462,91,3,94,0.0228,False,Resposta 'Acesso' não representa corretamente a categoria esperada 'Rede'
+llama3.2:3b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Acesso,False,2.0493,90,3,93,0.0234,False,Resposta 'Acesso' não corresponde à categoria 'Rede' da mensagem original
+llama3.2:3b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Acesso,False,2.0577,92,3,95,0.023,False,Resposta 'Acesso' não representa claramente a categoria 'Rede' da categoria esperada
+llama3.2:3b,A conexão cabeada está desconectando sozinha.,Rede,Acesso,False,2.0505,90,3,93,0.0233,False,A resposta 'Acesso' não corresponde à categoria 'Rede' da mensagem original 'A conexão cabeada está desconectando sozinha'.
+llama3.2:3b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Acesso,False,2.0544,92,3,95,0.0231,False,Resposta 'Acesso' não corresponde à categoria esperada 'Rede' na mensagem 'O Wi-Fi corporativo não aparece na lista de redes disponíveis'.
+llama3.2:3b,A impressora de rede está indisponível para todos os computadores.,Rede,Acesso,False,2.0372,92,3,95,0.0235,False,Resposta 'Acesso' não representa a categoria esperada 'Rede' da mensagem original.
+llama3.2:3b,A intranet está fora do ar para todos os funcionários.,Rede,Configuração,False,2.0449,91,4,95,0.0261,False,Resposta 'Configuração' não representa corretamente a categoria esperada 'Rede' da mensagem original
+llama3.2:3b,A conexão com o servidor apresenta perda de pacotes.,Rede,Configuração.,False,2.0595,91,5,96,0.0304,False,"Resposta indicou 'Configuração', outra categoria não na lista"
+llama3.2:3b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Acesso,False,2.0343,93,3,96,0.0232,False,"A resposta 'Acesso' não representa claramente a categoria 'Rede' da mensagem original 'O computador está conectado ao Wi-Fi, mas sem acesso à internet.'"
+llama3.2:3b,A VPN desconecta continuamente durante o uso.,Rede,Acesso,False,2.0503,87,3,90,0.0224,False,Resposta 'Acesso' não representa a categoria 'Rede' da categoria esperada.
+llama3.2:3b,A transferência de arquivos pela rede está muito lenta.,Rede,Configuração.,False,2.0535,90,5,95,0.0304,False,Resposta 'Configuração' não corresponde à categoria 'Rede' da mensagem original.
+llama3.2:3b,Sem acesso a pasta.,Acesso,Acesso,True,2.067,82,3,85,0.0227,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Não consigo entrar no computador.,Acesso,Acesso,True,2.0616,85,3,88,0.0229,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0621,88,3,91,0.0237,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,2.0613,91,3,94,0.0245,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.0479,91,3,94,0.0241,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso.,True,2.0482,89,4,93,0.0266,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Acesso,True,2.0433,90,3,93,0.0233,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Acesso,True,2.049,92,3,95,0.023,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Acesso,True,2.0376,92,3,95,0.023,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0734,92,3,95,0.0235,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Minha conta foi desativada e não consigo autenticar.,Acesso,Acesso,True,2.0611,92,3,95,0.0232,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,O sistema não aceita a senha da minha conta.,Acesso,Acesso,True,2.0559,88,3,91,0.0228,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Acesso,True,2.0591,90,3,93,0.0235,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso redefinir minha senha de rede.,Acesso,Acesso,True,2.0565,88,3,91,0.0229,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.0592,91,3,94,0.0231,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Acesso,True,2.0738,93,3,96,0.0234,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Acesso,True,2.06,93,3,96,0.0227,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso de um programa.,Instalação,Acesso.,False,2.0481,83,4,87,0.0263,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Sem máquina nessa mesa.,Instalação,Acesso,False,2.0395,84,3,87,0.0224,False,Resposta 'Acesso' não se refere diretamente à categoria 'Instalação' da mensagem original 'Sem máquina nessa mesa'.
+llama3.2:3b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Configuração,False,2.0382,88,4,92,0.0266,False,"Resposta sugeriu Configuração, que não é a categoria esperada de Instalação"
+llama3.2:3b,Solicito a instalação do pacote de escritório.,Instalação,Configuração.,False,2.0502,90,5,95,0.0308,False,"Resposta indicou 'Configuração', enquanto a categoria esperada era 'Instalação'"
+llama3.2:3b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Configuração.,False,2.0697,90,5,95,0.0297,False,Resposta 'Configuração' não identifica claramente a categoria 'Instalação'
+llama3.2:3b,Instalem o leitor de PDF na minha estação.,Instalação,Acesso,False,2.0512,89,3,92,0.023,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Preciso instalar o certificado digital neste computador.,Instalação,Acesso,False,2.0482,89,3,92,0.023,False,Resposta 'Acesso' não corresponde à categoria 'Instalação' da categoria esperada
+llama3.2:3b,Quero instalar o aplicativo de videoconferência.,Instalação,Acesso.,False,2.0583,90,4,94,0.027,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+llama3.2:3b,Solicito a instalação do cliente VPN.,Instalação,Configuração.,False,2.0623,87,5,92,0.0291,False,Resposta 'Configuração' não corresponde claramente à categoria esperada 'Instalação'
+llama3.2:3b,A nova estação precisa receber o sistema operacional.,Instalação,Acesso,False,2.0559,88,3,91,0.0232,False,A resposta 'Acesso' não corresponde à categoria 'Instalação' mencionada na categoria esperada
+llama3.2:3b,Preciso instalar os drivers da impressora.,Instalação,Configuração,False,2.0664,87,4,91,0.0262,False,Resposta 'Configuração' não corresponde à categoria 'Instalação'
+llama3.2:3b,Solicito a instalação do navegador Firefox.,Instalação,Acesso,False,2.0519,87,3,90,0.0231,False,Resposta 'Acesso' não representa corretamente a categoria esperada 'Instalação'
+llama3.2:3b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Configuração,False,2.0519,89,4,93,0.0273,False,Resposta indicou 'Configuração' ao invés de 'Instalação'
+llama3.2:3b,Instalem o software de desenho nesta máquina.,Instalação,Acesso,False,2.0372,89,3,92,0.023,False,Resposta 'Acesso' não corresponde claramente à categoria 'Instalação' da mensagem original 'Instalem o software de desenho nesta máquina.'
+llama3.2:3b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Configuração.,False,2.0459,92,5,97,0.0303,False,Resposta 'Configuração' não corresponde corretamente à categoria esperada 'Instalação'
+llama3.2:3b,Solicito a instalação do driver do scanner.,Instalação,Acesso,False,2.0374,88,3,91,0.0225,False,Resposta não identifica a categoria de Instalação
+llama3.2:3b,Preciso que fique dessa forma.,Configuração,Acesso,False,2.0464,85,3,88,0.023,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' da mensagem original 'Preciso que fique dessa forma.'
+llama3.2:3b,Preciso do meu computador no modo noturno.,Configuração,Acesso.,False,2.0589,89,4,93,0.0262,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' da mensagem original.
+llama3.2:3b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,2.0677,95,4,99,0.0272,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso configurar a assinatura automática do e-mail.,Configuração,Acesso.,False,2.0651,91,4,95,0.0269,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' esperada
+llama3.2:3b,Quero mudar o idioma do sistema para português.,Configuração,Acesso,False,2.0427,91,3,94,0.0223,False,Resposta 'Acesso' não representa a categoria esperada 'Configuração' do contexto da mensagem
+llama3.2:3b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,A categoria correta para a mensagem de suporte de TI é: Acesso.,False,2.1177,91,18,109,0.077,False,"Resposta indica a categoria 'Acesso', mas a mensagem original se refere à configuração da página da intranet"
+llama3.2:3b,Preciso ajustar o fuso horário do computador.,Configuração,Configuração.,True,2.0595,90,5,95,0.0301,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Configuração,True,2.0374,91,4,95,0.0266,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Configuração,True,2.0533,90,4,94,0.0271,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Rede.,False,2.0477,94,4,98,0.0268,False,Resposta 'Rede' não identifica claramente a categoria 'Configuração' do problema descrito na mensagem original.
+llama3.2:3b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Acesso,False,2.0521,91,3,94,0.0234,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+llama3.2:3b,Ajuste o brilho da tela para um nível menor.,Configuração,Configuração.,True,2.0421,92,5,97,0.0302,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+llama3.2:3b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Acesso,False,2.0504,92,3,95,0.0231,False,Resposta 'Acesso' não representa a categoria 'Configuração' da mensagem original.
+llama3.2:3b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Acesso.,False,2.0395,93,4,97,0.0273,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' esperada
+llama3.2:3b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Acesso,False,2.0688,89,3,92,0.0229,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+llama3.2:3b,Preciso deixar a escala da tela em 125%.,Configuração,Acesso,False,2.0428,90,3,93,0.0232,False,Resposta não identifica a categoria esperada de Configuração
+gemma3:1b,Monitor parou.,Hardware,Rede,False,3.7174,58,3,61,1.679,False,"Resposta é 'Rede', que não está na lista de categorias permitidas"
+gemma3:1b,Meu teclado não funciona.,Hardware,Rede,False,2.0442,59,3,62,0.0293,False,"Resposta indicou Rede, que não é a categoria esperada (Hardware)"
+gemma3:1b,O mouse não está respondendo aos movimentos.,Hardware,Rede,False,2.0494,63,3,66,0.0285,False,"Resposta indicou Rede, que não é a categoria esperada (Hardware)."
+gemma3:1b,A tela do notebook está piscando constantemente.,Hardware,Rede,False,2.0656,63,3,66,0.0296,False,"Resposta indica Rede, enquanto a categoria esperada é Hardware"
+gemma3:1b,O computador não liga quando aperto o botão.,Hardware,Rede,False,2.0688,63,3,66,0.0258,False,"Resposta indicou 'Rede', que não corresponde à categoria esperada 'Hardware'."
+gemma3:1b,A impressora está puxando várias folhas de uma vez.,Hardware,Rede,False,2.0718,66,3,69,0.0289,False,A resposta 'Rede' não corresponde à categoria esperada 'Hardware' do chamado de TI.
+gemma3:1b,O headset não reproduz som em nenhum aplicativo.,Hardware,Rede,False,2.0488,64,3,67,0.0286,False,"A resposta indicou 'Rede', que não corresponde à categoria esperada de 'Hardware'"
+gemma3:1b,Uma das portas USB não reconhece o pendrive.,Hardware,Rede,False,2.0877,65,3,68,0.0285,False,"Resposta indicou Rede, enquanto a categoria esperada é Hardware"
+gemma3:1b,O carregador do notebook está com o cabo danificado.,Hardware,Rede,False,2.067,66,3,69,0.0286,False,"Resposta indicou Rede, enquanto a categoria esperada era Hardware"
+gemma3:1b,A webcam não liga quando conecto ao computador.,Hardware,Rede,False,2.0636,64,3,67,0.0284,False,"Resposta indicou Rede, enquanto a categoria esperada é Hardware"
+gemma3:1b,A tela do monitor está com uma faixa preta.,Hardware,Hardware,True,2.0469,65,2,67,0.0251,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O notebook está superaquecendo e desligando sozinho.,Hardware,Hardware,True,2.0422,66,2,68,0.0258,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A bateria do notebook não segura carga.,Hardware,Rede,False,2.0453,62,3,65,0.0292,False,"Resposta indicou Rede, enquanto a categoria esperada é Hardware"
+gemma3:1b,Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Acesso,False,2.0432,65,3,68,0.0289,False,Resposta 'Acesso' não corresponde à categoria 'Hardware' da mensagem original.
+gemma3:1b,O computador está emitindo um ruído forte na ventoinha.,Hardware,Rede,False,2.0451,68,3,71,0.0287,False,"A resposta indicou 'Rede', que não é a categoria esperada (Hardware)"
+gemma3:1b,O conector do cabo de vídeo está quebrado.,Hardware,Rede,False,2.0545,65,3,68,0.0286,False,Resposta 'Rede' não representa corretamente a categoria esperada 'Hardware'
+gemma3:1b,O scanner não liga quando pressiono o botão.,Hardware,Hardware,True,2.0668,64,2,66,0.0247,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Programa travou.,Software,Rede,False,2.0583,58,3,61,0.0275,False,"Resposta indicou Rede, que não está na lista de categorias válidas"
+gemma3:1b,O sistema fecha sozinho ao abrir.,Software,Rede,False,2.0895,61,3,64,0.0287,False,Resposta 'Rede' não representa corretamente a categoria 'Software' da mensagem 'O sistema fecha sozinho ao abrir.'
+gemma3:1b,O navegador apresenta erro ao iniciar.,Software,Rede,False,2.0551,61,3,64,0.0279,False,"Resposta indicou Rede, enquanto a categoria esperada é Software"
+gemma3:1b,O aplicativo de folha de pagamento parou de responder.,Software,Software,True,2.0631,66,2,68,0.0262,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O Word fecha quando tento salvar o documento.,Software,Software,True,2.0466,63,3,66,0.0291,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O programa exibe uma mensagem de erro ao executar.,Software,Instalação,False,2.045,65,5,70,0.0337,False,"Resposta indica Instalação, que não corresponde à categoria Software"
+gemma3:1b,O sistema apresenta falha ao carregar os relatórios.,Software,Rede,False,2.0581,66,3,69,0.0285,False,A resposta 'Rede' não representa corretamente a categoria esperada 'Software'
+gemma3:1b,O aplicativo não abre depois da atualização.,Software,Rede,False,2.0727,62,3,65,0.0292,False,Resposta 'Rede' não corresponde à categoria 'Software' da mensagem original.
+gemma3:1b,O programa apresenta falha ao exportar um arquivo PDF.,Software,Rede,False,2.0695,66,3,69,0.03,False,A resposta 'Rede' não representa corretamente a categoria esperada 'Software'
+gemma3:1b,O sistema duplicou os registros ao salvar.,Software,Rede,False,2.0662,63,3,66,0.0281,False,"Resposta indicou 'Rede', que não corresponde à categoria esperada de 'Software'"
+gemma3:1b,O navegador não carrega as extensões instaladas.,Software,Rede,False,2.0491,65,3,68,0.0274,False,Resposta 'Rede' não corresponde à categoria esperada 'Software'
+gemma3:1b,O antivírus exibe um erro durante a verificação.,Software,Rede,False,2.0703,66,3,69,0.0288,False,"Resposta indica 'Rede', enquanto a categoria esperada é 'Software'"
+gemma3:1b,O aplicativo apresenta uma tela branca ao iniciar.,Software,Acesso,False,2.0407,63,3,66,0.0296,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software'
+gemma3:1b,O programa não reconhece o arquivo que tento importar.,Software,Rede,False,2.054,65,3,68,0.0285,False,"Resposta indicou Rede, enquanto a categoria esperada era Software"
+gemma3:1b,O sistema apaga os filtros depois que fecho a tela.,Software,Rede,False,2.0672,67,3,70,0.0289,False,Resposta 'Rede' não representa corretamente a categoria esperada 'Software'.
+gemma3:1b,O leitor de PDF fecha ao abrir determinados arquivos.,Software,Instalação,False,2.0805,65,5,70,0.0342,False,A resposta 'Instalação' não se refere diretamente ao problema de leitor de PDF fechando ao abrir determinados arquivos. Problema de leitor de PDF é mais associado a software.
+gemma3:1b,A planilha apresenta erro ao executar uma fórmula.,Software,Acesso,False,2.0757,63,3,66,0.0292,False,Resposta 'Acesso' não corresponde à categoria esperada 'Software' da mensagem original
+gemma3:1b,Estou sem rede.,Rede,Rede,True,2.0818,58,3,61,0.0285,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Internet lenta.,Rede,Rede,True,2.0373,57,3,60,0.0283,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Não consigo acessar nenhum site mesmo conectado ao Wi-Fi.,Rede,Rede,True,2.0596,66,3,69,0.0291,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A conexão Wi-Fi cai várias vezes durante o expediente.,Rede,Rede,True,2.0567,66,3,69,0.0276,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O computador não recebe um endereço IP da rede.,Rede,Rede,True,2.0754,64,3,67,0.0284,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O cabo de rede não está conectando à internet.,Rede,Rede,True,2.0576,65,3,68,0.0285,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A rede da empresa está indisponível em todos os computadores.,Rede,Rede,True,2.0568,68,3,71,0.0285,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Não consigo alcançar o servidor pelo endereço IP.,Rede,Não especificado,False,2.0451,63,4,67,0.0309,False,Resposta não indica a categoria esperada (Rede)
+gemma3:1b,A videoconferência trava por causa da instabilidade da conexão.,Rede,Rede,True,2.0525,67,3,70,0.0279,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A conexão cabeada está desconectando sozinha.,Rede,Rede,True,2.0702,64,3,67,0.0287,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O Wi-Fi corporativo não aparece na lista de redes disponíveis.,Rede,Rede,True,2.0479,68,3,71,0.0291,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A impressora de rede está indisponível para todos os computadores.,Rede,Rede,True,2.0728,69,3,72,0.0292,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A intranet está fora do ar para todos os funcionários.,Rede,Rede,True,2.067,65,3,68,0.0288,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A conexão com o servidor apresenta perda de pacotes.,Rede,Rede,True,2.0512,65,3,68,0.0271,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,"O computador está conectado ao Wi-Fi, mas sem acesso à internet.",Rede,Rede,True,2.0443,69,3,72,0.0285,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A VPN desconecta continuamente durante o uso.,Rede,Rede,True,2.0428,63,3,66,0.029,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,A transferência de arquivos pela rede está muito lenta.,Rede,Rede,True,2.0523,64,3,67,0.0279,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Sem acesso a pasta.,Acesso,Rede,False,2.0369,59,3,62,0.028,False,Resposta 'Rede' não corresponde à categoria 'Acesso'
+gemma3:1b,Não consigo entrar no computador.,Acesso,Rede,False,2.0525,60,3,63,0.029,False,"Resposta indicou 'Rede', que não corresponde à categoria esperada 'Acesso'"
+gemma3:1b,Não consigo fazer login no sistema com minha conta.,Acesso,Acesso,True,2.0379,64,3,67,0.0284,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Segurança,False,2.0529,66,3,69,0.0285,False,Resposta 'Segurança' não representa a categoria 'Acesso' da mensagem original.
+gemma3:1b,Preciso recuperar o acesso ao meu e-mail institucional.,Acesso,Acesso,True,2.0541,66,3,69,0.0274,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Minha conta não consegue entrar no portal interno.,Acesso,Acesso,True,2.0695,64,3,67,0.0294,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Aparece usuário sem permissão ao abrir o sistema.,Acesso,Acesso,True,2.0546,65,3,68,0.0274,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Meu crachá não libera meu acesso ao sistema de ponto.,Acesso,Rede,False,2.0695,67,3,70,0.0289,False,Resposta indicou 'Rede' ao invés de 'Acesso'
+gemma3:1b,Não consigo acessar a pasta compartilhada do meu departamento.,Acesso,Rede,False,2.0804,65,3,68,0.0289,False,Resposta 'Rede' não corresponde à categoria esperada 'Acesso'
+gemma3:1b,Preciso liberar acesso ao módulo financeiro para meu usuário.,Acesso,Acesso,True,2.0585,66,4,70,0.0306,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Minha conta foi desativada e não consigo autenticar.,Acesso,Acesso,True,2.0647,67,3,70,0.029,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O sistema não aceita a senha da minha conta.,Acesso,Rede,False,2.066,65,3,68,0.0293,False,"Resposta identifica Rede, que não é a categoria esperada (Acesso)"
+gemma3:1b,Não consigo entrar no painel administrativo com meu usuário.,Acesso,Rede,False,2.0609,65,3,68,0.0279,False,"Resposta indica Rede, enquanto a categoria esperada é Acesso"
+gemma3:1b,Preciso redefinir minha senha de rede.,Acesso,Acesso,True,2.0631,64,3,67,0.0286,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,O acesso ao sistema foi negado para minha matrícula.,Acesso,Acesso,True,2.0739,65,3,68,0.0292,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Meu usuário não tem permissão para visualizar os relatórios.,Acesso,Não fornecido,False,2.0727,66,4,70,0.0311,False,Resposta não identifica claramente a categoria esperada
+gemma3:1b,O login no e-mail retorna uma mensagem de credenciais inválidas.,Acesso,Acesso,True,2.0718,69,3,72,0.0288,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Preciso de um programa.,Instalação,Software,False,2.0591,60,3,63,0.0285,False,Resposta 'Software' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Sem máquina nessa mesa.,Instalação,Software,False,2.0611,59,2,61,0.0256,False,Resposta 'Software' não está relacionada à categoria esperada 'Instalação'
+gemma3:1b,Preciso instalar o Microsoft Teams neste computador.,Instalação,Rede,False,2.0524,63,4,67,0.0309,False,"Resposta indicou Rede, enquanto a categoria esperada é Instalação"
+gemma3:1b,Solicito a instalação do pacote de escritório.,Instalação,Software,False,2.0544,63,3,66,0.0278,False,Resposta 'Software' não corresponde à categoria 'Instalação' esperada
+gemma3:1b,Preciso adicionar uma impressora nova ao meu computador.,Instalação,Rede,False,2.0581,65,3,68,0.0283,False,"Resposta indicou Rede, que não corresponde à categoria esperada de Instalação"
+gemma3:1b,Instalem o leitor de PDF na minha estação.,Instalação,Software,False,2.058,65,2,67,0.0245,False,"Resposta indica software, mas a mensagem pede instalação de leitor de PDF, que normalmente envolve software, mas também pode implicar em instalação de software."
+gemma3:1b,Preciso instalar o certificado digital neste computador.,Instalação,Acesso,False,2.0687,63,3,66,0.0283,False,Resposta 'Acesso' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Quero instalar o aplicativo de videoconferência.,Instalação,Rede,False,2.0801,64,3,67,0.0288,False,"Resposta mencionou 'Rede', enquanto a categoria esperada era 'Instalação'"
+gemma3:1b,Solicito a instalação do cliente VPN.,Instalação,Rede,False,2.0687,62,3,65,0.0278,False,Resposta 'Rede' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,A nova estação precisa receber o sistema operacional.,Instalação,Rede,False,2.0784,63,3,66,0.0279,False,"Resposta indica Rede, que não é a categoria esperada (Instalação)"
+gemma3:1b,Preciso instalar os drivers da impressora.,Instalação,Rede,False,2.0635,63,3,66,0.027,False,"Resposta indicou 'Rede', que não é a categoria esperada de 'Instalação'."
+gemma3:1b,Solicito a instalação do navegador Firefox.,Instalação,Software,False,2.0447,62,3,65,0.0286,False,Resposta 'Software' não corresponde à categoria esperada 'Instalação'
+gemma3:1b,Preciso instalar o aplicativo de acesso remoto.,Instalação,Acesso,False,2.0673,63,4,67,0.0305,False,Resposta 'Acesso' não representa claramente a categoria 'Instalação'
+gemma3:1b,Instalem o software de desenho nesta máquina.,Instalação,Software,False,2.0643,63,3,66,0.0271,False,"Resposta mencionou apenas 'Software', enquanto a categoria esperada é 'Instalação'"
+gemma3:1b,Preciso adicionar o agente de antivírus no notebook.,Instalação,Segurança da Rede,False,2.062,65,5,70,0.0343,False,"Resposta mencionou 'Segurança da Rede', que não corresponde à categoria esperada 'Instalação'."
+gemma3:1b,Solicito a instalação do driver do scanner.,Instalação,Rede,False,2.0657,63,3,66,0.03,False,Resposta 'Rede' não representa claramente a categoria 'Instalação' da mensagem original 'Solicitação de instalação do driver do scanner'
+gemma3:1b,Preciso que fique dessa forma.,Configuração,Instalação,False,2.0715,61,5,66,0.0343,False,"Resposta indicou Instalação, enquanto a categoria esperada era Configuração"
+gemma3:1b,Preciso do meu computador no modo noturno.,Configuração,Software,False,2.0651,64,3,67,0.0288,False,A resposta 'Software' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Quero alterar a resolução do monitor para 1920x1080.,Configuração,Rede,False,2.0703,73,3,76,0.0288,False,Resposta 'Rede' não está relacionada à alteração da resolução de monitor
+gemma3:1b,Preciso configurar a assinatura automática do e-mail.,Configuração,Configuração,True,2.0849,65,3,68,0.0292,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Quero mudar o idioma do sistema para português.,Configuração,Acesso,False,2.0729,64,4,68,0.0309,False,Resposta 'Acesso' não corresponde à categoria 'Configuração' da categoria esperada.
+gemma3:1b,Configure o navegador para abrir a página da intranet ao iniciar.,Configuração,Acesso,False,2.0629,66,3,69,0.03,False,Resposta 'Acesso' não corresponde claramente à categoria esperada 'Configuração'
+gemma3:1b,Preciso ajustar o fuso horário do computador.,Configuração,Acesso,False,2.0669,64,4,68,0.0316,False,Resposta 'Acesso' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Quero alterar o tempo para a tela bloquear automaticamente.,Configuração,Software,False,2.0704,65,2,67,0.0262,False,Resposta 'Software' não representa a categoria esperada 'Configuração'
+gemma3:1b,Configure a impressora para imprimir frente e verso por padrão.,Configuração,Acesso,False,2.052,66,4,70,0.0307,False,Resposta 'Acesso' não se refere a configuração de impressão
+gemma3:1b,Preciso mapear a unidade de rede Z: no meu computador.,Configuração,Rede,False,2.0565,68,3,71,0.029,False,Resposta 'Rede' não corresponde à categoria esperada 'Configuração'
+gemma3:1b,Quero definir o aplicativo de PDF como programa padrão.,Configuração,Instalação,False,2.0632,65,5,70,0.0343,False,Resposta 'Instalação' não corresponde à categoria esperada 'Configuração' para a mensagem original
+gemma3:1b,Ajuste o brilho da tela para um nível menor.,Configuração,Configuração,True,2.0712,66,4,70,0.0311,True,"Correspondência exata após normalização; avaliação realizada pelo Python, sem consulta ao juiz."
+gemma3:1b,Preciso configurar a conexão Wi-Fi com a rede corporativa.,Configuração,Rede,False,2.0926,68,3,71,0.0287,False,"A resposta 'Rede' não identifica claramente a categoria 'Configuração', que é a categoria esperada."
+gemma3:1b,Quero mudar o formato de data do sistema para dd/mm/aaaa.,Configuração,Instalação,False,2.071,70,5,75,0.0342,False,Resposta 'Instalação' não corresponde à categoria 'Configuração'
+gemma3:1b,Configure meu e-mail para atualizar a cada cinco minutos.,Configuração,Software,False,2.0626,66,3,69,0.0284,False,"Resposta é 'Software', mas a categoria esperada é 'Configuração'"
+gemma3:1b,Preciso deixar a escala da tela em 125%.,Configuração,Acesso,False,2.0652,67,4,71,0.0314,False,Resposta 'Acesso' não representa a categoria 'Configuração' do chamado.
