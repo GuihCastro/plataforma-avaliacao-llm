@@ -32,3 +32,8 @@ Para verificar as leituras de CSV e JSON e os cálculos do painel:
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q tests/test_app.py tests/test_results_csv.py
 ```
+
+Para consultar o experimento arquivado de regressão de prompts, abra o painel e selecione
+**Regressão de prompts** em **Fonte dos resultados**. O painel compara os prompts original
+e degradado e permite consultar cada chamado do CSV
+`eval/results/results_old/regression_results_prompt_comparison.csv`.
