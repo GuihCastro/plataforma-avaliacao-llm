@@ -204,6 +204,50 @@ o aviso de queda, a visibilidade de −0,4 p.p. e a manutenção do valor arquiv
 
 Aceito para revisão da equipe. Conferi no painel os resultados dos 20 pares e o aviso de queda de 50% para 15%. O teste automatizado cobre a variação de −0,4 p.p.
 
+## 6. Documentação técnica e evidências (T17)
+
+- **Data:** 19/11/2026
+- **Responsável:** Guilherme Henrique de Castro
+- **Ferramenta:** GitHub Copilot usando o Copilot SDK no VS Code; modelo específico não informado.
+- **Pedido completo:**
+
+> Prepare a primeira versão da documentação técnica da T17 a partir desta branch, que inclui o PR #9. Escreva em português para alguém que acabou de clonar o repositório.
+>
+> 1. Crie docs/documentacao-tecnica.md com os nove tópicos do enunciado: visão geral e arquitetura com diagrama e fluxo dos dados, instalação e execução, decisões de arquitetura, referência da interface, dados e modelos, reprodução das avaliações, testes e CI, segurança/privacidade/limitações e manual do usuário. Reaproveite os guias e relatórios por links relativos. Detalhe os passos para abrir o painel no Windows e consultar modelos e regressão. Nas 3 a 5 decisões previstas, inclua contexto e alternativas apenas com as evidências disponíveis. Identifique o que precisa de confirmação ou captura real.
+>
+> 2. Crie evidencias/README.md ligando cada afirmação comprovada ao arquivo e à forma de conferência. Verifique os 300 resultados de 100 chamados em 3 modelos, a regressão do CSV arquivado de 20 pares e os testes locais registrados no PROMPTS.md. Distinga a amostra arquivada da bateria que a equipe ainda vai selecionar e as 30 linhas de revisão humana dos 10 chamados distintos que elas representam. Identifique as evidências pendentes, incluindo o vídeo, os logs da execução completa e a CI verde da versão final.
+>
+> 3. Confira os caminhos relativos e a precisão das instruções. Mantenha esta rodada nos dois documentos e em PROMPTS.md. Na seção de Guilherme, registre esta mensagem integral, a ferramenta, um resumo do resultado, os arquivos e as verificações realmente feitas. Deixe a decisão de aceite para Guilherme e apresente o diff antes de commit e push.
+
+**Resumo do resultado:** criada uma primeira versão com os nove tópicos solicitados e um índice de evidências que associa afirmações às fontes e aos métodos de conferência. Foram registradas as contagens dos CSVs e explicitadas as divergências entre alguns relatórios e seus arquivos de dados. A documentação distingue a regressão arquivada da bateria pendente de seleção e esclarece que 30 revisões humanas representam 10 chamados repetidos entre três modelos.
+
+**Arquivos alterados nesta rodada:**
+
+- `docs/documentacao-tecnica.md` — documentação técnica T17.
+- `evidencias/README.md` — índice de evidências, verificações e pendências.
+- `PROMPTS.md` — registro deste pedido e desta execução.
+
+**Verificações realmente feitas:** conferido no histórico Git o merge do PR #9 (`3b9e07c`); contadas as linhas, mensagens distintas, modelos e acertos dos CSVs; executado `.\.venv\Scripts\python.exe -m pytest -q tests/test_app.py tests/test_results_csv.py`, com resultado `17 passed, 16 subtests passed in 4.65s`; verificados 38 links relativos nos dois documentos novos, sem links quebrados. Não foram executados os modelos, a CI, uma execução completa, nem foram gravados vídeo ou logs de modelo.
+
+### Pedido de revisão registrado em 19/11/2026
+
+> Revise `docs/documentacao-tecnica.md` e `evidencias/README.md` conforme os pontos abaixo.
+>
+> 1. Corrija o diagrama para mostrar que o juiz usa `qwen2.5:3b` e devolve sua avaliação ao executor. O desenho atual encaminha o juiz ao grupo dos três modelos avaliados.
+> 2. Alinhe as evidências ao enunciado. O vídeo deve ter **3–5 minutos**, mostrar a **tela inteira**, iniciar o projeto com `docker compose up` e percorrer o fluxo principal. A CI final precisa de link e captura da execução na tag `v1.0`. Inclua também os vínculos para pelo menos três falhas analisadas e para as contribuições e revisões do grupo. Registre a integração do Compose como pendente, pois a configuração atual executa testes.
+> 3. Complete a seção de dados e modelos com origem, tratamento e licenças verificadas ou identificadas como pendentes. Informe que a cobertura de testes ainda não foi medida. Explicite as pendências de SQLite, execução de avaliações pelo painel e identificação das versões dos prompts.
+> 4. Esclareça que `eval.calibration` calcula concordância lendo um CSV local. A escolha do arquivo é interativa e esse cálculo funciona sem Ollama. Diferencie-o das reavaliações que chamam modelos. Para conferir a base da branch, use `git merge-base --is-ancestor 3b9e07c HEAD`.
+>
+> Registre este pedido integral e as correções na seção 6 de `PROMPTS.md`. Verifique novamente os links relativos e o diff. Mantenha o aceite de Guilherme pendente e apresente o resultado antes do commit.
+
+**Correções desta rodada:** o diagrama separa os três modelos avaliados do `qwen2.5:3b` usado pelo juiz e representa o retorno da avaliação ao executor. A documentação agora registra as condições do vídeo e da evidência de CI na tag `v1.0`, bem como a integração do Compose como pendente. Foram detalhadas origem e tratamento dos dados, escopo conhecido da licença MIT e licenças externas ainda não verificadas; incluídas as pendências de cobertura, SQLite, execução via painel e identificação dos prompts. Também foi esclarecida a calibração local sem Ollama, diferenciada das reavaliações que podem chamar modelos, e acrescentados links para falhas, contribuições e uma revisão aprovada do grupo.
+
+**Arquivos alterados nesta rodada:** `docs/documentacao-tecnica.md`, `evidencias/README.md` e este registro.
+
+**Verificações desta rodada:** `git merge-base --is-ancestor 3b9e07c HEAD` terminou com código 0. A consulta GitHub não encontrou workflows/execuções de Actions nem um commit associado à tag `v1.0`; não foi apresentada uma CI verde inexistente. Foram verificados 61 links relativos nos dois documentos, sem destinos quebrados; `git diff --check HEAD` não apontou problemas. Não foram alterados código ou testes.
+
+Aceito para revisão da equipe. As correções solicitadas foram incorporadas. As pendências da entrega estão identificadas nos documentos.
+
 ---
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
