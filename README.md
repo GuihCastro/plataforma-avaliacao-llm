@@ -16,7 +16,9 @@ Plataforma para avaliar modelos de linguagem e prompts na classificação de cha
 
 ## Painel de resultados (T11)
 
-O painel consulta avaliações no formato definido em [`docs/contrato-avaliacao.md`](docs/contrato-avaliacao.md) e abre com um exemplo sintético. Ele não executa modelos nem configura infraestrutura; categorias, métricas e rubrica permanecem sujeitas à validação da equipe.
+O painel abre os [resultados salvos dos modelos](eval/results/results_100_metrics.csv). Compare acurácia, latência de geração e tokens, selecione um modelo e consulte o chamado, a resposta original e o parecer do juiz. A consulta funciona localmente, sem iniciar o Ollama.
+
+Em **Fonte dos resultados**, você também pode abrir a demonstração sintética ou carregar um arquivo. O JSON segue o [contrato de avaliação](docs/contrato-avaliacao.md). O CSV usa UTF-8 e vírgulas, com as colunas obrigatórias `model`, `input`, `expected`, `response` e `correct` (true/false). A coluna opcional `prompt_version` separa os resultados por versão. No CSV histórico, essa informação aparece como ausente.
 
 Instale as dependências e inicie o painel:
 
@@ -25,8 +27,8 @@ Instale as dependências e inicie o painel:
 .\.venv\Scripts\python.exe -m streamlit run src\app.py
 ```
 
-Para validar a leitura dos arquivos, a acurácia com falhas e as medições ausentes:
+Para verificar as leituras de CSV e JSON e os cálculos do painel:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe -m pytest -q tests/test_app.py tests/test_results_csv.py
 ```

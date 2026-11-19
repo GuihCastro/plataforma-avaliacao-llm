@@ -5,9 +5,15 @@ from typing import Any
 
 import streamlit as st
 
+if __package__:
+    from .results_csv import ResultsCSVError, read_results_csv, summarize
+else:  # Streamlit executa este arquivo como script e inclui src/ no caminho.
+    from results_csv import ResultsCSVError, read_results_csv, summarize
+
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DEMO_FILE = ROOT_DIR / "eval" / "exemplos" / "exemplo-avaliacao.json"
+RESULTS_FILE = ROOT_DIR / "eval" / "results" / "results_100_metrics.csv"
 
 
 class EvaluationFormatError(ValueError):
@@ -93,23 +99,7 @@ def _render_details(case: Mapping[str, Any]) -> None:
         st.code(json.dumps(error, ensure_ascii=False, indent=2))
 
 
-def main() -> None:
-    st.set_page_config(page_title="Resultados da avaliação", page_icon="📊")
-    st.title("Painel de resultados")
-    st.caption("Consulta de resultados de avaliações de modelos e prompts.")
-
-    uploaded_file = st.file_uploader("Carregar arquivo de avaliação (JSON)", type="json")
-    is_demo = uploaded_file is None
-    try:
-        content = DEMO_FILE.read_bytes() if is_demo else uploaded_file.getvalue()
-        evaluation = load_evaluation(content)
-    except OSError:
-        st.error("Não foi possível ler o arquivo de avaliação.")
-        return
-    except EvaluationFormatError as error:
-        st.error(f"Arquivo inválido: {error}")
-        return
-
+def _render_json(evaluation: dict[str, Any], is_demo: bool) -> None:
     if is_demo or evaluation.get("sintetico") is True:
         st.info("Demonstração — dados sintéticos")
 
@@ -170,6 +160,99 @@ def main() -> None:
         "Categorias, métricas e rubrica exibidas são propostas e continuam sujeitas "
         "à validação da equipe."
     )
+
+
+def _render_csv(content: bytes) -> None:
+    groups = read_results_csv(content)
+    versions = list(groups)
+    if len(versions) > 1:
+        position = st.selectbox(
+            "Versão do prompt", range(len(versions)),
+            format_func=lambda i: versions[i] or "Não informada no CSV",
+        )
+        version = versions[position]
+    else:
+        version = versions[0]
+        st.caption(f"Versão do prompt: {version or 'não informada no CSV'}.")
+
+    models = groups[version]
+    comparison = []
+    for name, cases in models.items():
+        stats = summarize(cases)
+        duration = stats["latency_seconds"]
+        comparison.append({
+            "Modelo": name,
+            "Casos": stats["count"],
+            "Acertos": stats["correct"],
+            "Acurácia": f"{stats['accuracy']:.1%}",
+            "Latência somada": f"{duration:.2f} s" if duration is not None else "Indisponível",
+            "Tokens totais": str(stats["total_tokens"]) if stats["total_tokens"] is not None else "Indisponível",
+        })
+    st.subheader("Comparação de modelos")
+    st.dataframe(comparison, hide_index=True, width="stretch")
+    st.caption(
+        "A acurácia usa todos os registros de cada modelo. A latência soma os tempos "
+        "de geração. Um total fica indisponível se faltar alguma medição."
+    )
+
+    name = st.selectbox("Modelo para consultar", list(models))
+    cases = models[name]
+    st.subheader("Casos")
+    st.dataframe([
+        {
+            "Registro": case.record,
+            "Chamado": case.ticket,
+            "Categoria esperada": case.expected,
+            "Resposta do modelo": case.response or "Sem resposta registrada",
+            "Acerto": "Sim" if case.correct else "Não",
+            "Latência": format_measurement(case.latency_seconds, " s"),
+            "Tokens de entrada": format_measurement(case.prompt_tokens),
+            "Tokens de saída": format_measurement(case.completion_tokens),
+        }
+        for case in cases
+    ], hide_index=True, width="stretch")
+
+    index = st.selectbox(
+        "Consultar caso", range(len(cases)),
+        format_func=lambda i: f"{cases[i].record} · {cases[i].ticket}",
+    )
+    case = cases[index]
+    st.text(case.ticket)
+    st.markdown("**Resposta original**")
+    st.code(case.response or "Sem resposta registrada.", language="text")
+    st.markdown("**Avaliação do juiz**")
+    if case.judge_correct is None:
+        st.write("Sem veredito registrado.")
+    else:
+        st.write("Correta" if case.judge_correct else "Incorreta")
+    if case.judge_reason:
+        st.text(case.judge_reason)
+
+
+def main() -> None:
+    st.set_page_config(page_title="Resultados da avaliação", page_icon="📊")
+    st.title("Painel de resultados")
+    source = st.radio(
+        "Fonte dos resultados",
+        ("Resultados do projeto", "Demonstração JSON", "Carregar arquivo"),
+        horizontal=True,
+    )
+    try:
+        if source == "Resultados do projeto":
+            _render_csv(RESULTS_FILE.read_bytes())
+        elif source == "Demonstração JSON":
+            _render_json(load_evaluation(DEMO_FILE.read_bytes()), is_demo=True)
+        else:
+            upload = st.file_uploader("Arquivo de avaliação", type=["json", "csv"])
+            if upload is not None:
+                if upload.name.lower().endswith(".csv"):
+                    _render_csv(upload.getvalue())
+                else:
+                    _render_json(load_evaluation(upload.getvalue()), is_demo=False)
+    except OSError:
+        st.error("Não foi possível ler o arquivo de avaliação.")
+    except (EvaluationFormatError, ResultsCSVError) as error:
+        st.error(f"Arquivo inválido: {error}")
 
 
 if __name__ == "__main__":
