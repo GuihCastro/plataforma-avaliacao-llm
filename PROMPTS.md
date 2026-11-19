@@ -103,6 +103,26 @@ O comando `.\.venv\Scripts\python.exe -m pytest tests\test_app.py` retornou **5 
 
 ---
 
+## 4. Consulta dos resultados gravados no painel (T11)
+
+- **Data:** 18/11/2026
+- **Ferramenta:** Codex no ChatGPT.
+- **Pedido de Guilherme:**
+
+> Pronto, foi feito o merge do meu último commit e, em seguida, de mais uma colaboração de outro colega. Agora vamo:
+>
+> 1. Pegar o último commit;
+> 2. Checar o andamento do projeto (prazos, onde estamos, o que falta);
+> 3. Continuar
+
+**Resposta e implementação proposta:** conferiu a `main` no commit `7979bd4`, os relatórios e o quadro do projeto. Preparou o painel para ler `eval/results/results_100_metrics.csv`, comparar os modelos e consultar respostas e pareceres. Manteve a demonstração e o upload JSON e acrescentou o upload de CSV.
+
+**Decisões e verificação:** a acurácia usa o campo `correct` de todos os registros de cada modelo. O parecer do juiz aparece separado e uma versão ausente do prompt fica identificada como tal. A leitura dos dados publicados recuperou 46, 24 e 32 acertos em 100 casos por modelo. Os cinco testes novos do leitor passaram na cópia de trabalho. A execução da interface com Streamlit e a revisão pela equipe ficam para a validação do PR.
+
+Na primeira execução de Guilherme no Windows, passaram 10 testes e 12 subtestes. O teste do painel atingiu o limite padrão de 3 segundos ao abrir o CSV, antes de conferir a tabela. Após receber essa saída, o Codex ajustou o limite do AppTest para 30 segundos por execução. A abertura do CSV e a troca para a demonstração JSON ainda precisam ser confirmadas no Windows. (atualização: Em 18/11/2026, Guilherme confirmou que a validação local do painel funcionou no Windows após o ajuste do teste.)
+
+---
+
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
 **Hugo — IA e Avaliação**
