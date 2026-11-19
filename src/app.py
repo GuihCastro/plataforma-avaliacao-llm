@@ -6,14 +6,27 @@ from typing import Any
 import streamlit as st
 
 if __package__:
-    from .results_csv import ResultsCSVError, read_results_csv, summarize
+    from .results_csv import (
+        ResultsCSVError,
+        read_prompt_regression_csv,
+        read_results_csv,
+        summarize,
+        summarize_prompt_regression,
+    )
 else:  # Streamlit executa este arquivo como script e inclui src/ no caminho.
-    from results_csv import ResultsCSVError, read_results_csv, summarize
+    from results_csv import (
+        ResultsCSVError,
+        read_prompt_regression_csv,
+        read_results_csv,
+        summarize,
+        summarize_prompt_regression,
+    )
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DEMO_FILE = ROOT_DIR / "eval" / "exemplos" / "exemplo-avaliacao.json"
 RESULTS_FILE = ROOT_DIR / "eval" / "results" / "results_100_metrics.csv"
+REGRESSION_FILE = ROOT_DIR / "eval" / "results" / "results_old" / "regression_results_prompt_comparison.csv"
 
 
 class EvaluationFormatError(ValueError):
@@ -229,17 +242,83 @@ def _render_csv(content: bytes) -> None:
         st.text(case.judge_reason)
 
 
+def _render_prompt_regression(content: bytes) -> None:
+    cases = read_prompt_regression_csv(content)
+    stats = summarize_prompt_regression(cases)
+    st.info("Experimento arquivado — dados de regressão de prompts")
+
+    pair_column, original_column, degraded_column, variation_column = st.columns(4)
+    pair_column.metric("Pares avaliados", stats["count"])
+    original_column.metric(
+        "Prompt original",
+        f"{stats['original_correct']}/{stats['count']} · {stats['original_accuracy']:.1%}",
+    )
+    degraded_column.metric(
+        "Prompt degradado",
+        f"{stats['degraded_correct']}/{stats['count']} · {stats['degraded_accuracy']:.1%}",
+    )
+    variation = f"{stats['difference_points']:+.1f}"
+    variation_column.metric("Variação", f"{variation} p.p.")
+    message = (
+        f"Resultado: {stats['status']}. "
+        f"Variação degradado − original: {variation} pontos percentuais."
+    )
+    if stats["status"] == "queda":
+        st.warning(message)
+    elif stats["status"] == "estabilidade":
+        st.info(message)
+    else:
+        st.success(message)
+
+    st.subheader("Pares avaliados")
+    st.dataframe([
+        {
+            "Chamado": case.ticket,
+            "Categoria esperada": case.expected,
+            "Original": "Acerto" if case.original_correct else "Erro",
+            "Degradado": "Acerto" if case.degraded_correct else "Erro",
+        }
+        for case in cases
+    ], hide_index=True, width="stretch")
+
+    index = st.selectbox(
+        "Selecionar chamado",
+        range(len(cases)),
+        format_func=lambda i: f"{cases[i].record} · {cases[i].ticket}",
+    )
+    case = cases[index]
+    st.markdown("**Categoria esperada**")
+    st.write(case.expected)
+    st.markdown("**Resposta — prompt original**")
+    st.code(case.original_response or "Sem resposta registrada.", language="text")
+    st.markdown("**Resposta — prompt degradado**")
+    st.code(case.degraded_response or "Sem resposta registrada.", language="text")
+
+
 def main() -> None:
     st.set_page_config(page_title="Resultados da avaliação", page_icon="📊")
     st.title("Painel de resultados")
     source = st.radio(
         "Fonte dos resultados",
-        ("Resultados do projeto", "Demonstração JSON", "Carregar arquivo"),
+        (
+            "Resultados do projeto",
+            "Regressão de prompts",
+            "Demonstração JSON",
+            "Carregar arquivo",
+        ),
         horizontal=True,
     )
     try:
         if source == "Resultados do projeto":
             _render_csv(RESULTS_FILE.read_bytes())
+        elif source == "Regressão de prompts":
+            st.caption(f"Arquivo: {REGRESSION_FILE.name}")
+            try:
+                relative_path = REGRESSION_FILE.relative_to(ROOT_DIR).as_posix()
+            except ValueError:
+                relative_path = str(REGRESSION_FILE)
+            st.caption(f"Caminho: {relative_path}")
+            _render_prompt_regression(REGRESSION_FILE.read_bytes())
         elif source == "Demonstração JSON":
             _render_json(load_evaluation(DEMO_FILE.read_bytes()), is_demo=True)
         else:

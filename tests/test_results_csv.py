@@ -1,8 +1,16 @@
 import csv
 import io
 import unittest
+from pathlib import Path
 
-from src.results_csv import ResultsCSVError, read_results_csv, summarize
+from src.results_csv import (
+    PromptRegressionCase,
+    ResultsCSVError,
+    read_prompt_regression_csv,
+    read_results_csv,
+    summarize,
+    summarize_prompt_regression,
+)
 
 
 HEADER = ["model", "input", "expected", "response", "correct"]
@@ -17,6 +25,67 @@ def make_csv(extra_columns, records):
 
 
 class ResultsCSVTests(unittest.TestCase):
+    def make_regression_csv(self, rows):
+        out = io.StringIO(newline="")
+        writer = csv.writer(out)
+        writer.writerow([
+            "input", "expected", "original_response", "original_correct",
+            "degraded_response", "degraded_correct",
+        ])
+        writer.writerows(rows)
+        return out.getvalue().encode("utf-8-sig")
+
+    def test_prompt_regression_drop_tie_and_improvement(self):
+        cases_drop = [
+            PromptRegressionCase(1, "A", "Rede", "Rede", True, "Hardware", False),
+            PromptRegressionCase(2, "B", "Rede", "Rede", True, "Rede", False),
+        ]
+        cases_tie = [
+            PromptRegressionCase(1, "A", "Rede", "Rede", True, "Rede", True),
+            PromptRegressionCase(2, "B", "Hardware", "Hardware", True, "Rede", True),
+        ]
+        cases_improve = [
+            PromptRegressionCase(1, "A", "Rede", "Acesso", False, "Rede", True),
+            PromptRegressionCase(2, "B", "Hardware", "Rede", False, "Hardware", True),
+        ]
+
+        drop = summarize_prompt_regression(cases_drop)
+        tie = summarize_prompt_regression(cases_tie)
+        improve = summarize_prompt_regression(cases_improve)
+        self.assertEqual(drop["status"], "queda")
+        self.assertEqual(drop["difference_points"], -100)
+        self.assertEqual(tie["status"], "estabilidade")
+        self.assertEqual(tie["difference_points"], 0)
+        self.assertEqual(improve["status"], "melhora")
+        self.assertEqual(improve["difference_points"], 100)
+
+    def test_prompt_regression_published_values(self):
+        content = Path(
+            "eval/results/results_old/regression_results_prompt_comparison.csv"
+        ).read_bytes()
+        stats = summarize_prompt_regression(read_prompt_regression_csv(content))
+        self.assertEqual(stats["count"], 20)
+        self.assertEqual(stats["original_correct"], 10)
+        self.assertEqual(stats["degraded_correct"], 3)
+        self.assertAlmostEqual(stats["original_accuracy"], 0.50)
+        self.assertAlmostEqual(stats["degraded_accuracy"], 0.15)
+        self.assertAlmostEqual(stats["difference_points"], -35)
+
+    def test_prompt_regression_rejects_invalid_input(self):
+        invalid_contents = [
+            b"input,expected\nA,Rede\n",
+            b"",
+            self.make_regression_csv([
+                ["A", "Rede", "Rede", "talvez", "Hardware", "false"],
+            ]),
+            self.make_regression_csv([
+                ["", "Rede", "Rede", "true", "Hardware", "false"],
+            ]),
+        ]
+        for content in invalid_contents:
+            with self.subTest(content=content):
+                with self.assertRaises(ResultsCSVError):
+                    read_prompt_regression_csv(content)
     def test_false_and_blank_response_stay_in_accuracy_denominator(self):
         content = make_csv(["judge_correct", "judge_reason"], [
             ["modelo", "Acesso, por favor", "Acesso", "Acesso.", "True", "true", "ok"],

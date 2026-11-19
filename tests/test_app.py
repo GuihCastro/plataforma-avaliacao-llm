@@ -79,3 +79,77 @@ def test_rejects_execution_failure_marked_as_correct() -> None:
 
     with pytest.raises(EvaluationFormatError, match="caso 1 registra uma falha de execução"):
         load_evaluation(content)
+
+
+def test_prompt_regression_option_opens_published_csv(tmp_path, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+
+    from src import app
+
+    saved = tmp_path / "regression_results_prompt_comparison.csv"
+    saved.write_text(
+        "input,expected,original_response,original_correct,"
+        "degraded_response,degraded_correct\n"
+        "Chamado A,Rede,Rede,true,Hardware,false\n"
+        "Chamado B,Hardware,Hardware,true,Hardware,true\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(app, "REGRESSION_FILE", saved)
+    screen = AppTest.from_string(
+        "from src.app import main\nmain()", default_timeout=30
+    ).run()
+    screen.radio[0].set_value("Regressão de prompts").run()
+    assert not screen.exception and not screen.error
+    assert any("Experimento arquivado" in banner.value for banner in screen.info)
+    assert any(metric.label == "Pares avaliados" and metric.value == "2" for metric in screen.metric)
+    assert any("regression_results_prompt_comparison.csv" in caption.value for caption in screen.caption)
+
+
+def test_prompt_regression_published_values() -> None:
+    from streamlit.testing.v1 import AppTest
+
+    screen = AppTest.from_string(
+        "from src.app import main\nmain()", default_timeout=30
+    ).run()
+    screen.radio[0].set_value("Regressão de prompts").run()
+    assert not screen.exception and not screen.error
+    metrics = {metric.label: metric.value for metric in screen.metric}
+    assert metrics["Pares avaliados"] == "20"
+    assert "50.0%" in metrics["Prompt original"]
+    assert "15.0%" in metrics["Prompt degradado"]
+    assert metrics["Variação"] == "-35.0 p.p."
+    assert any("Resultado: queda." in banner.value for banner in screen.warning)
+
+
+def test_prompt_regression_warns_and_displays_fractional_variation(
+    tmp_path, monkeypatch
+):
+    from streamlit.testing.v1 import AppTest
+
+    from src import app
+
+    saved = tmp_path / "fractional_regression.csv"
+    rows = [
+        "input,expected,original_response,original_correct,"
+        "degraded_response,degraded_correct"
+    ]
+    rows.extend(
+        f"Chamado {index},Rede,Rede,true,Rede,{'false' if index == 0 else 'true'}"
+        for index in range(250)
+    )
+    saved.write_text("\n".join(rows), encoding="utf-8")
+    monkeypatch.setattr(app, "REGRESSION_FILE", saved)
+
+    screen = AppTest.from_string(
+        "from src.app import main\nmain()", default_timeout=30
+    ).run()
+    screen.radio[0].set_value("Regressão de prompts").run()
+
+    assert not screen.exception and not screen.error
+    metrics = {metric.label: metric.value for metric in screen.metric}
+    assert metrics["Variação"] == "-0.4 p.p."
+    assert any(
+        "Resultado: queda." in banner.value
+        and "-0.4 pontos percentuais" in banner.value
+        for banner in screen.warning
+    )
