@@ -248,6 +248,56 @@ Aceito para revisão da equipe. Conferi no painel os resultados dos 20 pares e o
 
 Aceito para revisão da equipe. As correções solicitadas foram incorporadas. As pendências da entrega estão identificadas nos documentos.
 
+## 7. Rascunho de pesquisa acadêmica (T17)
+
+- **Data:** 19/11/2026
+- **Responsável:** Guilherme Henrique de Castro
+- **Ferramenta:** GitHub Copilot usando o Copilot SDK no VS Code; modelo específico não informado.
+- **Pedido completo:**
+
+> Na branch docs/t17-rascunho-pesquisa, organize e revise os textos já produzidos pela equipe para preparar docs/pesquisa-rascunho.md. Leia docs/documentacao-tecnica.md, evidencias/README.md, os relatórios em docs/ e os CSVs citados. Use a redação dos integrantes e os resultados comprovados como base.
+>
+> Organize o rascunho em resumo, abstract, palavras-chave, 1 Introdução, 2 Referencial teórico, 3 Metodologia, 4 Resultados e discussão, 5 Considerações finais e Referências. Identifique por seção o que precisa de redação ou validação da equipe para a versão completa de 12–20 páginas textuais. O PDF final previsto é docs/pesquisa-abnt.pdf.
+>
+> Na metodologia e nos resultados, diferencie o classificador dos três modelos e o juiz híbrido qwen2.5:3b. Apresente os 300 registros de 100 chamados, com 46, 24 e 32 acertos por modelo. Identifique a regressão como amostra arquivada de 20 pares, com 50% e 15% e queda de 35 pontos percentuais. Contextualize as divergências dos relatórios. A revisão humana contém 30 registros de 10 chamados distintos. Registre limitações e pendências com base nas evidências.
+>
+> Para o referencial, comece pelas oito fontes listadas no cartão T17. Confira os trechos originais e os metadados antes de inserir citações e referências. Relacione cada fonte ao que ela sustenta e cite apenas as que utilizar. Se o conteúdo estiver inacessível, sinalize a leitura pendente. Os artigos tratam de cenários diferentes do nosso estudo. Informações bibliográficas incompletas e afirmações que precisem de redação dos autores devem ficar identificadas para revisão humana.
+>
+> Atualize a seção de Guilherme em PROMPTS.md com este pedido integral, ferramenta, resumo do que organizou e revisou, fontes consultadas e verificações efetivamente feitas. Confira os links. Apresente o diff e deixe a decisão de aceite para Guilherme antes do commit.
+
+**Resumo do resultado:** organizado um rascunho acadêmico nas seções solicitadas, com notas de redação/validação por seção e caminho previsto para o PDF. A metodologia separa os três classificadores do juiz híbrido; os resultados usam as contagens do CSV principal e distinguem snapshots divergentes de regressão e calibração. O cartão/lista das oito fontes acadêmicas não foi localizado no repositório, nos issues disponíveis ou no histórico de sessão consultado. Não foram inventadas citações: a leitura, a síntese comparativa e as referências dessas fontes estão marcadas como pendentes.
+
+**Fontes internas consultadas:** `docs/documentacao-tecnica.md`, `evidencias/README.md`, os relatórios `docs/Metricas_consumo.md`, `docs/analise_erros_classificacao.md`, `docs/Analise_erros.md`, `docs/Teste_regressao.md`, `docs/relatorio_calibracao_judge.md`, `docs/relatorio_qualidade_dados.md`, `docs/LLM_judge_calibracao.md`, `docs/Reavaliacao_human_review.md` e `docs/contrato-avaliacao.md`; trechos relevantes de `PROMPTS.md`; código de comparação, juiz, calibração e regressão. Foram lidos os CSVs atuais e arquivados usados nos resultados, incluindo bateria, métricas, pares de regressão e revisão humana.
+
+**Verificações efetivamente feitas:** as contagens foram recalculadas com `csv.DictReader`. O CSV principal tem 300 linhas (100 por modelo) e 46/24/32 acertos; o CSV de regressão do painel tem 20 pares e 10/3 acertos; a revisão humana tem 30 linhas, 10 chamados distintos e concordância 30/30. Foram identificados snapshots antigos (49/22/37 e 51/25/38), versões de regressão divergentes (11/2 e 10/3 versus os 9/3 do relatório) e diferença entre o CSV de calibração (10/20) e o texto de `LLM_judge_calibracao.md` (7/23). Foram verificados 32 links relativos em `docs/pesquisa-rascunho.md`, sem destinos quebrados; as nove seções solicitadas estão presentes. `git diff --check` terminou sem apontamentos. Não foram executados modelos ou testes.
+
+**Arquivos alterados nesta rodada:** `docs/pesquisa-rascunho.md` e `PROMPTS.md`.
+
+### Revisão do referencial teórico e das referências da T17
+
+- **Data:** 19/11/2026
+- **Responsável:** Guilherme Henrique de Castro
+- **Ferramenta:** GitHub Copilot usando o Copilot SDK no VS Code; modelo específico não informado. As páginas de origem foram consultadas diretamente com `web_fetch`.
+- **Pedido registrado:**
+
+> Use o material fornecido para revisar o referencial teórico e as referências de `docs/pesquisa-rascunho.md`. Relacione cada fonte às afirmações que ela sustenta. Diferencie as notas fornecidas das fontes que você conseguir consultar diretamente e registre as leituras pendentes.
+>
+> Na seção 7 de `PROMPTS.md`, registre este pedido, o uso do arquivo de apoio, as correções e as verificações realizadas. Mantenha o aceite de Guilherme pendente e apresente o diff antes do commit.
+
+**Material de apoio:** o texto “Fontes de apoio para o rascunho da T17”, com quatro artigos e quatro documentações, foi fornecido diretamente na mensagem do usuário. Não havia arquivo de apoio separado no workspace. As notas fornecidas serviram de roteiro; não foram tratadas como prova de leitura integral dos artigos.
+
+**Resumo do resultado:** substituída a tabela de fontes não identificadas por uma síntese que relaciona as oito fontes às afirmações que podem sustentar, citações autor-data no texto e referências com links e versões identificadas quando disponíveis. O texto diferencia os cenários dos artigos dos experimentos locais e liga as documentações ao código ou às pendências do projeto. Os artigos foram consultados diretamente apenas pela página arXiv de metadados e resumo; a leitura integral pelos integrantes continua pendente.
+
+**Fontes consultadas diretamente:** páginas arXiv de HELM (`2211.09110v2`), LLM-as-a-Judge (`2306.05685v4`), G-Eval (`2303.16634v3`) e Chatbot Arena (`2403.04132v1`); documentação do endpoint Generate do Ollama, página inicial da documentação Streamlit, referência Python `sqlite3` e documentação pytest no endereço `stable`. As páginas Ollama, Streamlit e pytest não fixam uma versão numérica; a URL do Python é `/3/` e a página consultada aponta para código CPython 3.15. A data de acesso registrada é 19/11/2026.
+
+**Verificações efetivamente feitas:** conferidos os metadados e resumos nas quatro páginas arXiv, as versões fixadas e os DOIs, além das quatro páginas oficiais de documentação. Os 37 links relativos do rascunho não têm destinos quebrados; os 12 links externos incluídos foram consultados. `git diff --check` passou e uma checagem adicional de whitespace nos dois arquivos não encontrou ocorrências inesperadas. Não foram executados testes nem lidos integralmente os artigos.
+
+**Arquivos alterados nesta rodada:** `docs/pesquisa-rascunho.md` e `PROMPTS.md`.
+
+**Correção adicional:** removidos os espaços ao final das linhas 3, 4 e 5 de `docs/pesquisa-rascunho.md`, mantendo as linhas em branco que separam o cabeçalho. As alterações ficam na branch para revisão; nenhum commit foi feito.
+
+Aceito como rascunho para revisão da equipe. A leitura integral das fontes, a ampliação do texto e a preparação do PDF ABNT permanecem pendentes.
+
 ---
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
