@@ -43,9 +43,31 @@ Essas contagens verificam a estrutura e os campos registrados; não reexecutam o
 | CI verde na tag `v1.0`, com link direto e captura da execução. | A branch local não contém a tag `v1.0`; a consulta GitHub à tag não encontrou commit, a API de Actions retornou zero workflows e zero execuções filtradas para `v1.0`. A página [GitHub Actions](https://github.com/GuihCastro/plataforma-avaliacao-llm/actions) é apenas o local de consulta, não substitui o link da execução. Criar/confirmar tag e workflow, executar CI e anexar link mais captura. |
 | Integração do Compose para abrir o painel. | [`compose.yaml`](../compose.yaml) define apenas `testes`, e [`Dockerfile`](../Dockerfile) executa pytest. `docker compose up` não inicializa Streamlit; adicionar serviço/porta/comando do painel é pendência. |
 | Confirmação da bateria que a equipe escolherá para o relatório. | O CSV de 20 pares é arquivado e a T11 registra a decisão como pendente; obter decisão explícita da equipe e identificador/versão da bateria. |
-| Captura real da interface e confirmação das escolhas arquiteturais. | Esta documentação foi conferida por leitura de código e AppTest; não foi feita captura visual nesta rodada. Confirmar com Guilherme/equipe motivações e alternativas arquiteturais que não constam nos registros. |
+| Confirmação das escolhas arquiteturais além das capturas da interface. | Foram adicionadas três capturas manuais feitas por Guilherme e conferidas visualmente no ChatGPT. As motivações e alternativas arquiteturais ainda não constam nos registros e permanecem pendentes de confirmação pela equipe. |
 | Reconciliação dos números dos relatórios com os CSVs. | `Metricas_consumo.md` diverge dos resultados em CSV; `Teste_regressao.md` diverge do CSV arquivado. Definir a fonte da versão final e corrigir ou contextualizar os relatórios após aprovação. |
 | Licenças específicas dos conjuntos de dados e versões dos modelos. | [`LICENSE`](../LICENSE) declara MIT para o projeto; não foi encontrada licença por dataset nem referência com versão/digest e licença dos modelos usados. Verificar origem/termos de cada fonte antes da publicação. |
+
+## Capturas manuais da interface
+
+As três capturas abaixo foram feitas manualmente por Guilherme Henrique de Castro e conferidas visualmente no ChatGPT. Elas documentam a interface nesta etapa; não reexecutam modelos nem demonstram uma nova execução dos modelos.
+
+### Painel de comparação dos modelos
+
+[![Painel de comparação dos modelos](imagens/painel-modelos.png)](imagens/painel-modelos.png)
+
+Captura manual do painel com a comparação dos resultados disponíveis. A imagem apresenta dados já registrados no projeto e não comprova uma execução manual ou automática nesta etapa.
+
+### Regressão arquivada
+
+[![Painel da regressão arquivada](imagens/painel-regressao.png)](imagens/painel-regressao.png)
+
+Captura manual do painel na opção de regressão. Os dados exibidos correspondem ao experimento arquivado em [`eval/results/results_old/regression_results_prompt_comparison.csv`](../eval/results/results_old/regression_results_prompt_comparison.csv); não representam uma nova execução da regressão.
+
+### Demonstração sintética da falha TIMEOUT
+
+[![Painel com demonstração sintética da falha TIMEOUT](imagens/painel-falha.png)](imagens/painel-falha.png)
+
+Captura manual do painel apresentando dados sintéticos com uma falha `TIMEOUT`. A imagem é uma demonstração da interface e não indica que um modelo real tenha sido executado nesta etapa.
 
 ## Falhas analisadas e contribuições/revisões do grupo
 

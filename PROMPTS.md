@@ -400,6 +400,36 @@ O comando solicitado foi executado na `.venv`:
 
 ---
 
+### Documentação das capturas manuais do painel — 21/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Prepare a documentação das três capturas feitas manualmente:
+>
+> - evidencias/imagens/painel-modelos.png
+> - evidencias/imagens/painel-regressao.png
+> - evidencias/imagens/painel-falha.png
+>
+> Confira se os arquivos existem e atualize evidencias/README.md com links relativos e descrições das imagens.
+>
+> Identifique a regressão como experimento arquivado e a falha TIMEOUT como demonstração com dados sintéticos. Não afirme que os modelos foram executados nesta etapa.
+>
+> Confira e preserve layout="wide" na chamada existente de st.set_page_config em src/app.py.
+>
+> Registre este pedido integralmente e as alterações realizadas na seção de Guilherme em PROMPTS.md. Informe que as capturas foram feitas manualmente por Guilherme e conferidas visualmente no ChatGPT.
+>
+> Não marque outras evidências pendentes como concluídas. Não execute modelos nem faça commit ou push. Apresente o diff para revisão.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Arquivos conferidos:** existiam os três PNGs solicitados em `evidencias/imagens/`: `painel-modelos.png`, `painel-regressao.png` e `painel-falha.png`.
+- **Alterações:** adicionada em `evidencias/README.md` uma seção de capturas manuais com links relativos e descrições das três imagens. O painel de modelos não afirma nova execução. A imagem de regressão foi identificada como experimento arquivado. A imagem da falha foi identificada como demonstração sintética com `TIMEOUT`. A linha de pendências foi ajustada somente para registrar a adição das capturas e manter pendente a confirmação das escolhas arquiteturais.
+- **Conferência do painel:** Guilherme adicionou manualmente `layout="wide"` em `src/app.py`, seguindo orientação do ChatGPT, para mostrar integralmente os indicadores da regressão. A etapa posterior de documentação apenas preservou esse ajuste.
+- **Conferência visual:** as capturas foram feitas manualmente por Guilherme Henrique de Castro e conferidas visualmente no ChatGPT nesta etapa.
+- **Validação:** não foram executados modelos reais, testes automatizados desta documentação ou avaliações. Não houve consulta ao Ollama.
+- **Decisão:** documentação preparada no diff para revisão humana. Não houve commit nem push. O aceite permanece pendente de Guilherme Henrique de Castro.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
