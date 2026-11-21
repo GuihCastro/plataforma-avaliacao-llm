@@ -1,0 +1,8 @@
+2026-11-20 21:51:11 [INFO] Iniciando avaliação | Modelo: llama3.2:1b | Prompt: v1
+2026-11-20 21:51:11 [INFO] Processando chamado #1: 'Minha internet caiu e a luz vermelha está piscando no modem.'
+2026-11-20 21:51:19 [INFO] Decisão #1 | Esperado: 'Suporte Técnico' | Resposta IA: 'Suporte Técnico' | Acerto: True | Latência: 7.939s | Tokens: 7
+2026-11-20 21:51:19 [INFO] Processando chamado #2: 'Cobraram duas vezes a fatura do meu cartão neste mês.'
+2026-11-20 21:51:21 [INFO] Decisão #2 | Esperado: 'Financeiro' | Resposta IA: 'Essa categoria seria Cancelamento.' | Acerto: False | Latência: 2.232s | Tokens: 8
+2026-11-20 21:51:21 [INFO] Processando chamado #3: 'Quero cancelar minha assinatura antes da renovação.'
+2026-11-20 21:51:24 [INFO] Decisão #3 | Esperado: 'Cancelamento' | Resposta IA: 'A categoria correta para o chamado de suporte é Financeiro.' | Acerto: False | Latência: 2.412s | Tokens: 16
+2026-11-20 21:51:24 [INFO] Avaliação concluída! CSV salvo em: eval/results/resultados_backend.csv

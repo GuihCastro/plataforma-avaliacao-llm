@@ -1,6 +1,19 @@
 import csv
+import logging
 import os
 from ollama_client import gerar_classificacao
+
+# Configura logs com data e hora (Observabilidade - Evidência #4)
+os.makedirs("evidencias", exist_ok=True)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[
+        logging.FileHandler("evidencias/execucao_backend.log", encoding="utf-8"),
+        logging.StreamHandler(),
+    ],
+)
 
 CHAMADOS_EXEMPLO = [
     {"input": "Minha internet caiu e a luz vermelha está piscando no modem.", "expected": "Suporte Técnico"},
@@ -10,9 +23,11 @@ CHAMADOS_EXEMPLO = [
 
 
 def executar_avaliacao(modelo: str = "llama3.2:1b", prompt_version: str = "v1"):
+    logging.info(f"Iniciando avaliação | Modelo: {modelo} | Prompt: {prompt_version}")
     resultados = []
 
-    for item in CHAMADOS_EXEMPLO:
+    for idx, item in enumerate(CHAMADOS_EXEMPLO, start=1):
+        logging.info(f"Processando chamado #{idx}: '{item['input']}'")
         prompt_completo = (
             "Classifique o chamado de suporte abaixo em APENAS UMA das categorias: "
             "Suporte Técnico, Financeiro ou Cancelamento.\n\n"
@@ -22,6 +37,12 @@ def executar_avaliacao(modelo: str = "llama3.2:1b", prompt_version: str = "v1"):
         saida = gerar_classificacao(modelo=modelo, prompt=prompt_completo)
         resposta_limpa = saida["response"]
         acertou = item["expected"].lower() in resposta_limpa.lower()
+
+        logging.info(
+            f"Decisão #{idx} | Esperado: '{item['expected']}' | "
+            f"Resposta IA: '{resposta_limpa}' | Acerto: {acertou} | "
+            f"Latência: {saida['latency_seconds']}s | Tokens: {saida['tokens']}"
+        )
 
         resultados.append({
             "model": modelo,
@@ -43,6 +64,7 @@ def executar_avaliacao(modelo: str = "llama3.2:1b", prompt_version: str = "v1"):
         escritor.writeheader()
         escritor.writerows(resultados)
 
+    logging.info(f"Avaliação concluída! CSV salvo em: {caminho_csv}")
     print(f"Avaliação concluída! Arquivo salvo em: {caminho_csv}")
 
 

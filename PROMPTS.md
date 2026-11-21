@@ -300,6 +300,27 @@ Aceito como rascunho para revisão da equipe. A leitura integral das fontes, a a
 
 ---
 
+## 8. Resolução do conflito do PR #13
+
+- Data de execução — 21/11/2026.
+- Ferramenta — Codex no ChatGPT.
+- Pedido de Guilherme
+
+> Antes de seguirmos para isso: ao tentar aceitar o PR de um colega da equipe, tive problemas de conflito com o merge. Resolva: https://github.com/GuihCastro/plataforma-avaliacao-llm/pull/13/conflicts
+
+O Codex reproduziu o merge da `main` `1d89360` na branch `IamMorpheu-patch-1`, do PR #13, originalmente em `c072a6f`. O conflito era do tipo add/add em `src/avaliador.py`, que havia sido adicionado em ambas as branches.
+
+A resolução mantém os logs com data e hora do PR #13, a gravação do CSV e a mensagem final no terminal. Os arquivos da infraestrutura e o cliente `gerar_classificacao` da main entram pelo merge.
+
+A validação executou o teste existente de `tests/test_backend.py` diretamente com a geração simulada, em diretório temporário. Foram conferidos os três registros do CSV e os oito registros de log. Os CSVs e logs versionados foram preservados durante essa validação. Os oito testes de `tests/test_results_csv.py` passaram com `python -m unittest discover -s tests -p test_results_csv.py -v`. A compilação de `src/avaliador.py`, `src/ollama_client.py` e `tests/test_backend.py` com `py_compile` passou.
+
+A instalação das dependências da suite não foi concluída no ambiente de revisão. Pytest e Streamlit ficaram indisponíveis para a execução completa. A inspeção também identificou uma incompatibilidade anterior ao PR #13, na main do PR #12. `src/ollama_client.py` fornece `gerar_classificacao`, mas retirou a classe `OllamaClient` ainda importada pelo juiz, pelos scripts de avaliação e pelos testes antigos. Essa ocorrência precisa de correção própria e não é causada pelo conflito em `avaliador.py`.
+
+A resolução da branch do PR #13 foi preparada para conferência de Guilherme. O merge final do PR na main depende da revisão da equipe.
+
+---
+
+
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
 **Hugo — IA e Avaliação**
@@ -857,3 +878,8 @@ Não foram encontradas discordâncias nessa execução.
 O resultado indica concordância perfeita dentro da amostra utilizada. Entretanto, existem limitações: os 30 registros representam apenas 10 situações distintas, repetidas entre os três modelos, e as correspondências exatas são resolvidas diretamente pelo Python, sem consulta ao LLM Judge.
 
 Por isso, o resultado não deve ser interpretado como garantia de desempenho geral do avaliador.
+
+### Interação X — Estruturação de Infraestrutura Docker e Backend Ollama
+- **Prompt resumido:** Solicitei a estruturação do `Dockerfile`, `compose.yaml` e dos módulos Python (`ollama_client.py` e `avaliador.py`) para integrar o Ollama local ao painel Streamlit e exportar métricas em CSV.
+- **Resumo da resposta:** A IA gerou a configuração multi-container com rede interna (`OLLAMA_HOST`), volumes persistentes e um cliente HTTP para coletar latência e tokens.
+- **O que foi aceito/corrigido:** Aceita a arquitetura desacoplada e o contrato CSV. Corrigido o tratamento da variável `OLLAMA_HOST` para adicionar `http://` automaticamente quando executado fora do Docker no Windows.
