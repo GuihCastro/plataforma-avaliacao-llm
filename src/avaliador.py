@@ -65,8 +65,8 @@ def executar_avaliacao(modelo: str = "llama3.2:1b", prompt_version: str = "v1"):
         escritor.writerows(resultados)
 
     logging.info(f"Avaliação concluída! CSV salvo em: {caminho_csv}")
+    print(f"Avaliação concluída! Arquivo salvo em: {caminho_csv}")
 
 
 if __name__ == "__main__":
     executar_avaliacao(modelo="llama3.2:1b", prompt_version="v1")
-

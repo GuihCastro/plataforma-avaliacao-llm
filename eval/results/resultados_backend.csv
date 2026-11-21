@@ -1,0 +1,4 @@
+model,input,expected,response,correct,prompt_version,latency_seconds,tokens
+llama3.2:1b,Minha internet caiu e a luz vermelha está piscando no modem.,Suporte Técnico,Cancelamento.,false,v1,30.741,4
+llama3.2:1b,Cobraram duas vezes a fatura do meu cartão neste mês.,Financeiro,Suporte Técnico,false,v1,2.35,7
+llama3.2:1b,Quero cancelar minha assinatura antes da renovação.,Cancelamento,Suporte Técnico.,false,v1,2.365,8
