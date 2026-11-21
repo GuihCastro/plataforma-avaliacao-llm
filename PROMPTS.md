@@ -857,3 +857,8 @@ Não foram encontradas discordâncias nessa execução.
 O resultado indica concordância perfeita dentro da amostra utilizada. Entretanto, existem limitações: os 30 registros representam apenas 10 situações distintas, repetidas entre os três modelos, e as correspondências exatas são resolvidas diretamente pelo Python, sem consulta ao LLM Judge.
 
 Por isso, o resultado não deve ser interpretado como garantia de desempenho geral do avaliador.
+
+### Interação X — Estruturação de Infraestrutura Docker e Backend Ollama
+- **Prompt resumido:** Solicitei a estruturação do `Dockerfile`, `compose.yaml` e dos módulos Python (`ollama_client.py` e `avaliador.py`) para integrar o Ollama local ao painel Streamlit e exportar métricas em CSV.
+- **Resumo da resposta:** A IA gerou a configuração multi-container com rede interna (`OLLAMA_HOST`), volumes persistentes e um cliente HTTP para coletar latência e tokens.
+- **O que foi aceito/corrigido:** Aceita a arquitetura desacoplada e o contrato CSV. Corrigido o tratamento da variável `OLLAMA_HOST` para adicionar `http://` automaticamente quando executado fora do Docker no Windows.
