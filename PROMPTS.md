@@ -430,6 +430,64 @@ O comando solicitado foi executado na `.venv`:
 
 ---
 
+### Integração contínua com GitHub Actions — 21/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Configure a integração contínua deste repositório com GitHub Actions.
+>
+> Crie .github/workflows/tests.yml para:
+> - Executar em pull requests destinados à main, pushes na main,
+>   tags v* e acionamento manual.
+> - Usar Ubuntu e Python 3.11, compatível com o Dockerfile.
+> - Instalar requirements.txt.
+> - Executar python -m pytest -q tests/.
+> - Usar permissão contents: read.
+> - Definir um limite de tempo para o job.
+>
+> Os testes devem funcionar sem Ollama, Docker ou download de modelos.
+> Preserve as chamadas HTTP simuladas existentes.
+>
+> O teste de backend escreve em arquivos versionados de resultados e
+> logs. Ajuste seu isolamento, usando um diretório temporário, para
+> que os testes não sobrescrevam evidências ou resultados reais.
+> Não enfraqueça as verificações para obter aprovação.
+>
+> Atualize evidencias/README.md:
+> - Corrija a informação desatualizada sobre Dockerfile e compose.yaml:
+>   a configuração atual já inicia o painel Streamlit.
+> - Diferencie configuração existente de execução validada:
+>   não afirme que o Docker foi executado nesta etapa.
+> - Mantenha a evidência de CI verde na tag v1.0 como pendente.
+>
+> Execute localmente na .venv:
+> .\.venv\Scripts\python.exe -m pytest -q tests/
+>
+> Confira git diff --check e git status --short.
+> Registre este pedido integralmente, as alterações e os resultados
+> reais na seção de Guilherme em PROMPTS.md.
+>
+> Não execute modelos, não crie tags e não faça commit ou push.
+> Apresente o diff e a saída dos testes para revisão.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Alterações:** criado `.github/workflows/tests.yml` com eventos para PR direcionado a `main`, push em `main`, tags `v*` e disparo manual; job em `ubuntu-latest` com Python 3.11, permissão `contents: read`, limite de 15 minutos, instalação de `requirements.txt` e comando `python -m pytest -q tests/`.
+- **Isolamento do teste de backend:** `tests/test_backend.py` executa o backend em subprocesso com diretório de trabalho `tmp_path`. A chamada de geração continua simulada e é verificada três vezes; CSV e log são conferidos dentro do diretório temporário, incluindo três registros e a configuração de modelo/versão de prompt. A importação e a configuração de logging também ocorrem nesse diretório, sem sobrescrever arquivos versionados.
+- **Documentação:** `evidencias/README.md` agora informa que o `Dockerfile` e `compose.yaml` configuram o serviço Streamlit, mas que a execução do Docker Compose não foi validada nesta etapa. A linha da CI verde na tag `v1.0` permanece como pendência.
+- **Resultado real:** execução local do comando solicitado:
+
+```text
+............................                             [100%]
+28 passed, 16 subtests passed in 2.35s
+```
+
+`git diff --check` foi executado e não indicou problemas de whitespace. `git status --short` foi conferido; apresentou `M PROMPTS.md`, `M evidencias/README.md`, `M tests/test_backend.py` e `?? .github/`.
+
+- **Escopo de validação:** nenhum modelo foi executado; não foi executado Docker Compose ou CI remoto; nenhuma tag foi criada; não houve commit nem push.
+- **Decisão:** workflow e ajustes de teste/documentação preparados para revisão. A comprovação de CI verde na tag `v1.0` permanece pendente.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
