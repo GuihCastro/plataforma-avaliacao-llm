@@ -296,7 +296,11 @@ def _render_prompt_regression(content: bytes) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Resultados da avaliação", page_icon="📊")
+    st.set_page_config(
+        page_title="Resultados da avaliação",
+        page_icon="📊",
+        layout="wide",
+    )
     st.title("Painel de resultados")
     source = st.radio(
         "Fonte dos resultados",
