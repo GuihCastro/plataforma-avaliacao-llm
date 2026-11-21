@@ -1,9 +1,24 @@
-
 services:
-  testes:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_server
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  app:
     build: .
-    container_name: avaliacao-llm-testes
+    container_name: plataforma_avaliacao
+    ports:
+      - "8501:8501"
     environment:
-      OLLAMA_BASE_URL: http://host.docker.internal:11434
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./eval:/app/eval
+    depends_on:
+      - ollama
+
+volumes:
+  ollama_data:
+
