@@ -320,6 +320,86 @@ A resolução da branch do PR #13 foi preparada para conferência de Guilherme. 
 
 ---
 
+## 9. Restauração da compatibilidade do cliente Ollama
+
+- **Data:** 21/11/2026
+- **Responsável:** Guilherme Henrique de Castro
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Prompt completo:**
+
+> Corrija a compatibilidade de `src/ollama_client.py`.
+>
+> Recupere a classe anterior consultando `git show d8cbb2a:src/ollama_client.py`. Restaure `OllamaClient`, `generate` e `generate_with_metrics`, preservando seus retornos, métricas e tratamento de erros. Mantenha disponível a função atual `gerar_classificacao`, usada pelo novo backend.
+>
+> Para configurar o endereço da classe, respeite esta prioridade: argumento `base_url`, variável `OLLAMA_BASE_URL`, variável `OLLAMA_HOST` e endereço local padrão. Confira o uso de `OLLAMA_HOST` no Compose.
+>
+> Atualize `tests/test_ollama_client.py` com respostas HTTP simuladas para verificar os dois contratos, as métricas, o endereço configurado e os erros. Os testes devem funcionar localmente sem depender do Ollama.
+>
+> Execute na `.venv`:
+>
+> `.\.venv\Scripts\python.exe -m pytest -q tests/test_ollama_client.py tests/test_app.py tests/test_results_csv.py`
+>
+> Registre este pedido integral, as alterações, os resultados reais e as decisões na seção de Guilherme em `PROMPTS.md`. Apresente o diff e deixe o aceite pendente para revisão antes do commit.
+
+### Alterações realizadas
+
+- Restabelecida em `src/ollama_client.py` a classe `OllamaClient` e os métodos `generate` e `generate_with_metrics`, recuperando o contrato anterior: `generate` retorna somente texto ou `None`, enquanto `generate_with_metrics` retorna o texto e todas as métricas de entrada, saída, duração total e durações por etapa.
+- Preservados os quatro modelos suportados pela versão anterior, a validação de modelo com `ValueError`, `response.raise_for_status()`, timeout de 120 segundos e o retorno `None` com mensagem de erro para `RequestException`.
+- Mantida `gerar_classificacao`; a função continua retornando `response`, `latency_seconds` e `tokens` para o backend atual e passa a respeitar a configuração dinâmica de endereço.
+- Implementada a prioridade de endereço `base_url` explícito, `OLLAMA_BASE_URL`, `OLLAMA_HOST` e `http://localhost:11434`. Endereços sem esquema recebem `http://`, barras finais são removidas e `0.0.0.0` é convertido para `localhost`.
+- Conferido `compose.yaml`: o serviço `app` define `OLLAMA_HOST=http://ollama:11434`, endereço interno do Compose compatível com a nova resolução.
+- Reescrito `tests/test_ollama_client.py` sem chamadas reais ao Ollama, usando respostas HTTP simuladas para os contratos de texto e métricas, a função `gerar_classificacao`, a prioridade de configuração, o endereço padrão, modelos inválidos, erros de conexão e erros HTTP.
+
+### Resultado real da validação
+
+O comando solicitado foi executado na `.venv`:
+
+```text
+..........................                                     [100%]
+26 passed, 16 subtests passed in 10.37s
+```
+
+### Decisão
+
+- Alteração preparada, validada e deixada no diff da branch para revisão.
+- Não foi realizado commit nem push.
+- Aceite pendente de Guilherme Henrique de Castro.
+
+---
+
+### Correção adicional da normalização do endereço — 21/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Corrija apenas a normalização do endereço em src/ollama_client.py:
+>
+> 1. Substitua 0.0.0.0 por localhost somente quando o hostname completo for exatamente 0.0.0.0. Preserve esquema, porta e os demais componentes.
+> 2. Preserve endereços como:
+>    - http://10.0.0.0:11434
+>    - http://node-0.0.0.0.example:11434
+> 3. Acrescente testes para esses casos e mantenha a conversão de 0.0.0.0:8080 para http://localhost:8080.
+> 4. Preserve os dois contratos, a precedência das configurações e os testes existentes.
+> 5. Registre este pedido integral, a correção e o resultado real da validação na seção 9 de PROMPTS.md. Mantenha o aceite humano pendente.
+>
+> Execute:
+> .\.venv\Scripts\python.exe -m pytest -q tests/test_ollama_client.py tests/test_app.py tests/test_results_csv.py
+>
+> Não execute modelos reais. Não faça commit nem push.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Correção:** a normalização deixou de substituir texto em qualquer parte da URL e passou a comparar o hostname completo do componente `netloc`, preservando esquema, porta, caminho, consulta e fragmento. A substituição ocorre apenas para `0.0.0.0` e `0.0.0.0:<porta>`; `10.0.0.0` e `node-0.0.0.0.example` permanecem intactos.
+- **Testes:** acrescentada cobertura para `http://10.0.0.0:11434` e `http://node-0.0.0.0.example:11434`, além da manutenção do caso `0.0.0.0:8080`.
+- **Validação real:** o comando solicitado foi executado sem chamadas a modelos reais:
+
+```text
+...........................                                     [100%]
+27 passed, 16 subtests passed in 5.29s
+```
+
+- **Decisão:** correção validada e mantida no diff para revisão. Não houve commit nem push. O aceite humano permanece pendente.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
