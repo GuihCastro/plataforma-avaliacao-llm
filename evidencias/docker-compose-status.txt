@@ -1,0 +1,3 @@
+﻿NAME                   IMAGE                          COMMAND                  SERVICE   CREATED         STATUS         PORTS
+ollama_server          ollama/ollama:latest           "/bin/ollama serve"      ollama    5 minutes ago   Up 5 minutes   0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+plataforma_avaliacao   plataforma-avaliacao-llm-app   "streamlit run src/aÔÇª"   app       5 minutes ago   Up 5 minutes   0.0.0.0:8501->8501/tcp, [::]:8501->8501/tcp

@@ -1,0 +1,26 @@
+﻿plataforma_avaliacao  | 2026-11-23T23:39:08.963086758Z 
+ollama_server         | 2026-11-23T23:39:14.669606024Z Couldn't find '/root/.ollama/id_ed25519'. Generating new private key.
+plataforma_avaliacao  | 2026-11-23T23:39:08.963205074Z Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+ollama_server         | 2026-11-23T23:39:14.670712540Z Your new public key is: 
+plataforma_avaliacao  | 2026-11-23T23:39:08.963208246Z 
+plataforma_avaliacao  | 2026-11-23T23:39:09.417229204Z 2026-11-23 23:39:09.416 Uvicorn server started on 0.0.0.0:8501
+ollama_server         | 2026-11-23T23:39:14.670722381Z 
+plataforma_avaliacao  | 2026-11-23T23:39:10.153344793Z 
+plataforma_avaliacao  | 2026-11-23T23:39:10.153380160Z   You can now view your Streamlit app in your browser.
+plataforma_avaliacao  | 2026-11-23T23:39:10.153382028Z 
+plataforma_avaliacao  | 2026-11-23T23:39:10.153382689Z   Local URL: http://localhost:8501
+plataforma_avaliacao  | 2026-11-23T23:39:10.153384167Z   Network URL: http://172.18.0.3:8501
+plataforma_avaliacao  | 2026-11-23T23:39:10.153384745Z   External URL: http://170.78.248.41:8501
+plataforma_avaliacao  | 2026-11-23T23:39:10.153385319Z 
+plataforma_avaliacao  | 2026-11-23T23:39:10.153385946Z   Detected WSL. Using poll-based file watching for better compatibility. To force watchdog, set server.fileWatcherType = "watchdog".
+ollama_server         | 2026-11-23T23:39:14.670723159Z ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcsm7uWN5ssUyTZC6QJZrAdV439kn4I1ssCnq1TDQUs
+ollama_server         | 2026-11-23T23:39:14.670724904Z 
+ollama_server         | 2026-11-23T23:39:14.680085555Z time=2026-11-23T23:39:14.679Z level=INFO source=routes.go:2484 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: LLAMA_ARG_FIT: LLAMA_ARG_FIT_TARGET: NO_PROXY: OLLAMA_CONTEXT_LENGTH:0 OLLAMA_CREATE_REMOTE:false OLLAMA_DEBUG:INFO OLLAMA_DEBUG_LOG_REQUESTS:false OLLAMA_EDITOR: OLLAMA_FLASH_ATTENTION:false OLLAMA_GO_TEMPLATE:true OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://0.0.0.0:11434 OLLAMA_IGPU_ENABLE: OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MAX_TRANSFER_STREAMS:4 OLLAMA_MODELS:/root/.ollama/models OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NO_CLOUD:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false OLLAMA_VULKAN:true ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
+ollama_server         | 2026-11-23T23:39:14.680253076Z time=2026-11-23T23:39:14.679Z level=INFO source=routes.go:2486 msg="Ollama cloud disabled: false"
+ollama_server         | 2026-11-23T23:39:14.681338250Z time=2026-11-23T23:39:14.681Z level=INFO source=images.go:1033 msg="total blobs: 0"
+ollama_server         | 2026-11-23T23:39:14.681352370Z time=2026-11-23T23:39:14.681Z level=INFO source=images.go:1042 msg="total unused blobs removed: 0"
+ollama_server         | 2026-11-23T23:39:14.682979566Z time=2026-11-23T23:39:14.682Z level=INFO source=routes.go:2546 msg="Listening on [::]:11434 (version 0.40.17)"
+ollama_server         | 2026-11-23T23:39:14.703772221Z time=2026-11-23T23:39:14.703Z level=INFO source=runner.go:60 msg="discovering available GPUs..."
+ollama_server         | 2026-11-23T23:39:14.936091939Z time=2026-11-23T23:39:14.935Z level=INFO source=model_recommendations.go:177 msg="model recommendations cache sleep scheduled" wait=4h10m10.404099769s consecutive_failures=0
+ollama_server         | 2026-11-23T23:39:18.610732548Z time=2026-11-23T23:39:18.610Z level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="3.7 GiB" available="2.8 GiB"
+ollama_server         | 2026-11-23T23:39:18.610817131Z time=2026-11-23T23:39:18.610Z level=INFO source=routes.go:2596 msg="vram-based default context" total_vram="0 B" default_num_ctx=4096

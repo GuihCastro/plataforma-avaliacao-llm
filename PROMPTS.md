@@ -488,6 +488,80 @@ O comando solicitado foi executado na `.venv`:
 
 ---
 
+### Validação manual do painel pelo Docker Compose — 23/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Documente a validação manual do painel via Docker Compose,
+> realizada por Guilherme em 23/11/2026.
+>
+> Leia:
+> - evidencias/docker-compose.log
+> - evidencias/docker-compose-status.txt
+>
+> Atualize evidencias/README.md com links para esses arquivos e
+> registre o alcance da validação:
+> - docker compose up --build concluiu a construção e inicialização;
+> - os serviços app e ollama ficaram em execução;
+> - Guilherme abriu e conferiu as telas de resultados dos modelos,
+>   regressão arquivada e demonstração JSON no localhost:8501;
+> - o ChatGPT conferiu as saídas e capturas enviadas.
+>
+> Registre como realizada a validação manual da inicialização do
+> painel pelo Compose. Mantenha pendentes o vídeo, a execução real
+> dos modelos, seus logs e a CI na tag v1.0.
+>
+> Não afirme que houve inferência ou que a comunicação entre o
+> backend e o Ollama foi testada.
+>
+> Registre este pedido integralmente e as alterações na seção de
+> Guilherme em PROMPTS.md.
+>
+> Não altere código, não execute modelos e não faça commit ou push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Arquivos conferidos:** `evidencias/docker-compose.log` e `evidencias/docker-compose-status.txt`.
+- **Alterações:** `evidencias/README.md` agora registra como realizada a validação manual da inicialização pelo Compose em 23/11/2026, links para os dois registros e a conferência das telas de resultados dos modelos, regressão arquivada e demonstração JSON em `localhost:8501`. Também registra que o ChatGPT conferiu as saídas e capturas enviadas. A descrição explicita que não houve inferência nem teste da comunicação entre backend e Ollama.
+- **Pendências preservadas:** vídeo, execução real dos modelos, logs dessa execução e CI verde na tag `v1.0` permanecem pendentes.
+- **Verificação:** `git diff --check` não apontou problemas de whitespace. `git status --short` apresentou `M PROMPTS.md`, `M evidencias/README.md` e `?? evidencias/docker-compose-status.txt`.
+- **Escopo:** nenhuma alteração de código; modelos não foram executados; não houve commit nem push.
+
+---
+
+### Correção da fonte dos logs de inicialização do Compose — 23/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Ajuste a documentação da validação do Docker Compose:
+>
+> 1. Use evidencias/docker-compose-inicializacao.txt como arquivo
+>    versionável dos logs de inicialização. Atualize os links no
+>    evidencias/README.md.
+>
+> 2. Esclareça que esse arquivo contém a saída dos serviços obtida
+>    com docker compose logs --no-color --timestamps.
+>    Ele não contém as etapas da construção da imagem.
+>
+> 3. Registre separadamente que a conclusão do build foi conferida
+>    na saída de docker compose up --build enviada por Guilherme
+>    ao ChatGPT.
+>
+> 4. Registre essa correção em PROMPTS.md, preservando integralmente
+>    os pedidos anteriores e mantendo as demais pendências.
+>
+> Não altere código nem execute novamente o build ou modelos.
+> Não faça commit ou push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Alterações:** os links em `evidencias/README.md` agora apontam para `evidencias/docker-compose-inicializacao.txt` e `evidencias/docker-compose-status.txt`. A documentação distingue a saída de `docker compose logs --no-color --timestamps`, que não contém etapas de build, da confirmação separada da conclusão do build na saída de `docker compose up --build` enviada por Guilherme ao ChatGPT. O registro anterior do pedido e da validação foi preservado.
+- **Pendências preservadas:** vídeo, execução real dos modelos, logs da execução dos modelos e CI verde na tag `v1.0`.
+- **Verificação:** `git diff --check` não apontou problemas de whitespace. `git status --short` apresentou `M PROMPTS.md`, `M evidencias/README.md`, `?? evidencias/docker-compose-inicializacao.txt` e `?? evidencias/docker-compose-status.txt`.
+- **Escopo:** nenhuma alteração de código; build e modelos não foram executados novamente; não houve commit nem push.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
