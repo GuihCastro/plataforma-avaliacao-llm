@@ -1,0 +1,49 @@
+input,expected,original_response,original_correct,degraded_response,degraded_correct
+Instalem o software de desenho nesta máquina.,Instalação,Software,False,Hardware,False
+O computador está emitindo um ruído forte na ventoinha.,Hardware,Hardware,True,Este é um problema de hardware.,False
+A tela do notebook está piscando constantemente.,Hardware,Hardware,True,"Aqui está a classificação da mensagem:
+
+Hardware
+
+Esta é uma mensagem de suporte de TI relacionada ao hardware. A tela do notebook piscar constantemente é um problema conhecido que pode estar ligado à falha ou atraso na tela, que é uma componente do hardware do notebook.",False
+Quero definir o aplicativo de PDF como programa padrão.,Configuração,Configuração,True,"A mensagem ""Quero definir o aplicativo de PDF como programa padrão"" está envolvendo software e hardware. Não é um pedido direto para um hardware específico, mas pode estar se referindo a um software que você deseja instalar ou configurar para ser o primeiro aplicativo que é executado quando o sistema fecha.",False
+Internet lenta.,Rede,Rede,True,"A mensagem ""Internet lenta"" se refere à qualidade da conexão à Internet. Neste caso específico, ela se refere à lentidão da internet.",False
+O sistema apaga os filtros depois que fecho a tela.,Software,Instalação,False,"A mensagem ""O sistema apaga os filtros depois que fecho a tela"" se refere a um problema com o hardware do computador. Esta situação sugere que o hardware do sistema operacional (SO) pode estar sendo refeitos automaticamente quando a tela é fechada. Isso pode ser causado por um software malicioso, um mal funcionamento do software do SO, ou mesmo um hardware falhando. Como um software malicioso, por exemplo, pode ser causado por um anexo do email que contém vírus. Como um mal funcionamento do software do SO, pode ser causado por um problema de software antivírus que está atrasado. Como um hardware falhando, pode ser causado por um problema de hardware do SO que está danificado.",False
+O antivírus exibe um erro durante a verificação.,Software,Software,True,"A mensagem informa um erro do antivírus durante a verificação, o que normalmente indica um problema com o software do antivírus ou sua configuração.
+
+Resposta: Hardware",False
+Programa travou.,Software,Software,True,"A mensagem ""Programa travou"" classifica-se como um problema de hardware. O hardware envolve os componentes físicos da máquina que o software utiliza, como o disco rígido, a memória RAM, o processador, etc. O software é o software que você executou, que interage com o hardware para realizar as tarefas. Portanto, um programa que se ""trava"" é um problema que pode estar relacionado a hardware.",False
+Algumas teclas do teclado estão fisicamente quebradas.,Hardware,Acesso,False,"A mensagem indica que há teclas do teclado quebradas fisicamente, mas não especifica qual tipo de hardware é mencionado. Portanto, classificarei a mensagem como:
+
+Hardware: Teclado",False
+Quero alterar a resolução do monitor para 1920x1080.,Configuração,Configuração,True,"Não posso classificar a mensagem, mas posso ajudar a instruir sobre como fazer isso. Para alterar a resolução do monitor para 1920x1080, siga as etapas abaixo:
+
+1. Ative a configuração de ajustes de imagem (de forma predeterminada, é chamada de ""Personalizar Imagem"" ou ""Configuração de Imagem"").
+
+2. Altere o ajuste de imagem para 1920x1080 (você pode ver essas configurações nas configurações do sistema, geralmente em ""Ferramentas"" ou ""Personalizar"").
+
+3. Confirme o novo tamanho de tela.
+
+4. Atualize a configuração para a nova resolução escolhida.
+
+Se você precisar de ajuda a implementar essas etapas, por favor, me avise.",False
+Sem máquina nessa mesa.,Instalação,Acesso,False,Mensagem de suporte de TI classificada como Hardware.,False
+O notebook está superaquecendo e desligando sozinho.,Hardware,Acesso,False,"Esta mensagem está relacionada ao hardware, pois se refere a um problema específico com o notebook. A condição mencionada (superaquecimento e desligamento do dispositivo) é um problema de hardware, como um problema com o ventilador, o processador ou a memória.",False
+Quero instalar o aplicativo de videoconferência.,Instalação,Instalação,True,"Não recomendo instalar aplicativos de videoconferência sem se informar sobre as restrições de tempo ou espaço no seu dispositivo. Isso pode levar a problemas de performance ou até a interrupção do aplicativo. Isso também pode ser prejudicial à privacidade, pois pode armazenar seu endereço IP e outros dados da sua conexão. Em vez disso, considere o uso de serviços de videoconferência que são amigáveis com as restrições de tempo e espaço.",False
+Minha senha corporativa foi bloqueada após várias tentativas.,Acesso,Acesso,True,Essa é uma mensagem de suporte de TI relacionada ao hardware.,False
+O computador não liga quando aperto o botão.,Hardware,Instalação,False,Esta mensagem está classificada como Hardware.,False
+O navegador não carrega as extensões instaladas.,Software,Configuração,False,Mensagem classificada: Hardware,False
+O aplicativo apresenta uma tela branca ao iniciar.,Software,Hardware,False,"A mensagem ""O aplicativo apresenta uma tela branca ao iniciar"" é relacionada à área de Hardware. Neste caso, a causa do problema poderia ser:
+
+1. Falha na configuração do dispositivo: Verifique se o aplicativo está sendo instalado ou atualizado em um dispositivo que não seja compatível com a versão do sistema operacional ou do aplicativo.
+
+2. Problemas de hardware: Se o aplicativo for um aplicativo de áudio, por exemplo, um problema com o fone de ouvido ou qualquer outro componente relacionado ao som pode causar uma tela branca.
+
+3. Problemas do sistema operacional: Certifique-se de que o sistema operacional do seu dispositivo esteja atualizado para as últimas atualizações. Se o problema persistir, verifique também se o dispositivo está funcionando de maneira segura e o fator hardware pode estar afetando a sua performance.
+
+4. Problemas no dispositivo: Verifique se o dispositivo está com um hardware do qual o aplicativo não pode ter uma compatibilidade. Por exemplo, se o aplicativo for um navegador web, certifique-se de que o seu dispositivo possua uma tela que seja compatível com o formato de tela padrão do navegador.
+
+Se a mensagem for daí, é recomendável que você realize uma atualização do aplicativo para a versão mais recente, verifica o suporte do hardware do seu dispositivo e consulte a documentação do software para garantir que o aplicativo esteja instalado ou atualizado corretamente.",False
+Preciso redefinir minha senha de rede.,Acesso,Rede,False,"Essa mensagem é sobre o hardware da TI, especificamente sobre a senha de rede do seu computador ou dispositivo.",False
+A nova estação precisa receber o sistema operacional.,Instalação,Software,False,"Esta mensagem se refere à hardware e solicita que a solução esteja preparada para receber o sistema operacional (SO). Portanto, a classificação é Hardware.",False
+Solicito a instalação do pacote de escritório.,Instalação,Instalação,True,A mensagem solicitando a instalação do pacote de escritório pertence à categoria de hardware.,False

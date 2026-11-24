@@ -588,6 +588,49 @@ O comando solicitado foi executado na `.venv`:
 
 ---
 
+### Documentação da regressão real 20261123-213619 — 23/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Documente a execução real de regressão 20261123-213619.
+>
+> Leia:
+> - eval/results/execucoes/20261123-213619/regressao.csv
+> - evidencias/regressao-20261123-213619.txt
+>   (arquivo UTF-16; contém acentos corrompidos na saída capturada).
+>
+> Preserve os arquivos originais e confira os resultados:
+> 20 chamados distintos, 10 acertos originais, zero degradados,
+> nenhuma resposta vazia e queda de 50 pontos percentuais.
+>
+> Crie docs/regressao-20261123-213619.md explicando:
+> - modelo qwen2.5:1.5b, ID registrado 65ec06548149;
+> - execução em 23/11/2026 no horário de Brasília;
+> - semente 42 usada somente para selecionar a amostra;
+> - geração com parâmetros padrão do Ollama;
+> - avaliação por comparação exata normalizada, sem LLM juiz;
+> - respostas extensas do prompt degradado também falham no formato;
+> - resultados específicos desta rodada, sem generalização estatística.
+>
+> Atualize evidencias/README.md com links para o relatório, CSV e log.
+> Diferencie esta rodada da regressão arquivada exibida pelo painel.
+> Registre a regressão real e seu log como obtidos, preservando a
+> pendência da comparação completa dos três modelos e da CI na v1.0.
+>
+> Registre este pedido integralmente e as verificações reais em
+> PROMPTS.md. Não altere código ou resultados anteriores.
+> Não execute modelos, faça commit ou push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Arquivos conferidos:** `eval/results/execucoes/20261123-213619/regressao.csv` e `evidencias/regressao-20261123-213619.txt`; também foi consultado `eval/regression_test.py` para confirmar a seleção amostral e a normalização exata.
+- **Verificações reais:** o CSV contém 20 linhas e 20 entradas distintas, 10 `original_correct=true`, zero `degraded_correct=true` e nenhuma resposta vazia em nenhuma das duas colunas de resposta. As acurácias recalculadas são 50% e 0%, diferença de -50 pontos percentuais. O log UTF-16 foi decodificado sem alterar o original; os horários UTC foram convertidos para 23/11/2026, 21:36:37.233930–21:37:37.588633 no horário de Brasília. A saída tem acentos corrompidos, como indicado no pedido.
+- **Alterações:** criado `docs/regressao-20261123-213619.md` com modelo e ID, horário, uso da semente apenas para a amostra, parâmetros padrão do Ollama, critério de avaliação sem LLM juiz, resultados e limites de generalização. `evidencias/README.md` agora liga relatório, CSV e log e distingue esta execução da regressão arquivada mostrada pelo painel.
+- **Pendências preservadas:** comparação completa dos três modelos e CI verde na tag `v1.0`.
+- **Escopo:** nenhum código ou resultado anterior foi alterado; modelos não foram executados; não houve commit nem push.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
