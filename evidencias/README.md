@@ -39,7 +39,7 @@ Essas contagens verificam a estrutura e os campos registrados; não reexecutam o
 
 | Evidência a obter | Situação nesta branch |
 |---|---|
-| Vídeo de 3–5 minutos, com a tela inteira, iniciando o projeto por `docker compose up` e percorrendo o fluxo principal. | Nenhum arquivo de vídeo foi identificado. A inicialização pelo Compose foi validada manualmente em 23/11/2026, mas a gravação completa da tela e do fluxo ainda está pendente. Gravar e anexar o vídeo após uma execução controlada. |
+| Vídeo de 3–5 minutos, com a tela inteira, iniciando o projeto por `docker compose up` e percorrendo o fluxo principal. | A gravação real da demonstração está disponível em [`videos/video-demonstracao.mp4`](videos/video-demonstracao.mp4). Sua duração é 1 min 42,891 s (aproximadamente 1 min 43 s), sem narração audível. Guilherme decidiu manter esta versão; ela não atende ao intervalo solicitado de 3–5 minutos. |
 | Execução real dos modelos e da regressão. | Não foi realizada nesta validação manual do painel. Executar a avaliação controlada e registrar parâmetros, versões dos modelos, data e arquivos de saída. |
 | Logs completos de uma execução real dos modelos e da regressão. | Os arquivos [`docker-compose-inicializacao.txt`](docker-compose-inicializacao.txt) e [`docker-compose-status.txt`](docker-compose-status.txt) registram a inicialização dos serviços, não a execução de inferência ou regressão. Salvar saída de terminal, parâmetros, versões do modelo, data e arquivos de saída em uma execução controlada. |
 | CI verde na tag `v1.0`, com link direto e captura da execução. | A branch local não contém a tag `v1.0`; a consulta GitHub à tag não encontrou commit, a API de Actions retornou zero workflows e zero execuções filtradas para `v1.0`. A página [GitHub Actions](https://github.com/GuihCastro/plataforma-avaliacao-llm/actions) é apenas o local de consulta, não substitui o link da execução. Criar/confirmar tag e workflow, executar CI e anexar link mais captura. |
@@ -47,6 +47,12 @@ Essas contagens verificam a estrutura e os campos registrados; não reexecutam o
 | Confirmação das escolhas arquiteturais além das capturas da interface. | Foram adicionadas três capturas manuais feitas por Guilherme e conferidas visualmente no ChatGPT. As motivações e alternativas arquiteturais ainda não constam nos registros e permanecem pendentes de confirmação pela equipe. |
 | Reconciliação dos números dos relatórios com os CSVs. | `Metricas_consumo.md` diverge dos resultados em CSV; `Teste_regressao.md` diverge do CSV arquivado. Definir a fonte da versão final e corrigir ou contextualizar os relatórios após aprovação. |
 | Licenças específicas dos conjuntos de dados e versões dos modelos. | [`LICENSE`](../LICENSE) declara MIT para o projeto; não foi encontrada licença por dataset nem referência com versão/digest e licença dos modelos usados. Verificar origem/termos de cada fonte antes da publicação. |
+
+## Gravação da demonstração
+
+[Vídeo da demonstração](videos/video-demonstracao.mp4)
+
+Esta é uma gravação real da demonstração, compactada pelo ChatGPT. A duração registrada nos metadados do MP4 é de 1 min 42,891 s (aproximadamente 1 min 43 s). Não há narração audível. Guilherme decidiu manter esta versão, embora sua duração não atenda ao intervalo solicitado de 3–5 minutos.
 
 ## Capturas manuais da interface
 

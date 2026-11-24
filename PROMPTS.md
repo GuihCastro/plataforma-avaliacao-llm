@@ -562,6 +562,32 @@ O comando solicitado foi executado na `.venv`:
 
 ---
 
+### Registro do vídeo de demonstração — 23/11/2026
+
+- **Pedido completo de Guilherme:**
+
+> Confira evidencias/video-demonstracao.mp4 e adicione um link
+> relativo para ele em evidencias/README.md.
+>
+> Registre que é uma gravação real da demonstração, compactada
+> pelo ChatGPT, com aproximadamente 1min43s e sem narração audível.
+> Guilherme decidiu manter essa versão. Informe a duração real,
+> sem afirmar que atende ao intervalo solicitado de 3–5 minutos.
+>
+> Registre este pedido e as alterações na seção de Guilherme
+> em PROMPTS.md. Preserve as demais pendências.
+>
+> Não altere código nem execute modelos. Não faça commit ou push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+- **Ferramenta:** GitHub Copilot SDK no VS Code.
+- **Arquivo conferido:** o vídeo foi encontrado em `evidencias/videos/video-demonstracao.mp4` (dentro de `videos/`, não diretamente na raiz de `evidencias/`). A duração lida dos metadados MP4 é 102,891 segundos, isto é, 1 min 42,891 s (aproximadamente 1 min 43 s).
+- **Alterações:** `evidencias/README.md` contém um link relativo para o vídeo e registra que é uma gravação real, compactada pelo ChatGPT, sem narração audível. Também registra que Guilherme decidiu manter esta versão e que sua duração não atende ao intervalo solicitado de 3–5 minutos.
+- **Pendências preservadas:** execução real dos modelos e regressão, logs dessa execução e CI verde na tag `v1.0`. O requisito de duração de 3–5 minutos não é atendido pela versão mantida.
+- **Escopo:** nenhuma alteração de código; modelos não foram executados; não houve commit nem push.
+
+---
+
 
 # Registro de uso de IA na programação — Plataforma de Avaliação de LLMs
 
