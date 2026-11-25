@@ -53,6 +53,19 @@ def _resolve_base_url(base_url: Optional[str] = None) -> str:
 class OllamaClient:
     def __init__(self, base_url: Optional[str] = None):
         self.base_url = _resolve_base_url(base_url)
+        self.last_error = None
+
+    def list_models(self) -> list[dict]:
+        """Retorna os modelos instalados sem executar inferência."""
+        response = requests.get(f"{self.base_url}/api/tags", timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        models = data.get("models")
+        if not isinstance(models, list) or not all(
+            isinstance(model, dict) for model in models
+        ):
+            raise ValueError("Resposta inválida ao consultar os modelos do Ollama.")
+        return models
 
     def generate(self, model: str, prompt: str) -> Optional[str]:
         """Envia uma mensagem e retorna somente o texto da resposta."""
@@ -79,6 +92,7 @@ class OllamaClient:
                 f"Modelos disponíveis: {', '.join(supported_models)}"
             )
 
+        self.last_error = None
         try:
             response = requests.post(
                 f"{self.base_url}/api/generate",
@@ -92,24 +106,28 @@ class OllamaClient:
 
             response.raise_for_status()
             data = response.json()
+            prompt_tokens = data.get("prompt_eval_count")
+            completion_tokens = data.get("eval_count")
 
             return {
                 "response": data.get("response", ""),
-                "prompt_tokens": data.get("prompt_eval_count", 0),
-                "completion_tokens": data.get("eval_count", 0),
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
                 "total_tokens": (
-                    data.get("prompt_eval_count", 0)
-                    + data.get("eval_count", 0)
+                    prompt_tokens + completion_tokens
+                    if prompt_tokens is not None and completion_tokens is not None
+                    else None
                 ),
-                "total_duration_ns": data.get("total_duration", 0),
-                "load_duration_ns": data.get("load_duration", 0),
+                "total_duration_ns": data.get("total_duration"),
+                "load_duration_ns": data.get("load_duration"),
                 "prompt_eval_duration_ns": data.get(
-                    "prompt_eval_duration", 0
+                    "prompt_eval_duration"
                 ),
-                "eval_duration_ns": data.get("eval_duration", 0)
+                "eval_duration_ns": data.get("eval_duration")
             }
 
         except requests.exceptions.RequestException as e:
+            self.last_error = str(e)
             print(f"Erro de conexão: {str(e)}")
             return None
 

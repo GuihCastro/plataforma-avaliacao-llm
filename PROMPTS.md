@@ -1194,3 +1194,124 @@ Por isso, o resultado não deve ser interpretado como garantia de desempenho ger
 - **Prompt resumido:** Solicitei a estruturação do `Dockerfile`, `compose.yaml` e dos módulos Python (`ollama_client.py` e `avaliador.py`) para integrar o Ollama local ao painel Streamlit e exportar métricas em CSV.
 - **Resumo da resposta:** A IA gerou a configuração multi-container com rede interna (`OLLAMA_HOST`), volumes persistentes e um cliente HTTP para coletar latência e tokens.
 - **O que foi aceito/corrigido:** Aceita a arquitetura desacoplada e o contrato CSV. Corrigido o tratamento da variável `OLLAMA_HOST` para adicionar `http://` automaticamente quando executado fora do Docker no Windows.
+
+## Pedido — Preparar uma nova comparação real de modelos sem sobrescrever resultados
+
+### Solicitação integral
+
+> Prepare eval/model_comparison.py para uma nova execução real,
+> preservando os resultados anteriores.
+>
+> Requisitos:
+> - Coloque a execução em main(), protegida por
+>   if __name__ == "__main__". Importar o módulo não pode gerar
+>   respostas, escrever arquivos ou iniciar a avaliação.
+> - Adicione --output obrigatório para indicar um CSV novo.
+>   Recuse um arquivo existente antes de qualquer inferência.
+> - Preserve os três modelos, os 100 chamados, os prompts,
+>   o critério de acerto e o uso atual do LLMJudge.
+> - Antes da avaliação, confira a disponibilidade dos três
+>   modelos e do juiz qwen2.5:3b. Se faltar algum, interrompa
+>   com mensagem clara, sem iniciar a bateria.
+> - Preserve as colunas consumidas pelo painel.
+> - Grave os resultados progressivamente, sem perder os casos
+>   concluídos se houver interrupção.
+> - Registre falhas explicitamente; não apresente medições
+>   ausentes como zero.
+> - Mostre progresso por modelo e caso, com saída imediata.
+> - Registre início/fim em UTC, endereço do Ollama,
+>   identificação dos modelos, hash SHA256 do dataset, prompts
+>   e parâmetros efetivamente enviados. Não invente parâmetros
+>   ou medições. Salve os metadados ao lado do novo CSV.
+> - Diferencie métricas da geração classificadora das chamadas
+>   adicionais ao juiz.
+>
+> Adicione testes com respostas simuladas para importação sem
+> efeitos, proteção contra sobrescrita, modelo ausente, gravação
+> incremental e tratamento de falhas.
+>
+> Execute na .venv:
+> .\.venv\Scripts\python.exe -m pytest -q tests/
+>
+> Confira git diff --check. Registre este pedido integralmente,
+> decisões e resultados reais em PROMPTS.md.
+>
+> Não execute modelos nem altere resultados anteriores.
+> Não faça commit ou push. Apresente o diff, a saída dos testes
+> e git status --short.
+
+### Decisões de implementação
+
+- A execução ficou em `main()` e só é iniciada pelo ponto de entrada `if __name__ == "__main__"`. `--output` é obrigatório; o caminho CSV e o sidecar `<csv>.metadata.json` existentes são recusados antes de qualquer inferência.
+- A conferência de disponibilidade usa `GET /api/tags` e exige os nomes exatos `qwen2.5:1.5b`, `llama3.2:3b`, `gemma3:1b` e `qwen2.5:3b`. Não baixa nem executa modelos na pré-verificação.
+- Foram mantidos os três classificadores, 100 casos por classificador, o prompt de classificação, a comparação normalizada já existente e o `LLMJudge`. Permanecem todas as colunas antigas do CSV; as novas colunas identificam erros e métricas exclusivas do juiz.
+- O CSV é criado em modo exclusivo e descarregado após cada caso. O sidecar registra o estado da execução e cada prompt/requisição, incluindo chamadas em andamento. Medições indisponíveis são gravadas em branco; a latência observada de uma tentativa com falha permanece registrada, enquanto tokens e duração Ollama ausentes não são convertidos em zero.
+- Os metadados guardam horários UTC, URL do Ollama, identificação retornada para os modelos, SHA256 dos bytes do dataset, prompts efetivamente tentados e payload efetivamente usado. As chamadas classificadoras e adicionais do juiz são separadas; o payload não envia opções de amostragem.
+- Não foram executadas inferências reais. A validação usa somente respostas e disponibilidades simuladas, sem alterar os CSVs históricos.
+
+### Resultados reais da validação
+
+- Comando executado: `.\.venv\Scripts\python.exe -m pytest -q tests/`
+- Saída final: `35 passed, 16 subtests passed in 11.41s` (código de saída 0).
+- `git diff --check`: código de saída 0, sem mensagens.
+- Sintaxe Pylance: sem erros nos dois arquivos de implementação e nos dois arquivos de teste alterados. Diagnósticos Pylance de `eval/model_comparison.py`: nenhum.
+- Nenhuma inferência real foi iniciada; os testes de execução usaram clientes/modelos simulados. Os CSVs históricos não foram editados.
+- `git status --short`:
+  ```text
+   M PROMPTS.md
+   M docs/documentacao-tecnica.md
+   M eval/model_comparison.py
+   M src/ollama_client.py
+   M tests/test_ollama_client.py
+  ?? tests/test_model_comparison.py
+  ```
+
+## Revisão — Corrigir falhas no sidecar e nos vereditos
+
+### Solicitação integral
+
+> Corrija os três problemas encontrados na revisão:
+>
+> 1. Em eval/model_comparison.py, só atualize/finalize o arquivo
+>    de metadados depois que esta execução o criar com sucesso.
+>    Se a criação exclusiva falhar porque o arquivo passou a existir,
+>    preserve integralmente seu conteúdo e interrompa sem inferência.
+>
+> 2. Registre como falha de avaliação respostas do juiz vazias,
+>    JSON inválido ou campos com tipos inválidos. Preencha judge_error
+>    e diferencie ausência de veredito de um julgamento negativo válido.
+>    Preserve a separação das métricas do classificador e do juiz.
+>
+> 3. Resposta vazia ou somente espaços do classificador deve preencher
+>    model_error, marcar a chamada como falha e impedir consulta ao juiz.
+>    Preserve as métricas efetivamente recebidas.
+>
+> Acrescente testes simulados para esses cenários. Para os erros de
+> interpretação do juiz, exercite o LLMJudge real com transporte
+> simulado, em vez de substituir toda a avaliação por FakeJudge.
+>
+> Preserve os demais requisitos e arquivos históricos.
+> Atualize a documentação necessária e registre este pedido integral,
+> as correções e os resultados reais em PROMPTS.md.
+>
+> Execute:
+> .\.venv\Scripts\python.exe -m pytest -q tests/
+> git diff --check
+>
+> Não execute modelos nem faça commit ou push.
+> Apresente o diff das correções e a saída dos testes.
+
+### Correções e decisões
+
+- O executor só atualiza o sidecar após obter sucesso em `open("x")`. Se outra execução criar o sidecar durante a pré-verificação, preserva seus bytes e interrompe antes da inferência; o CSV vazio criado por esta tentativa é removido.
+- `LLMJudge` continua retornando o mesmo formato existente, mas expõe `evaluation_error` para diferenciar resposta vazia, JSON inválido e esquema/tipos inválidos de uma avaliação negativa válida. O CSV deixa `judge_correct` em branco sem veredito; `false` é reservado a um julgamento negativo válido, e `judge_error` contém a falha. As métricas do juiz continuam separadas.
+- Resposta do classificador vazia, só com espaços ou não textual agora registra `model_error`, marca a chamada como falha e impede a execução do juiz. Métricas que chegaram na resposta continuam registradas.
+- Os testes de interpretação instanciam `LLMJudge` real e simulam `GET /api/tags` e `POST /api/generate`; não fazem inferência nem conexão real com Ollama.
+
+### Resultados reais
+
+- Comando executado: `.\.venv\Scripts\python.exe -m pytest -q tests/`
+- Saída: `43 passed, 16 subtests passed in 8.33s` (código de saída 0).
+- `git diff --check`: código de saída 0, sem mensagens.
+- Pylance: sem erros de sintaxe em `src/llm_judge.py`; diagnósticos de `eval/model_comparison.py`: nenhum.
+- Nenhum modelo foi executado; as chamadas HTTP dos testes foram simuladas. Os resultados históricos não foram alterados.

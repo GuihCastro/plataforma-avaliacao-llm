@@ -70,6 +70,22 @@ def test_generate_with_metrics_preserves_metrics_contract(post):
 
 
 @patch("src.ollama_client.requests.post")
+def test_missing_generation_metrics_remain_unavailable(post):
+    post.return_value = mock_response({"response": "Hardware"})
+
+    result = OllamaClient().generate_with_metrics(
+        "qwen2.5:1.5b",
+        "Classifique",
+    )
+
+    assert result["response"] == "Hardware"
+    assert result["prompt_tokens"] is None
+    assert result["completion_tokens"] is None
+    assert result["total_tokens"] is None
+    assert result["total_duration_ns"] is None
+
+
+@patch("src.ollama_client.requests.post")
 def test_gerar_classificacao_preserves_backend_contract(post):
     post.return_value = mock_response({
         "response": "  Software  ",

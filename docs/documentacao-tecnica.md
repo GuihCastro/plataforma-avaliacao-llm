@@ -20,7 +20,7 @@ flowchart LR
     F -->|resposta do juiz| C
     C -->|resultado do juiz| E
     E -->|judge_correct e judge_reason| B
-    B --> G["eval/results/results_100_metrics.csv"]
+    B --> G["CSV de saída selecionado e metadados JSON"]
     G --> H["src/app.py"]
     I["CSV de regressão arquivado"] --> H
     H --> J["src/results_csv.py"]
@@ -141,10 +141,10 @@ Execute os comandos na raiz do repositório, com as dependências instaladas. As
 ### Comparação dos três modelos
 
 ```powershell
-.\.venv\Scripts\python.exe -m eval.model_comparison
+.\.venv\Scripts\python.exe -m eval.model_comparison --output eval/results/comparison_nova.csv
 ```
 
-O script lê os 100 casos e executa os três modelos, produzindo 300 resultados e substituindo `eval/results/results_100_metrics.csv`. Ele também usa o juiz híbrido. A execução pode levar vários minutos e os resultados podem variar; não execute sobre cópias de dados que deseja preservar sem fazer backup.
+O argumento `--output` é obrigatório e deve apontar para um CSV que ainda não exista. O script verifica previamente os três classificadores e o modelo `qwen2.5:3b`; se algum estiver indisponível, não inicia a bateria. São registrados 100 casos para cada classificador, com gravação incremental e um arquivo JSON de metadados ao lado do CSV. O arquivo histórico `eval/results/results_100_metrics.csv` não é substituído. O juiz híbrido mantém suas decisões em `judge_correct` e `judge_reason`, e as métricas das chamadas adicionais ao juiz ficam separadas das métricas de geração classificadora. Um `judge_correct` vazio indica que não houve veredito válido (por exemplo, JSON inválido); `false` indica um julgamento negativo válido, e `judge_error` registra falhas de avaliação. Uma resposta classificadora vazia é registrada como falha e não é enviada ao juiz.
 
 ### Regressão de prompts
 
