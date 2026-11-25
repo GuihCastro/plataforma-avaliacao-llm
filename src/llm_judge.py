@@ -8,6 +8,7 @@ from src.ollama_client import OllamaClient
 class LLMJudge:
     def __init__(self):
         self.client = OllamaClient()
+        self.evaluation_error = None
 
     def normalize(self, text):
         """Padroniza texto para comparação direta."""
@@ -16,6 +17,7 @@ class LLMJudge:
         return text.rstrip(".,;:!?")
 
     def evaluate(self, input_text, expected, response):
+        self.evaluation_error = None
 
         # Primeira etapa: comparação objetiva feita pelo Python.
         normalized_expected = self.normalize(expected)
@@ -72,9 +74,10 @@ class LLMJudge:
             )
 
             if not judge_response or not judge_response.strip():
+                self.evaluation_error = "Resposta do juiz está vazia"
                 return {
                     "correct": False,
-                    "reason": "Resposta do juiz está vazia"
+                    "reason": self.evaluation_error
                 }
 
             judge_response = judge_response.strip()
@@ -94,13 +97,15 @@ class LLMJudge:
             return result
 
         except json.JSONDecodeError:
+            self.evaluation_error = "Resposta do juiz não é um JSON válido"
             return {
                 "correct": False,
-                "reason": "Resposta do juiz não é um JSON válido"
+                "reason": self.evaluation_error
             }
 
         except Exception as e:
+            self.evaluation_error = f"Erro ao avaliar: {str(e)}"
             return {
                 "correct": False,
-                "reason": f"Erro ao avaliar: {str(e)}"
+                "reason": self.evaluation_error
             }
