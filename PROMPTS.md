@@ -1359,3 +1359,43 @@ Por isso, o resultado não deve ser interpretado como garantia de desempenho ger
 - Conferência das métricas do juiz no CSV/sidecar: 190 chamadas adicionais; 188 negativas válidas e dois JSONs inválidos no Qwen; os 110 acertos exatos não consultaram o juiz.
 - Conferidos os horários UTC do sidecar e convertidos para Brasília, o hash SHA-256 do dataset, os identificadores/digests, prompts e parâmetros efetivamente registrados. O log UTF-16 e os resultados originais não foram modificados.
 - Nenhum código foi alterado; nenhum modelo foi executado e nenhum commit ou push foi realizado. `git diff --check` terminou com código 0 e sem mensagens; 73 links relativos nos documentos foram conferidos sem destinos quebrados. `git status --short` mostrou `M PROMPTS.md`, `M evidencias/README.md`, o novo relatório e os artefatos originais de comparação como não rastreados.
+
+## Evidência da CI aprovada — tag v1.0
+
+### Pedido completo de Guilherme
+
+> Documente a CI aprovada da tag v1.0.
+>
+> Confira a existência de:
+> evidencias/imagens/ci-v1.0.png
+>
+> Atualize evidencias/README.md:
+> - registre a evidência de CI na v1.0 como obtida;
+> - inclua link relativo e exibição da captura;
+> - inclua o link direto da execução:
+>   https://github.com/GuihCastro/plataforma-avaliacao-llm/actions/runs/45918634750
+> - registre o commit avaliado:
+>   7f6c641a3d487979b38bfc02f510acd10d448ace
+> - informe Success e 43 testes e 16 subtestes aprovados,
+>   conforme os logs conferidos pelo ChatGPT;
+> - informe que Guilherme fez a captura manualmente e o ChatGPT
+>   conferiu visualmente a tag v1.0 e o status Success.
+>
+> Preserve os registros históricos, identificando as observações
+> antigas sobre ausência de CI como anteriores a esta evidência.
+> Mantenha as demais pendências.
+>
+> Registre este pedido integralmente e as alterações na seção
+> de Guilherme em PROMPTS.md.
+>
+> Não altere código, resultados ou a tag v1.0.
+> Não execute modelos ou CI, nem faça commit/push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+### Alterações e verificações realizadas
+
+- Conferida a existência de `evidencias/imagens/ci-v1.0.png` e a captura foi inspecionada visualmente: ela mostra a tag `v1.0` e o status `Success`. O registro informa que Guilherme fez a captura manualmente e o ChatGPT a conferiu.
+- Consultados os detalhes do GitHub Actions run `45918634750`: branch `v1.0`, commit `7f6c641a3d487979b38bfc02f510acd10d448ace` e conclusão `success`.
+- Conferidos os detalhes e logs do job `pytest`: conclusão `success` e saída `43 passed, 16 subtests passed in 3.89s`.
+- Atualizado `evidencias/README.md` com a evidência obtida, link direto da execução, commit, resultado, resumo dos testes, link relativo e exibição da captura. A observação da revisão de 19/11/2026 sobre ausência de CI foi preservada como histórica e anterior à evidência atual; as demais pendências foram mantidas.
+- Nenhum código, resultado ou tag foi alterado. Não foram executados modelos ou CI, e não foi feito commit nem push. `git diff --check` e `git status --short` foram verificados após estas alterações.
