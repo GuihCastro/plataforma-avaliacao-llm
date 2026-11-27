@@ -41,8 +41,8 @@ Essas contagens verificam a estrutura e os campos registrados; não reexecutam o
 | Evidência a obter | Situação nesta branch |
 |---|---|
 | Vídeo de 3–5 minutos, com a tela inteira, iniciando o projeto por `docker compose up` e percorrendo o fluxo principal. | A gravação real da demonstração está disponível em [`videos/video-demonstracao.mp4`](videos/video-demonstracao.mp4). Sua duração é 1 min 42,891 s (aproximadamente 1 min 43 s), sem narração audível. Guilherme decidiu manter esta versão; ela não atende ao intervalo solicitado de 3–5 minutos. |
-| Comparação completa dos três modelos. | A regressão real `20261123-213619` foi executada somente com `qwen2.5:1.5b`; a comparação completa dos três modelos permanece pendente. |
-| Logs completos da comparação dos três modelos. | O [log da regressão real `20261123-213619`](regressao-20261123-213619.txt) registra uma execução do `qwen2.5:1.5b`, não a comparação dos três modelos. Os arquivos [`docker-compose-inicializacao.txt`](docker-compose-inicializacao.txt) e [`docker-compose-status.txt`](docker-compose-status.txt) registram a inicialização dos serviços, não inferência ou regressão. |
+| Comparação completa dos três modelos. | A comparação real `20261126-200844` está documentada em [`docs/comparacao-20261126-200844.md`](../docs/comparacao-20261126-200844.md), com os resultados em [`comparacao.csv`](../eval/results/execucoes/20261126-200844/comparacao.csv), metadados e log original. |
+| Logs completos da comparação dos três modelos. | O [log original da comparação `20261126-200844`](comparacao-20261126-200844.txt) registra os 100 casos por cada um dos três modelos. O [log da regressão `20261123-213619`](regressao-20261123-213619.txt) permanece evidência separada de uma execução apenas do `qwen2.5:1.5b`. Os arquivos [`docker-compose-inicializacao.txt`](docker-compose-inicializacao.txt) e [`docker-compose-status.txt`](docker-compose-status.txt) registram a inicialização dos serviços, não inferência ou regressão. |
 | CI verde na tag `v1.0`, com link direto e captura da execução. | A branch local não contém a tag `v1.0`; a consulta GitHub à tag não encontrou commit, a API de Actions retornou zero workflows e zero execuções filtradas para `v1.0`. A página [GitHub Actions](https://github.com/GuihCastro/plataforma-avaliacao-llm/actions) é apenas o local de consulta, não substitui o link da execução. Criar/confirmar tag e workflow, executar CI e anexar link mais captura. |
 | Confirmação da bateria que a equipe escolherá para o relatório. | O CSV de 20 pares é arquivado e a T11 registra a decisão como pendente; obter decisão explícita da equipe e identificador/versão da bateria. |
 | Confirmação das escolhas arquiteturais além das capturas da interface. | Foram adicionadas três capturas manuais feitas por Guilherme e conferidas visualmente no ChatGPT. As motivações e alternativas arquiteturais ainda não constam nos registros e permanecem pendentes de confirmação pela equipe. |
@@ -56,6 +56,15 @@ Essas contagens verificam a estrutura e os campos registrados; não reexecutam o
 - [Log da execução](regressao-20261123-213619.txt)
 
 Esta execução real e seus resultados são distintos da [regressão arquivada exibida pelo painel](../eval/results/results_old/regression_results_prompt_comparison.csv). O painel continua exibindo o experimento arquivado; não se deve interpretar sua captura como a execução `20261123-213619`.
+
+## Comparação real — 20261126-200844
+
+- [Relatório da comparação](../docs/comparacao-20261126-200844.md)
+- [CSV original de resultados](../eval/results/execucoes/20261126-200844/comparacao.csv)
+- [Metadados originais](../eval/results/execucoes/20261126-200844/comparacao.csv.metadata.json)
+- [Log original em UTF-16](comparacao-20261126-200844.txt)
+
+Os três modelos avaliaram os mesmos 100 chamados, totalizando 300 registros e 52/20/38 acertos. Os arquivos originais foram preservados como obtidos. Esta comparação não altera os resultados históricos nem o painel existente. A pendência de CI verde na tag `v1.0` permanece inalterada.
 
 ## Gravação da demonstração
 

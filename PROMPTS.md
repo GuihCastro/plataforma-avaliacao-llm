@@ -1315,3 +1315,47 @@ Por isso, o resultado não deve ser interpretado como garantia de desempenho ger
 - `git diff --check`: código de saída 0, sem mensagens.
 - Pylance: sem erros de sintaxe em `src/llm_judge.py`; diagnósticos de `eval/model_comparison.py`: nenhum.
 - Nenhum modelo foi executado; as chamadas HTTP dos testes foram simuladas. Os resultados históricos não foram alterados.
+
+## Documentação da comparação real — 20261126-200844
+
+### Pedido completo de Guilherme
+
+> Documente a comparação real 20261126-200844.
+>
+> Leia e preserve os originais:
+> - eval/results/execucoes/20261126-200844/comparacao.csv
+> - eval/results/execucoes/20261126-200844/comparacao.csv.metadata.json
+> - evidencias/comparacao-20261126-200844.txt (UTF-16)
+>
+> Crie docs/comparacao-20261126-200844.md.
+> Confira os 300 registros, mesmos 100 chamados por modelo,
+> acertos exatos de 52/20/38 e ausência de falhas classificadoras.
+>
+> Documente separadamente as métricas dos classificadores e do juiz.
+> Houve 190 chamadas adicionais: 188 negativas válidas e dois
+> JSONs inválidos na avaliação do Qwen. Os 110 acertos exatos
+> foram resolvidos pelo Python, sem consulta ao juiz.
+>
+> Inclua horários em Brasília, commit, identificação dos modelos,
+> hash do dataset, prompts e parâmetros registrados. Diferencie
+> tempo total da rodada e latências classificadoras. Não afirme
+> calibração do juiz nem generalize os resultados desta rodada.
+>
+> Atualize evidencias/README.md com links e registre a comparação
+> e seus logs como obtidos. Preserve os resultados históricos,
+> o painel existente e a pendência de CI verde na tag v1.0.
+>
+> Registre este pedido integralmente e as verificações realizadas
+> na seção de Guilherme em PROMPTS.md.
+>
+> Não altere código, execute modelos ou faça commit/push.
+> Execute git diff --check e apresente o diff e git status --short.
+
+### Alterações e verificações realizadas
+
+- Criado `docs/comparacao-20261126-200844.md` com os números, tempos, identificações e digests dos modelos, hash do dataset, prompts, parâmetros e métricas separadas dos classificadores e do juiz. O SHA do commit observado no checkout foi incluído com a ressalva de que o sidecar não registra o commit da execução.
+- Atualizado `evidencias/README.md` para ligar o relatório, CSV, metadados e log original da comparação. A pendência de CI verde na tag `v1.0`, o painel e os resultados históricos foram preservados.
+- Conferência do CSV com `csv.DictReader`: 300 registros, 100 por modelo, 100 entradas distintas em cada grupo e igualdade dos três conjuntos de entradas; acertos 52/20/38; zero `model_error`.
+- Conferência das métricas do juiz no CSV/sidecar: 190 chamadas adicionais; 188 negativas válidas e dois JSONs inválidos no Qwen; os 110 acertos exatos não consultaram o juiz.
+- Conferidos os horários UTC do sidecar e convertidos para Brasília, o hash SHA-256 do dataset, os identificadores/digests, prompts e parâmetros efetivamente registrados. O log UTF-16 e os resultados originais não foram modificados.
+- Nenhum código foi alterado; nenhum modelo foi executado e nenhum commit ou push foi realizado. `git diff --check` terminou com código 0 e sem mensagens; 73 links relativos nos documentos foram conferidos sem destinos quebrados. `git status --short` mostrou `M PROMPTS.md`, `M evidencias/README.md`, o novo relatório e os artefatos originais de comparação como não rastreados.
